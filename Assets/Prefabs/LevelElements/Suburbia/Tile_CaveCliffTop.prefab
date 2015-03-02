@@ -1,57 +1,56 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &102522
+--- !u!1 &110124
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
   m_Component:
-  - 4: {fileID: 402522}
-  - 212: {fileID: 21202522}
-  - 60: {fileID: 6002522}
+  - 4: {fileID: 410124}
+  - 212: {fileID: 21210124}
+  - 60: {fileID: 6010124}
   m_Layer: 0
-  m_Name: Tile_CliffToCave
+  m_Name: Tile_CaveCliffTop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &402522
+--- !u!4 &410124
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 102522}
+  m_GameObject: {fileID: 110124}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 18.8700008, y: -2.0999999, z: 0}
+  m_LocalPosition: {x: 25.2900009, y: -4.13000011, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!60 &6002522
+--- !u!60 &6010124
 PolygonCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 102522}
+  m_GameObject: {fileID: 110124}
   m_Enabled: 1
-  m_Material: {fileID: 6200000, guid: d0ed214f77891d24aab80bef0c347282, type: 2}
+  m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Poly:
     m_Paths:
-    - - {x: .0498285294, y: .639122367}
-      - {x: .0501451492, y: -.17569375}
-      - {x: .125933647, y: -.474162102}
-      - {x: .245789528, y: -.601242781}
-      - {x: .639781952, y: -.630386353}
-      - {x: .639999986, y: .639999986}
---- !u!212 &21202522
+    - - {x: -.64204216, y: .630470514}
+      - {x: -.639999986, y: -.639999986}
+      - {x: -.517929077, y: -.639560223}
+      - {x: -.524211884, y: -.0509991646}
+      - {x: -.469270706, y: .630470276}
+--- !u!212 &21210124
 SpriteRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 102522}
+  m_GameObject: {fileID: 110124}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -66,7 +65,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: 7789e53d86a8d1a43896e38c786789cf, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f1e522f2e240cf243b76c5a2ab6ebc33, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &100100000
 Prefab:
@@ -77,6 +76,6 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 102522}
+  m_RootGameObject: {fileID: 110124}
   m_IsPrefabParent: 1
   m_IsExploded: 1
