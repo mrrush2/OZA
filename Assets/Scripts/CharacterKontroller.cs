@@ -8,13 +8,15 @@ public class CharacterKontroller : MonoBehaviour {
 
 	Animator anim;
 
-	bool grounded = false;
+	public bool grounded = false;
 	public Transform groundCheck;
 	float groundRadius = 0.001f;
 	public LayerMask whatIsGround;
 	public float jumpForce = 50f;
 	public Transform sightStart, sightEnd;
 	public bool notTraversable;
+
+	public bool onLadder = false;
 
 	// Use this for initialization
 	void Start () {
@@ -39,7 +41,7 @@ public class CharacterKontroller : MonoBehaviour {
 
 		anim.SetFloat ("Speed", Mathf.Abs (move));
 
-		if (notTraversable)
+		if (notTraversable || onLadder)
 			rigidbody2D.velocity = new Vector2(0, rigidbody2D.velocity.y);
 		else
 			rigidbody2D.velocity = new Vector2(move * maxSpeed, rigidbody2D.velocity.y);
