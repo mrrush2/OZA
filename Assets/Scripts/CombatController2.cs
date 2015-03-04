@@ -20,6 +20,17 @@ public class CombatController2 : MonoBehaviour {
     public String noteEighth = "8";
     public String noteNinth = "9";
     */
+
+	// Custom key bindings
+	public KeyCode keyC = KeyCode.B,
+				   keyD = KeyCode.N,
+				   keyE = KeyCode.M,
+				   keyF = KeyCode.G,
+				   keyG = KeyCode.H,
+				   keyA = KeyCode.J,
+				   keyB = KeyCode.T,
+				   keyC2 = KeyCode.Y,
+				   keyReset = KeyCode.V;
 	
 	public string[] noteRep = {"1", "2", "3", "4", "5", "6", "7", "8", "9"}; 
 	
@@ -78,42 +89,42 @@ public class CombatController2 : MonoBehaviour {
 		////// NOTE PLAYING //////
 		
 		// All of the keys that can be played are below, referencing the currently active scale
-		if (canPlay && Input.GetKeyDown (KeyCode.Keypad1))
+		if (canPlay && Input.GetKeyDown (KeyCode.Keypad1) || Input.GetKeyDown (keyC))
 		{
 			NotePress(1);
 			AudioSource.PlayClipAtPoint(noteFirstS, noteOrigin.position);
 		}
-		if (canPlay && Input.GetKeyDown (KeyCode.Keypad2))
+		if (canPlay && Input.GetKeyDown (KeyCode.Keypad2) || Input.GetKeyDown (keyD))
 		{
 			NotePress(2);
 			AudioSource.PlayClipAtPoint(noteSecondS, noteOrigin.position);
 		}
-		if (canPlay && Input.GetKeyDown (KeyCode.Keypad3))
+		if (canPlay && Input.GetKeyDown (KeyCode.Keypad3) || Input.GetKeyDown (keyE))
 		{
 			NotePress(3);
 			AudioSource.PlayClipAtPoint(noteThirdS, noteOrigin.position);
 		}
-		if (canPlay && Input.GetKeyDown (KeyCode.Keypad4))
+		if (canPlay && Input.GetKeyDown (KeyCode.Keypad4) || Input.GetKeyDown (keyF))
 		{
 			NotePress(4);
 			AudioSource.PlayClipAtPoint(noteFourthS, noteOrigin.position);
 		}
-		if (canPlay && Input.GetKeyDown (KeyCode.Keypad5)) 
+		if (canPlay && Input.GetKeyDown (KeyCode.Keypad5) || Input.GetKeyDown (keyG)) 
 		{
 			NotePress(5);
 			AudioSource.PlayClipAtPoint(noteFifthS, noteOrigin.position);
 		}
-		if (canPlay && Input.GetKeyDown (KeyCode.Keypad6))
+		if (canPlay && Input.GetKeyDown (KeyCode.Keypad6) || Input.GetKeyDown (keyA))
 		{
 			NotePress(6);
 			AudioSource.PlayClipAtPoint(noteSixthS, noteOrigin.position);
 		}
-		if (canPlay && Input.GetKeyDown (KeyCode.Keypad7))
+		if (canPlay && Input.GetKeyDown (KeyCode.Keypad7) || Input.GetKeyDown (keyB))
 		{
 			NotePress(7);
 			AudioSource.PlayClipAtPoint(noteSeventhS, noteOrigin.position);
 		}
-		if (canPlay && Input.GetKeyDown (KeyCode.Keypad8))
+		if (canPlay && Input.GetKeyDown (KeyCode.Keypad8) || Input.GetKeyDown (keyC2))
 		{
 			NotePress(8);
 			AudioSource.PlayClipAtPoint(noteEighthS, noteOrigin.position);
@@ -127,7 +138,7 @@ public class CombatController2 : MonoBehaviour {
 		
 		////// RESETS //////
 		
-		if (Input.GetKeyDown (KeyCode.Keypad0)) //Reset button
+		if (Input.GetKeyDown (KeyCode.Keypad0) || Input.GetKeyDown (keyReset)) //Reset button
 		{
 			songValue = "";
 			specialAttackValue = 0;

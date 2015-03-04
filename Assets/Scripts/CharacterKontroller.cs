@@ -18,6 +18,14 @@ public class CharacterKontroller : MonoBehaviour {
 
 	public bool onLadder = false;
 
+	// Move variable
+	public float move = 0F;
+
+	// Custom key bindings
+	public KeyCode keyRight = KeyCode.D,
+				   keyLeft = KeyCode.A,
+				   keyJump = KeyCode.Space;
+
 	// Use this for initialization
 	void Start () {
 		anim = GetComponent < Animator > ();
@@ -34,10 +42,18 @@ public class CharacterKontroller : MonoBehaviour {
 
 		//Horizontal Movement
 
-		
-
-
-		float move = Input.GetAxis ("Horizontal");
+		if (Input.GetKey (keyRight) && Input.GetKey (keyLeft)) {
+			move = 0F;
+		} else if (Input.GetKey (keyRight)) {
+			move = 1F;
+		} else if (Input.GetKey (keyLeft)) {
+			move = -1F;
+		} else  if (grounded){
+			if (move > 0.1 || move < -0.1)
+				move += (move > 0 ? -0.1F : 0.1F);
+			else
+				move = 0F;
+		}
 
 		anim.SetFloat ("Speed", Mathf.Abs (move));
 
@@ -60,7 +76,7 @@ public class CharacterKontroller : MonoBehaviour {
 		notTraversable = Physics2D.Linecast(sightStart.position, sightEnd.position, whatIsGround);
 
 
-		if (grounded && Input.GetKeyDown(KeyCode.Space))
+		if (grounded && Input.GetKeyDown(keyJump))
 		{
 			anim.SetBool("Ground",false);
 			rigidbody2D.AddForce (new Vector2(0, jumpForce));
