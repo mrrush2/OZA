@@ -2,11 +2,13 @@
 using System.Collections;
 
 public class FallThroughPlatform : MonoBehaviour {
-	public GameObject player;
+	GameObject player;
+	GameObject groundCheck;
+
 	bool plat = false;
 	// Use this for initialization
 	void Start () {
-	
+		player = GameObject.FindGameObjectWithTag ("Player");
 	}
 	
 	// Update is called once per frame
@@ -19,7 +21,7 @@ public class FallThroughPlatform : MonoBehaviour {
 	}
 	void OnTriggerStay2D(Collider2D player)
 	{
-		if (Input.GetKey (KeyCode.S) || (player.transform.position.y-0.2923) < this.transform.position.y) // This is for falling through / jumping up onto the platform
+		if (Input.GetKey (KeyCode.S) || (player.transform.position.y-.28) < this.transform.position.y) // This is for falling through / jumping up onto the platform
 		{
 			plat = true;
 		}	
