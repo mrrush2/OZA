@@ -424,7 +424,7 @@ GameObject:
   m_Layer: 8
   m_Name: GroundCheck
   m_TagString: Untagged
-  m_Icon: {fileID: 266726316, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -1693,6 +1693,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d93ac3eb1d2ff54d99515cfc5ca36ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerScript: {fileID: 392385704}
   noteRep:
   - 1
   - 2
@@ -5151,6 +5152,8 @@ GameObject:
   - 4: {fileID: 1235245001}
   - 212: {fileID: 1235245000}
   - 68: {fileID: 1235244999}
+  - 61: {fileID: 1235245003}
+  - 114: {fileID: 1235245002}
   m_Layer: 0
   m_Name: Object_SewerPlatform
   m_TagString: Untagged
@@ -5206,6 +5209,29 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 18
+--- !u!114 &1235245002
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1235244998}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bdbe2e28307176944a1ac700ae0310b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 392385701}
+--- !u!61 &1235245003
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1235244998}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Size: {x: .74000001, y: .0500518978}
+  m_Center: {x: 0, y: .0250451565}
 --- !u!1001 &1236148443
 Prefab:
   m_ObjectHideFlags: 0
