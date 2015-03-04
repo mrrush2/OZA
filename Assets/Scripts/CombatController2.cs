@@ -3,7 +3,7 @@ using UnityEngine;
 using System.Collections;
 
 public class CombatController2 : MonoBehaviour {
-	
+	public CharacterKontroller playerScript;
 	//                      C   C#  D   D#  E   F   F#  G   G#  A    A#   B    C    C#   D    D#   E    F    F#   G    G#   A    A#   B    C
 	//float[] noteValues = {1f, 2f, 3f, 4f, 5f, 6f, 7f, 8f, 9f, 10f, 11f, 12f, 13f, 14f, 15f, 16f, 17f, 18f, 19f, 20f, 21f, 22f, 23f, 24f, 25f};
 	// This was supposed to be useful until I decided it was stupid. Now it's just a good reference. Also everything is a float becuase of an original plan I had.
@@ -159,8 +159,11 @@ public class CombatController2 : MonoBehaviour {
 	
 	// This is called every time a note button is pressed
 	void NotePress (int note) {
-		songValue += noteRep[--note];
-		FireSm();
+		if (!playerScript.onLadder) 
+		{
+			songValue += noteRep [--note];
+			FireSm ();
+		}
 		// AudioSource.PlayClipAtPoint(noteSound[--note], noteOrigin.position);
 	}
 	

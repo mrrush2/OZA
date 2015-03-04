@@ -4889,6 +4889,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d93ac3eb1d2ff54d99515cfc5ca36ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerScript: {fileID: 392385704}
   noteRep:
   - 1
   - 2
@@ -21167,7 +21168,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
 --- !u!1001 &1516992174
 Prefab:
   m_ObjectHideFlags: 0
@@ -25610,6 +25611,10 @@ Prefab:
       propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 11481428, guid: d6ea47256e0b6b74d99ea6bc0fcad66d, type: 2}
+      propertyPath: playerScript
+      value: 
+      objectReference: {fileID: 392385704}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d6ea47256e0b6b74d99ea6bc0fcad66d, type: 2}
   m_RootGameObject: {fileID: 392385701}
@@ -25803,7 +25808,7 @@ Transform:
   m_LocalScale: {x: -1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
 --- !u!1 &1862951587
 GameObject:
   m_ObjectHideFlags: 0
