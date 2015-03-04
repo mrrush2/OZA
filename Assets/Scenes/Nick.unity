@@ -4889,6 +4889,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d93ac3eb1d2ff54d99515cfc5ca36ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerScript: {fileID: 392385704}
   noteRep:
   - 1
   - 2
@@ -25607,6 +25608,65 @@ Prefab:
   m_RootGameObject: {fileID: 585198544}
   m_IsPrefabParent: 0
   m_IsExploded: 1
+<<<<<<< HEAD
+=======
+--- !u!1001 &1840340946
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 469766, guid: d6ea47256e0b6b74d99ea6bc0fcad66d, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: .942136109
+      objectReference: {fileID: 0}
+    - target: {fileID: 469766, guid: d6ea47256e0b6b74d99ea6bc0fcad66d, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -.139274329
+      objectReference: {fileID: 0}
+    - target: {fileID: 469766, guid: d6ea47256e0b6b74d99ea6bc0fcad66d, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 469766, guid: d6ea47256e0b6b74d99ea6bc0fcad66d, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 469766, guid: d6ea47256e0b6b74d99ea6bc0fcad66d, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 469766, guid: d6ea47256e0b6b74d99ea6bc0fcad66d, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 469766, guid: d6ea47256e0b6b74d99ea6bc0fcad66d, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 469766, guid: d6ea47256e0b6b74d99ea6bc0fcad66d, type: 2}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11469758, guid: d6ea47256e0b6b74d99ea6bc0fcad66d, type: 2}
+      propertyPath: whatIsGround.m_Bits
+      value: 4294963455
+      objectReference: {fileID: 0}
+    - target: {fileID: 169766, guid: d6ea47256e0b6b74d99ea6bc0fcad66d, type: 2}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 11481428, guid: d6ea47256e0b6b74d99ea6bc0fcad66d, type: 2}
+      propertyPath: playerScript
+      value: 
+      objectReference: {fileID: 392385704}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: d6ea47256e0b6b74d99ea6bc0fcad66d, type: 2}
+  m_RootGameObject: {fileID: 392385701}
+  m_IsPrefabParent: 0
+  m_IsExploded: 1
+>>>>>>> 931ab27c2fab70ef71591b650685c1dd21d09ef7
 --- !u!1 &1842780748
 GameObject:
   m_ObjectHideFlags: 0
