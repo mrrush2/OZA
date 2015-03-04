@@ -19,7 +19,7 @@ public class FallThroughPlatform : MonoBehaviour {
 	}
 	void OnTriggerStay2D(Collider2D player)
 	{
-		if (Input.GetKey (KeyCode.S)) // This is for falling through the platform
+		if (Input.GetKey (KeyCode.S) || (player.transform.position.y-0.2923) < this.transform.position.y) // This is for falling through / jumping up onto the platform
 		{
 			plat = true;
 		}	
