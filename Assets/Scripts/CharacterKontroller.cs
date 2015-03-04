@@ -12,6 +12,7 @@ public class CharacterKontroller : MonoBehaviour {
 	public Transform groundCheck;
 	float groundRadius = 0.001f;
 	public LayerMask whatIsGround;
+	public LayerMask rayCanHit;
 	public float jumpForce = 50f;
 	public Transform sightStart, sightEnd;
 	public bool notTraversable;
@@ -73,7 +74,7 @@ public class CharacterKontroller : MonoBehaviour {
 	{
 
 		Debug.DrawLine(sightStart.position, sightEnd.position, Color.blue); //Visual Representation of Ray Jesus
-		notTraversable = Physics2D.Linecast(sightStart.position, sightEnd.position, whatIsGround);
+		notTraversable = Physics2D.Linecast(sightStart.position, sightEnd.position, rayCanHit);
 
 
 		if (grounded && Input.GetKeyDown(keyJump))

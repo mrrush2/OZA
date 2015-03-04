@@ -3,15 +3,16 @@ using System.Collections;
 
 public class LadderByNick : MonoBehaviour {
 	
-	public GameObject player;
-	public CharacterKontroller playerScript;
+	GameObject player;
+	CharacterKontroller playerScript;
 
 
 
 	// Use this for initialization
 	void Start () 
 	{
-
+		player = GameObject.FindGameObjectWithTag ("Player");
+		playerScript = player.GetComponent<CharacterKontroller>();
 	}
 	
 	// Update is called constantly

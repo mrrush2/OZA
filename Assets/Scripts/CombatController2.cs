@@ -3,7 +3,12 @@ using UnityEngine;
 using System.Collections;
 
 public class CombatController2 : MonoBehaviour {
-	
+
+	// Other Script References
+	public CharacterKontroller playerScript;
+
+
+
 	//                      C   C#  D   D#  E   F   F#  G   G#  A    A#   B    C    C#   D    D#   E    F    F#   G    G#   A    A#   B    C
 	//float[] noteValues = {1f, 2f, 3f, 4f, 5f, 6f, 7f, 8f, 9f, 10f, 11f, 12f, 13f, 14f, 15f, 16f, 17f, 18f, 19f, 20f, 21f, 22f, 23f, 24f, 25f};
 	// This was supposed to be useful until I decided it was stupid. Now it's just a good reference. Also everything is a float becuase of an original plan I had.
@@ -75,7 +80,10 @@ public class CombatController2 : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+
+
+
+
 		////// AURA STUFF //////
 
 		auraAnim.SetBool ("IsPlaying", (!songValue.Equals (""))); //Aura definition. Governs when it should animate.
@@ -84,6 +92,12 @@ public class CombatController2 : MonoBehaviour {
 			auraLight.enabled = false;
 		else
 			auraLight.enabled = true;
+
+
+		////// CAN PLAY STUFF //////
+
+
+		canPlay = !playerScript.onLadder;
 
 		
 		////// NOTE PLAYING //////

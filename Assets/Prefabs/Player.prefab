@@ -82,7 +82,7 @@ GameObject:
   - 114: {fileID: 11481428}
   m_Layer: 8
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -291,7 +291,7 @@ CircleCollider2D:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 169766}
   m_Enabled: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: f8e4834603a3a954f9ef42e4f8507cf3, type: 2}
   m_IsTrigger: 0
   m_Radius: .0799999982
   m_Center: {x: 0, y: -.200000003}
@@ -302,7 +302,7 @@ BoxCollider2D:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 169766}
   m_Enabled: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: d0ed214f77891d24aab80bef0c347282, type: 2}
   m_IsTrigger: 0
   m_Size: {x: .129999995, y: .379999995}
   m_Center: {x: 0, y: .0199999996}
@@ -397,14 +397,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxSpeed: 3
+  grounded: 0
   groundCheck: {fileID: 469762}
   whatIsGround:
     serializedVersion: 2
-    m_Bits: 4294965503
+    m_Bits: 4294963455
   jumpForce: 200
   sightStart: {fileID: 469760}
   sightEnd: {fileID: 469770}
   notTraversable: 0
+  onLadder: 0
 --- !u!114 &11481428
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -416,6 +418,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d93ac3eb1d2ff54d99515cfc5ca36ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerScript: {fileID: 11469758}
   noteRep:
   - 1
   - 2
