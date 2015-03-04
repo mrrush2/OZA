@@ -4774,7 +4774,7 @@ Transform:
   - {fileID: 1791317263}
   - {fileID: 2124000782}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
 --- !u!114 &392385704
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4889,6 +4889,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d93ac3eb1d2ff54d99515cfc5ca36ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerScript: {fileID: 392385704}
   noteRep:
   - 1
   - 2
@@ -7840,7 +7841,7 @@ Transform:
   - {fileID: 582067840}
   - {fileID: 136991247}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
 --- !u!95 &618579047
 Animator:
   serializedVersion: 3
@@ -13161,6 +13162,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 11481428, guid: d6ea47256e0b6b74d99ea6bc0fcad66d, type: 2}
+      propertyPath: playerScript
+      value: 
+      objectReference: {fileID: 392385704}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d6ea47256e0b6b74d99ea6bc0fcad66d, type: 2}
   m_RootGameObject: {fileID: 392385701}
