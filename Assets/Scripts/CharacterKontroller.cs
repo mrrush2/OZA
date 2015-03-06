@@ -4,7 +4,7 @@ using System.Collections;
 public class CharacterKontroller : MonoBehaviour {
 
 	public float maxSpeed = 10f;
-	bool facingRight = true;
+	public bool facingRight = true;
 
 	Animator anim;
 
@@ -39,23 +39,7 @@ public class CharacterKontroller : MonoBehaviour {
 		anim.SetBool("Ground", grounded);
 
 		anim.SetFloat("vSpeed", rigidbody2D.velocity.y);
-
-
-		//Horizontal Movement
-
-		if (Input.GetKey (keyRight) && Input.GetKey (keyLeft)) {
-			move = 0F;
-		} else if (Input.GetKey (keyRight)) {
-			move = 1F;
-		} else if (Input.GetKey (keyLeft)) {
-			move = -1F;
-		} else  if (grounded){
-			if (move > 0.1 || move < -0.1)
-				move += (move > 0 ? -0.1F : 0.1F);
-			else
-				move = 0F;
-		}
-
+		
 		anim.SetFloat ("Speed", Mathf.Abs (move));
 
 		if (notTraversable || onLadder)
@@ -76,6 +60,22 @@ public class CharacterKontroller : MonoBehaviour {
 		Debug.DrawLine(sightStart.position, sightEnd.position, Color.blue); //Visual Representation of Ray Jesus
 		notTraversable = Physics2D.Linecast(sightStart.position, sightEnd.position, rayCanHit);
 
+		//Horizontal Movement
+		
+		if (Input.GetKey (keyRight) && Input.GetKey (keyLeft)) {
+			move = 0F; // Reset velocity if both keys are down
+		} else if (Input.GetKey (keyRight)) {
+			if (move < 0F) move = 0F; // Reset velocity
+			if (move < 1F) move += 0.15F; // Small acceleration
+		} else if (Input.GetKey (keyLeft)) {
+			if (move > 0F) move = 0F;
+			if (move > -1F) move -= 0.15F;
+		} else {
+			if (Mathf.Abs(move) - 0.15F > 0) // Slow down
+				move += (move > 0F ? -0.15F : 0.15F);
+			else
+				move = 0F; // Reset velocity if sufficiently slow
+		}
 
 		if (grounded && Input.GetKeyDown(keyJump))
 		{
