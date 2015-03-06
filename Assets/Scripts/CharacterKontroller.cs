@@ -77,6 +77,14 @@ public class CharacterKontroller : MonoBehaviour {
 				move = 0F; // Reset velocity if sufficiently slow
 		}
 
+		if (grounded && Input.GetKeyDown (keyJump) && rigidbody2D.velocity.y < 0) 
+		{
+			anim.SetBool ("Ground", false);
+			rigidbody2D.AddForce (new Vector2 (0, (-50*rigidbody2D.velocity.y)));
+
+		}
+
+
 		if (grounded && Input.GetKeyDown(keyJump))
 		{
 			anim.SetBool("Ground",false);
