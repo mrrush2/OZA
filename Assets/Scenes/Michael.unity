@@ -424,7 +424,7 @@ GameObject:
   m_Layer: 8
   m_Name: GroundCheck
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 266726316, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -1002,8 +1002,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b05fd429deb966f45b2da960d92bb3af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 392385701}
-  playerScript: {fileID: 392385704}
 --- !u!61 &251789648
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1597,6 +1595,9 @@ MonoBehaviour:
   whatIsGround:
     serializedVersion: 2
     m_Bits: 4294963455
+  rayCanHit:
+    serializedVersion: 2
+    m_Bits: 0
   jumpForce: 200
   sightStart: {fileID: 1320715675}
   sightEnd: {fileID: 1312026986}
@@ -1970,8 +1971,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b05fd429deb966f45b2da960d92bb3af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 392385701}
-  playerScript: {fileID: 392385704}
 --- !u!61 &451674068
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2240,8 +2239,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b05fd429deb966f45b2da960d92bb3af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 392385701}
-  playerScript: {fileID: 392385704}
 --- !u!61 &488954989
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2779,6 +2776,10 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 21290602, guid: 0596c7c438d3d194b88126e28e64e908, type: 2}
       propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 490602, guid: 0596c7c438d3d194b88126e28e64e908, type: 2}
+      propertyPath: m_LocalScale.x
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -4810,8 +4811,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b05fd429deb966f45b2da960d92bb3af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 392385701}
-  playerScript: {fileID: 392385704}
 --- !u!61 &1174348136
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5220,7 +5219,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bdbe2e28307176944a1ac700ae0310b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 392385701}
 --- !u!61 &1235245003
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6069,8 +6067,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b05fd429deb966f45b2da960d92bb3af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 392385701}
-  playerScript: {fileID: 392385704}
 --- !u!61 &1447427378
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7166,8 +7162,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b05fd429deb966f45b2da960d92bb3af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 392385701}
-  playerScript: {fileID: 392385704}
 --- !u!61 &1793051698
 BoxCollider2D:
   m_ObjectHideFlags: 0
