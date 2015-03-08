@@ -2,7 +2,22 @@ fileFormatVersion: 2
 guid: 5d93ac3eb1d2ff54d99515cfc5ca36ff
 MonoImporter:
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - noteFirstS: {fileID: 8300000, guid: 2a066d9e7c246534598f77ab9127df36, type: 3}
+  - noteSecondS: {fileID: 8300000, guid: 64cec35007dfe9e44953b26ec3fc512b, type: 3}
+  - noteThirdS: {instanceID: 0}
+  - noteFourthS: {instanceID: 0}
+  - noteFifthS: {instanceID: 0}
+  - noteSixthS: {instanceID: 0}
+  - noteSeventhS: {instanceID: 0}
+  - noteEighthS: {instanceID: 0}
+  - noteNinthS: {instanceID: 0}
+  - musicNoteSm: {instanceID: 0}
+  - musicNoteMd: {instanceID: 0}
+  - noteOrigin: {instanceID: 0}
+  - heWhoShoots: {instanceID: 0}
+  - auraAnim: {instanceID: 0}
+  - auraLight: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
