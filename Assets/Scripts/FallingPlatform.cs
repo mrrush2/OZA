@@ -33,13 +33,14 @@ public class FallingPlatform : MonoBehaviour {
 		{
 			canRespawn = false;
 			platformInstance = Instantiate ( platform, new Vector3(originX, originY, 0), origin.rotation) as GameObject;
-			platformInstance.rigidbody2D.velocity = new Vector2(0,0);
+			//platformInstance.rigidbody2D.velocity = new Vector2(0,0);
 			canRespawn = true;
 		} 
 		if (rigidbody2D.velocity.y < -3) 
 			Destroy (this.gameObject);
 		
-
+		if (rigidbody2D.velocity.y > 0)
+			rigidbody2D.AddForce (new Vector2(0, -20));
 
 
 	}
