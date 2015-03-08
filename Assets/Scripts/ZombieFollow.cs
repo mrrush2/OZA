@@ -5,9 +5,14 @@ public class ZombieFollow : MonoBehaviour {
 	public Transform target;//set target from inspector instead of looking in Update
 	public float speed = .5f;
 	bool facingRight = true;
+	Animator anim;
 	//bool chase = false;
 	private float distance;
 
+	void Start()
+	{
+		anim = GetComponent < Animator > ();
+	}
 	void Update() {
 
 		/*while (!chase) {
@@ -24,7 +29,7 @@ public class ZombieFollow : MonoBehaviour {
 		target = GameObject.FindWithTag ("Player").transform;		
 		distance = transform.position.x - target.position.x;
 		//FACE RIGHT OR LEFT
-
+		anim.SetFloat ("Speed", Mathf.Abs(rigidbody2D.velocity.x));
 		if (distance > 0 && !facingRight)
 			Flip ();
 		else if (distance < 0 && facingRight)
