@@ -32,11 +32,25 @@ public class CombatController2 : MonoBehaviour {
 	public Transform noteOrigin;
 	public Transform heWhoShoots;
 	float specialAttackValue = 0; //On a per-special basis, this controls how many times a combo runs when activated.
+
+	public KeyCode keyC = KeyCode.B,
+				   keyD = KeyCode.N,
+				   keyE = KeyCode.M,
+				   keyF = KeyCode.G,
+				   keyG = KeyCode.H,
+				   keyA = KeyCode.J,
+				   keyB = KeyCode.T,
+				   keyC2= KeyCode.Y,
+			   keyReset = KeyCode.V;
+
+
 	
 	// For visual manipulation
 	public Animator auraAnim;
 	public Light auraLight;
 
+	CharacterKontroller playerScript;
+	GameObject player;
 
 	SoundPlayer player1, player2, player3, player4, player5, player6, player7, player8, player9; 
 	
@@ -47,6 +61,9 @@ public class CombatController2 : MonoBehaviour {
 			ChangeKeyMajor (R);
 		else
 			ChangeKeyMinor (R); 
+
+		playerScript = player.GetComponent<CharacterKontroller>();
+		player = GameObject.FindGameObjectWithTag ("Player");
 	}
 	
 	//Method Introduced for Key changes 
