@@ -85,7 +85,7 @@ public class CharacterKontroller : MonoBehaviour {
 		}
 
 
-		if (grounded && Input.GetKeyDown(keyJump))
+		if (grounded && Input.GetKeyDown(keyJump) && rigidbody2D.velocity.y < 0.1)
 		{
 			anim.SetBool("Ground",false);
 			rigidbody2D.AddForce (new Vector2(0, jumpForce));
