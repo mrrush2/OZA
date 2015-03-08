@@ -15,25 +15,25 @@ public class FallThroughPlatform : MonoBehaviour {
 	void Update () {
 	
 	}
-	void OnTriggerEnter2D(Collider2D player)
+
+	void OnTriggerStay2D(Collider2D other)
 	{
-		Debug.Log ("On platform");
-	}
-	void OnTriggerStay2D(Collider2D player)
-	{
-		if (Input.GetKey (KeyCode.S) || (player.transform.position.y-.28) < this.transform.position.y) // This is for falling through / jumping up onto the platform
+		if (other.tag == "Player") 
 		{
-			plat = true;
-		}	
-		if (plat) 
-		{
-			Physics2D.IgnoreCollision (collider2D, player, true);
+			if (Input.GetKey (KeyCode.S) || (player.transform.position.y - .28) < this.transform.position.y) { // This is for falling through / jumping up onto the platform
+				plat = true;
+			}	
+			if (plat) {
+				Physics2D.IgnoreCollision (collider2D, other, true);
+			}
 		}
 	}
-	void OnTriggerExit2D(Collider2D player)
+	void OnTriggerExit2D(Collider2D other)
 	{
-		Debug.Log ("Fell through platform");
-		Physics2D.IgnoreCollision (collider2D, player, false);
-		plat = false;
+		if (other.tag == "Player") 
+		{
+			Physics2D.IgnoreCollision (collider2D, other, false);
+			plat = false;
+		}
 	}
 }
