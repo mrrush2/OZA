@@ -61,9 +61,6 @@ public class CombatController2 : MonoBehaviour {
 			ChangeKeyMajor (R);
 		else
 			ChangeKeyMinor (R); 
-
-		playerScript = player.GetComponent<CharacterKontroller>();
-		player = GameObject.FindGameObjectWithTag ("Player");
 	}
 	
 	//Method Introduced for Key changes 
@@ -106,8 +103,9 @@ public class CombatController2 : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-
-
+		// Script reference for the onLadder boolean
+		player = GameObject.FindGameObjectWithTag ("Player");
+		playerScript = player.GetComponent<CharacterKontroller>();
 
 		////// AURA STUFF //////
 		
@@ -124,17 +122,17 @@ public class CombatController2 : MonoBehaviour {
 		canPlay = !playerScript.onLadder;
 
 		//Temporary Key change mechanism using keybindings. 
-		if (Input.GetKeyDown (KeyCode.T))
+		if (Input.GetKeyDown (KeyCode.Z))
 		{
 			R = 5; 
 			ChangeKeyMajor(R); 
 		}
-		if (Input.GetKeyDown (KeyCode.R))
+		if (Input.GetKeyDown (KeyCode.X))
 		{
 			R = 8; 
 			ChangeKeyMinor(R); 
 		}
-		if (Input.GetKeyDown (KeyCode.G))
+		if (Input.GetKeyDown (KeyCode.C))
 		{
 			R = 8; 
 			ChangeKeyMajor(R); 
@@ -142,42 +140,42 @@ public class CombatController2 : MonoBehaviour {
 		
 		////// NOTE PLAYING //////
 		// All of the keys that can be played are below, referencing the currently active scale
-		if (canPlay && Input.GetKeyDown (KeyCode.Keypad1) || Input.GetKeyDown (keyC))
+		if (canPlay && (Input.GetKeyDown (KeyCode.Keypad1) || Input.GetKeyDown (keyC)))
 		{
 			NotePress(1);
 			player1.Play ();
 		}
-		if (canPlay && Input.GetKeyDown (KeyCode.Keypad2) || Input.GetKeyDown (keyD))
+		if (canPlay && (Input.GetKeyDown (KeyCode.Keypad2) || Input.GetKeyDown (keyD)))
 		{
 			NotePress(2);
 			player2.Play ();
 		}
-		if (canPlay && Input.GetKeyDown (KeyCode.Keypad3) || Input.GetKeyDown (keyE))
+		if (canPlay && (Input.GetKeyDown (KeyCode.Keypad3) || Input.GetKeyDown (keyE)))
 		{
 			NotePress(3);
 			player3.Play ();
 		}
-		if (canPlay && Input.GetKeyDown (KeyCode.Keypad4) || Input.GetKeyDown (keyF))
+		if (canPlay && (Input.GetKeyDown (KeyCode.Keypad4) || Input.GetKeyDown (keyF)))
 		{
 			NotePress(4);
 			player4.Play ();
 		}
-		if (canPlay && Input.GetKeyDown (KeyCode.Keypad5) || Input.GetKeyDown (keyG)) 
+		if (canPlay && (Input.GetKeyDown (KeyCode.Keypad5) || Input.GetKeyDown (keyG))) 
 		{
 			NotePress(5);
 			player5.Play ();
 		}
-		if (canPlay && Input.GetKeyDown (KeyCode.Keypad6) || Input.GetKeyDown (keyA))
+		if (canPlay && (Input.GetKeyDown (KeyCode.Keypad6) || Input.GetKeyDown (keyA)))
 		{
 			NotePress(6);
 			player6.Play ();
 		}
-		if (canPlay && Input.GetKeyDown (KeyCode.Keypad7) || Input.GetKeyDown (keyB))
+		if (canPlay && (Input.GetKeyDown (KeyCode.Keypad7) || Input.GetKeyDown (keyB)))
 		{
 			NotePress(7);
 			player7.Play ();
 		}
-		if (canPlay && Input.GetKeyDown (KeyCode.Keypad8) || Input.GetKeyDown (keyC2))
+		if (canPlay && (Input.GetKeyDown (KeyCode.Keypad8) || Input.GetKeyDown (keyC2)))
 		{
 			NotePress(8);
 			player8.Play ();
