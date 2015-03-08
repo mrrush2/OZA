@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+﻿/*using UnityEngine;
 using System.Collections;
 
 public class CombatController : MonoBehaviour {
@@ -196,3 +196,4 @@ public class CombatController : MonoBehaviour {
 
 
 }
+*/ 
