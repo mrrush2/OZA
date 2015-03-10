@@ -165,7 +165,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 169762}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -.292299986, z: 0}
+  m_LocalPosition: {x: 0, y: -.318599999, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 469766}
@@ -189,7 +189,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 169766}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .942136109, y: -.139274329, z: 0}
+  m_LocalPosition: {x: 112.769997, y: -7.71999979, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 469758}
@@ -397,16 +397,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxSpeed: 3
+  facingRight: 1
   grounded: 0
   groundCheck: {fileID: 469762}
   whatIsGround:
     serializedVersion: 2
     m_Bits: 4294963455
+  rayCanHit:
+    serializedVersion: 2
+    m_Bits: 0
   jumpForce: 200
   sightStart: {fileID: 469760}
   sightEnd: {fileID: 469770}
   notTraversable: 0
   onLadder: 0
+  move: 0
+  keyRight: 100
+  keyLeft: 97
+  keyJump: 32
 --- !u!114 &11481428
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -418,7 +426,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d93ac3eb1d2ff54d99515cfc5ca36ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerScript: {fileID: 11469758}
+  majorKey: 1
   noteRep:
   - 1
   - 2
@@ -429,21 +437,21 @@ MonoBehaviour:
   - 7
   - 8
   - 9
-  noteFirstS: {fileID: 8300000, guid: 2a066d9e7c246534598f77ab9127df36, type: 3}
-  noteSecondS: {fileID: 8300000, guid: ae3148f07f6c638489c3d38c4d146923, type: 3}
-  noteThirdS: {fileID: 8300000, guid: 4f91114c96c371b4cb3f4bc0f70c85b9, type: 3}
-  noteFourthS: {fileID: 8300000, guid: ece3939dd04edf943bc9b4e99648c360, type: 3}
-  noteFifthS: {fileID: 8300000, guid: c3f7b00ffc453014bb48e1163f8ec693, type: 3}
-  noteSixthS: {fileID: 8300000, guid: d6639d9e416b33b4faaa7bab56458d59, type: 3}
-  noteSeventhS: {fileID: 8300000, guid: e3f5d94418e982045996c2eb01a95aab, type: 3}
-  noteEighthS: {fileID: 8300000, guid: 0de3534e3122dcf4c946345b8477c2a6, type: 3}
-  noteNinthS: {fileID: 8300000, guid: a029cf388c2610e4482c2fe01bc5b268, type: 3}
-  ninthUnlocked: 0
   songValue: 
+  ninthUnlocked: 0
   musicNoteSm: {fileID: 5000000, guid: ba60609a8068fb04e918cb783b74e66c, type: 2}
   musicNoteMd: {fileID: 5000000, guid: 3054f7944fb68294485b269e831e09d6, type: 2}
   noteOrigin: {fileID: 469774}
   heWhoShoots: {fileID: 469766}
+  keyC: 98
+  keyD: 110
+  keyE: 109
+  keyF: 103
+  keyG: 104
+  keyA: 106
+  keyB: 116
+  keyC2: 121
+  keyReset: 118
   auraAnim: {fileID: 9569760}
   auraLight: {fileID: 10869758}
 --- !u!124 &12469758
