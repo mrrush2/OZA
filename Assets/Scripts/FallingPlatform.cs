@@ -25,6 +25,7 @@ public class FallingPlatform : MonoBehaviour {
 	// Update is called constantly
 	void Update () 
 	{
+		this.name = "Object_CavePlatform";
 		transform.Translate (originX - transform.position.x, 0, 0); //Locks the X-axis of the platform
 		if (rigidbody2D.velocity.y < 0) // Fake Gravity
 			rigidbody2D.AddForce (new Vector2(0, -20));
