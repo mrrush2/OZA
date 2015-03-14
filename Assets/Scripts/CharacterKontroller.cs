@@ -42,6 +42,10 @@ public class CharacterKontroller : MonoBehaviour {
 		
 		anim.SetFloat ("Speed", Mathf.Abs (move));
 
+		anim.SetBool ("onLadder", onLadder);
+
+		anim.SetBool ("climbingLadder", (onLadder && (Input.GetKey (KeyCode.W) || Input.GetKey (KeyCode.S))));
+
 		if (notTraversable || onLadder)
 			rigidbody2D.velocity = new Vector2(0, rigidbody2D.velocity.y);
 		else
