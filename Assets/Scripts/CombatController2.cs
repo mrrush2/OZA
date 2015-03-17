@@ -23,27 +23,37 @@ public class CombatController2 : MonoBehaviour {
 	public string songValue = ""; //The variable that tracks the current value of your song.
 	bool canPlay = true; //Checks if you are currently allowed to play.
 	public bool ninthUnlocked = false; //Has the player unlocked the use of nine notes?
-	
+
 	// All variables used to fire physical notes.
 	public Rigidbody2D musicNoteSm;
 	public Rigidbody2D musicNoteMd;
 	Rigidbody2D noteSmInstance;
 	Rigidbody2D noteMdInstance;
-	public Transform noteOrigin;
+	public Transform noteOrigin; 
+
 	public Transform heWhoShoots;
 	float specialAttackValue = 0; //On a per-special basis, this controls how many times a combo runs when activated.
 
-	public KeyCode keyC = KeyCode.B,
-				   keyD = KeyCode.N,
-				   keyE = KeyCode.M,
-				   keyF = KeyCode.G,
-				   keyG = KeyCode.H,
-				   keyA = KeyCode.J,
-				   keyB = KeyCode.T,
-				   keyC2= KeyCode.Y,
+	public KeyCode key1 = KeyCode.B,
+				   key2 = KeyCode.N,
+				   key3 = KeyCode.M,
+				   key4 = KeyCode.G,
+				   key5 = KeyCode.H,
+				   key6 = KeyCode.J,
+				   key7 = KeyCode.T,
+				   key8= KeyCode.Y,
 			   keyReset = KeyCode.V;
 
-
+	//Sound holding clips are declared here.
+	public AudioClip noteFirstS;
+	public AudioClip noteSecondS;
+	public AudioClip noteThirdS;
+	public AudioClip noteFourthS;
+	public AudioClip noteFifthS;
+	public AudioClip noteSixthS;
+	public AudioClip noteSeventhS;
+	public AudioClip noteEighthS;
+	public AudioClip noteNinthS;
 	
 	// For visual manipulation
 	public Animator auraAnim;
@@ -51,8 +61,6 @@ public class CombatController2 : MonoBehaviour {
 
 	CharacterKontroller playerScript;
 	GameObject player;
-
-	SoundPlayer player1, player2, player3, player4, player5, player6, player7, player8, player9; 
 	
 	// Use this for initialization
 	//Initializes the notes for the player to play, as well as the instrument. 
@@ -62,42 +70,60 @@ public class CombatController2 : MonoBehaviour {
 		else
 			ChangeKeyMinor (R); 
 	}
-	
-	//Method Introduced for Key changes 
+
+	//Methods Introduced for Key Changes 
+	//								   1, 2, 3, 4, 5, 7, 7, 8
 	//Major Keys follow the pattern of R, W, W, H, W, W, W, H
+	//									 +2,+2,+1,+2,+2,+2,+1
 	//Minor Keys follow the pattern of R, W, H, W, W, H, W, W
+	//									 +2,+1,+2,+2,+1,+2,+2
 	//R is Root for the starting note of the scale, W is a whole step (+2), and H is a half step (+1)
-	// Simple concatation fails because R is considered nonstatic and gives error CS0236: string fileloc = "Assests\\Sounds\\Violin\\V" + R +".wav";
 	// However if we initialize it in void Start() we can bypass the issue. Will rename playerN to NoteN later on. Will shorten directory with time (eliminate \Violin\ for example)
 	//Resets songvalue to avoid a bug... 
 	public void ChangeKeyMajor(int S)
 	{
 		majorKey = true; 
 		songValue = "";
-		player1 = new SoundPlayer(@"Assets\Sounds\Violin\" + insmt + S + ".wav");
-		player2 = new SoundPlayer(@"Assets\Sounds\Violin\" + insmt + (S + 2) + ".wav");
-		player3 = new SoundPlayer(@"Assets\Sounds\Violin\" + insmt + (S + 4) + ".wav");
-		player4 = new SoundPlayer(@"Assets\Sounds\Violin\" + insmt + (S + 5) + ".wav");
-		player5 = new SoundPlayer(@"Assets\Sounds\Violin\" + insmt + (S + 7) + ".wav");
-		player6 = new SoundPlayer(@"Assets\Sounds\Violin\" + insmt + (S + 9) + ".wav");
-		player7 = new SoundPlayer(@"Assets\Sounds\Violin\" + insmt + (S + 11) + ".wav");
-		player8 = new SoundPlayer(@"Assets\Sounds\Violin\" + insmt + (S + 12) + ".wav");
-		player9 = new SoundPlayer(@"Assets\Sounds\Violin\" + insmt + (S + 14) + ".wav");  
+		noteFirstS = Resources.Load ("V" + S) as AudioClip;
+		S = S + 2; 
+		noteSecondS = Resources.Load ("V" + S) as AudioClip;
+		S = S + 2;
+		noteThirdS = Resources.Load ("V" + S) as AudioClip;
+		S = S + 1;
+		noteFourthS = Resources.Load ("V" + S) as AudioClip;
+		S = S + 2;
+		noteFifthS = Resources.Load ("V" + S) as AudioClip;
+		S = S + 2;
+		noteSixthS = Resources.Load ("V" + S) as AudioClip;
+		S = S + 2;
+		noteSeventhS = Resources.Load ("V" + S) as AudioClip;
+		S = S + 1;
+		noteEighthS = Resources.Load ("V" + S) as AudioClip;
+		S = S + 2;
+		noteNinthS = Resources.Load ("V" + S) as AudioClip;
 	}
 	
 	public void ChangeKeyMinor(int S)
 	{
 		majorKey = false; 
 		songValue = ""; 
-		player1 = new SoundPlayer(@"Assets\Sounds\Violin\" + insmt + S + ".wav");
-		player2 = new SoundPlayer(@"Assets\Sounds\Violin\" + insmt + (S + 2) + ".wav");
-		player3 = new SoundPlayer(@"Assets\Sounds\Violin\" + insmt + (S + 3) + ".wav");
-		player4 = new SoundPlayer(@"Assets\Sounds\Violin\" + insmt + (S + 5) + ".wav");
-		player5 = new SoundPlayer(@"Assets\Sounds\Violin\" + insmt + (S + 7) + ".wav");
-		player6 = new SoundPlayer(@"Assets\Sounds\Violin\" + insmt + (S + 8) + ".wav");
-		player7 = new SoundPlayer(@"Assets\Sounds\Violin\" + insmt + (S + 10) + ".wav");
-		player8 = new SoundPlayer(@"Assets\Sounds\Violin\" + insmt + (S + 12) + ".wav");
-		player9 = new SoundPlayer(@"Assets\Sounds\Violin\" + insmt + (S + 14) + ".wav");  
+		noteFirstS = Resources.Load ("V" + S) as AudioClip;
+		S = S + 2; 
+		noteSecondS = Resources.Load ("V" + S) as AudioClip;
+		S = S + 1;
+		noteThirdS = Resources.Load ("V" + S) as AudioClip;
+		S = S + 2;
+		noteFourthS = Resources.Load ("V" + S) as AudioClip;
+		S = S + 2;
+		noteFifthS = Resources.Load ("V" + S) as AudioClip;
+		S = S + 1;
+		noteSixthS = Resources.Load ("V" + S) as AudioClip;
+		S = S + 2;
+		noteSeventhS = Resources.Load ("V" + S) as AudioClip;
+		S = S + 2;
+		noteEighthS = Resources.Load ("V" + S) as AudioClip;
+		S = S + 2;
+		noteNinthS = Resources.Load ("V" + S) as AudioClip;
 	}
 	
 	// Update is called once per frame
@@ -118,72 +144,72 @@ public class CombatController2 : MonoBehaviour {
 
 		////// CAN PLAY STUFF //////
 
-
 		canPlay = !playerScript.onLadder;
 
 		//Temporary Key change mechanism using keybindings. 
-		if (Input.GetKeyDown (KeyCode.Z))
+		if (Input.GetKeyDown (KeyCode.Z)) //A Major
 		{
-			R = 5; 
+			R = 5;
 			ChangeKeyMajor(R); 
 		}
-		if (Input.GetKeyDown (KeyCode.X))
+		if (Input.GetKeyDown (KeyCode.X)) //C Minor
 		{
 			R = 8; 
 			ChangeKeyMinor(R); 
 		}
-		if (Input.GetKeyDown (KeyCode.C))
+		if (Input.GetKeyDown (KeyCode.C)) //C Major
 		{
-			R = 8; 
+			R = 8;
 			ChangeKeyMajor(R); 
 		}
 		
 		////// NOTE PLAYING //////
 		// All of the keys that can be played are below, referencing the currently active scale
-		if (canPlay && (Input.GetKeyDown (KeyCode.Keypad1) || Input.GetKeyDown (keyC)))
+		if (canPlay && (Input.GetKeyDown (KeyCode.Keypad1) || Input.GetKeyDown (key1)))
 		{
 			NotePress(1);
-			player1.Play ();
+			AudioSource.PlayClipAtPoint(noteFirstS, noteOrigin.position);
 		}
-		if (canPlay && (Input.GetKeyDown (KeyCode.Keypad2) || Input.GetKeyDown (keyD)))
+		if (canPlay && (Input.GetKeyDown (KeyCode.Keypad2) || Input.GetKeyDown (key2)))
 		{
 			NotePress(2);
-			player2.Play ();
+			AudioSource.PlayClipAtPoint(noteSecondS, noteOrigin.position);
+
 		}
-		if (canPlay && (Input.GetKeyDown (KeyCode.Keypad3) || Input.GetKeyDown (keyE)))
+		if (canPlay && (Input.GetKeyDown (KeyCode.Keypad3) || Input.GetKeyDown (key3)))
 		{
 			NotePress(3);
-			player3.Play ();
+			AudioSource.PlayClipAtPoint(noteThirdS, noteOrigin.position);
 		}
-		if (canPlay && (Input.GetKeyDown (KeyCode.Keypad4) || Input.GetKeyDown (keyF)))
+		if (canPlay && (Input.GetKeyDown (KeyCode.Keypad4) || Input.GetKeyDown (key4)))
 		{
 			NotePress(4);
-			player4.Play ();
+			AudioSource.PlayClipAtPoint(noteFourthS, noteOrigin.position);
 		}
-		if (canPlay && (Input.GetKeyDown (KeyCode.Keypad5) || Input.GetKeyDown (keyG))) 
+		if (canPlay && (Input.GetKeyDown (KeyCode.Keypad5) || Input.GetKeyDown (key5))) 
 		{
 			NotePress(5);
-			player5.Play ();
+			AudioSource.PlayClipAtPoint(noteFifthS, noteOrigin.position);
 		}
-		if (canPlay && (Input.GetKeyDown (KeyCode.Keypad6) || Input.GetKeyDown (keyA)))
+		if (canPlay && (Input.GetKeyDown (KeyCode.Keypad6) || Input.GetKeyDown (key6)))
 		{
 			NotePress(6);
-			player6.Play ();
+			AudioSource.PlayClipAtPoint(noteSixthS, noteOrigin.position);
 		}
-		if (canPlay && (Input.GetKeyDown (KeyCode.Keypad7) || Input.GetKeyDown (keyB)))
+		if (canPlay && (Input.GetKeyDown (KeyCode.Keypad7) || Input.GetKeyDown (key7)))
 		{
 			NotePress(7);
-			player7.Play ();
+			AudioSource.PlayClipAtPoint(noteSeventhS, noteOrigin.position);
 		}
-		if (canPlay && (Input.GetKeyDown (KeyCode.Keypad8) || Input.GetKeyDown (keyC2)))
+		if (canPlay && (Input.GetKeyDown (KeyCode.Keypad8) || Input.GetKeyDown (key8)))
 		{
 			NotePress(8);
-			player8.Play ();
+			AudioSource.PlayClipAtPoint(noteEighthS, noteOrigin.position);
 		}   
 		if (ninthUnlocked && canPlay && Input.GetKeyDown (KeyCode.Keypad9)) //Extra note
 		{
 			NotePress(9);
-			player9.Play ();
+			AudioSource.PlayClipAtPoint (noteNinthS, noteOrigin.position);
 		}   
 		
 		
@@ -202,7 +228,7 @@ public class CombatController2 : MonoBehaviour {
 		
 		// Check for combos
 		ComboCheck();
-		
+
 	}
 	
 	////// PROJECTILES AND EFFECTS //////   
