@@ -8,6 +8,17 @@ public class CombatControllerIII : MonoBehaviour {
 
 	public string[] noteRep = {"1", "2", "3", "4", "5", "6", "7", "8", "9"}; 
 
+	// Keybindings.
+	public KeyCode key1 = KeyCode.B,
+	key2 = KeyCode.N,
+	key3 = KeyCode.M,
+	key4 = KeyCode.G,
+	key5 = KeyCode.H,
+	key6 = KeyCode.J,
+	key7 = KeyCode.T,
+	key8= KeyCode.Y,
+	keyReset = KeyCode.V;
+
 	// All of the sounds of the currently active scale are defined here
 	public AudioClip noteFirstS;
 	public AudioClip noteSecondS;
@@ -140,67 +151,60 @@ public class CombatControllerIII : MonoBehaviour {
 		
 		// All of the keys that can be played are below, referencing the currently active scale
 		
-		if (canPlay && Input.GetKeyDown (KeyCode.Keypad1))
-		{		
-			NotePress(1);		
-			AudioSource.PlayClipAtPoint(noteFirstS, noteOrigin.position);		
+		if (canPlay && (Input.GetKeyDown (KeyCode.Keypad1) || Input.GetKeyDown (key1)))
+		{
+			NotePress(1);
+			AudioSource.PlayClipAtPoint(noteFirstS, noteOrigin.position);
 		}
-		
-		if (canPlay && Input.GetKeyDown (KeyCode.Keypad2))		
-		{		
-			NotePress(2);		
-			AudioSource.PlayClipAtPoint(noteSecondS, noteOrigin.position);		
+		if (canPlay && (Input.GetKeyDown (KeyCode.Keypad2) || Input.GetKeyDown (key2)))
+		{
+			NotePress(2);
+			AudioSource.PlayClipAtPoint(noteSecondS, noteOrigin.position);
+			
 		}
-		
-		if (canPlay && Input.GetKeyDown (KeyCode.Keypad3))		
-		{		
-			NotePress(3);		
-			AudioSource.PlayClipAtPoint(noteThirdS, noteOrigin.position);		
+		if (canPlay && (Input.GetKeyDown (KeyCode.Keypad3) || Input.GetKeyDown (key3)))
+		{
+			NotePress(3);
+			AudioSource.PlayClipAtPoint(noteThirdS, noteOrigin.position);
 		}
-		
-		if (canPlay && Input.GetKeyDown (KeyCode.Keypad4))		
-		{		
-			NotePress(4);		
-			AudioSource.PlayClipAtPoint(noteFourthS, noteOrigin.position);		
+		if (canPlay && (Input.GetKeyDown (KeyCode.Keypad4) || Input.GetKeyDown (key4)))
+		{
+			NotePress(4);
+			AudioSource.PlayClipAtPoint(noteFourthS, noteOrigin.position);
 		}
-		
-		if (canPlay && Input.GetKeyDown (KeyCode.Keypad5)) 		
-		{		
-			NotePress(5);		
-			AudioSource.PlayClipAtPoint(noteFifthS, noteOrigin.position);		
+		if (canPlay && (Input.GetKeyDown (KeyCode.Keypad5) || Input.GetKeyDown (key5))) 
+		{
+			NotePress(5);
+			AudioSource.PlayClipAtPoint(noteFifthS, noteOrigin.position);
 		}
-		
-		if (canPlay && Input.GetKeyDown (KeyCode.Keypad6))		
-		{		
-			NotePress(6);		
-			AudioSource.PlayClipAtPoint(noteSixthS, noteOrigin.position);		
+		if (canPlay && (Input.GetKeyDown (KeyCode.Keypad6) || Input.GetKeyDown (key6)))
+		{
+			NotePress(6);
+			AudioSource.PlayClipAtPoint(noteSixthS, noteOrigin.position);
 		}
-		
-		if (canPlay && Input.GetKeyDown (KeyCode.Keypad7))		
-		{		
-			NotePress(7);		
-			AudioSource.PlayClipAtPoint(noteSeventhS, noteOrigin.position);		
+		if (canPlay && (Input.GetKeyDown (KeyCode.Keypad7) || Input.GetKeyDown (key7)))
+		{
+			NotePress(7);
+			AudioSource.PlayClipAtPoint(noteSeventhS, noteOrigin.position);
 		}
+		if (canPlay && (Input.GetKeyDown (KeyCode.Keypad8) || Input.GetKeyDown (key8)))
+		{
+			NotePress(8);
+			AudioSource.PlayClipAtPoint(noteEighthS, noteOrigin.position);
+		}   
+		if (ninthUnlocked && canPlay && Input.GetKeyDown (KeyCode.Keypad9)) //Extra note
+		{
+			NotePress(9);
+			AudioSource.PlayClipAtPoint (noteNinthS, noteOrigin.position);
+		}   
 		
-		if (canPlay && Input.GetKeyDown (KeyCode.Keypad8))		
-		{		
-			NotePress(8);		
-			AudioSource.PlayClipAtPoint(noteEighthS, noteOrigin.position);		
-		} 
-		
-		if (ninthUnlocked && canPlay && Input.GetKeyDown (KeyCode.Keypad9)) //Extra note		
-		{		
-			NotePress(9);		
-			AudioSource.PlayClipAtPoint(noteNinthS, noteOrigin.position);		
-		} 
 		
 		////// RESETS //////
 		
-		if (Input.GetKeyDown (KeyCode.Keypad0)) //Reset button		
+		if (Input.GetKeyDown (KeyCode.Keypad0) || Input.GetKeyDown (keyReset)) //Reset button
 		{
-			//randomizerIndex = 0;
 			songValue = "";
-			specialAttackValue = 0;	
+			specialAttackValue = 0;
 		}
 		
 		// Check for combos
