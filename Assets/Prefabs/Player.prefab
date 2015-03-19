@@ -79,7 +79,7 @@ GameObject:
   - 61: {fileID: 6169758}
   - 95: {fileID: 9569758}
   - 114: {fileID: 11469758}
-  - 114: {fileID: 11481428}
+  - 114: {fileID: 11424442}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -165,7 +165,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 169762}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -.292299986, z: 0}
+  m_LocalPosition: {x: 0, y: -.318599999, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 469766}
@@ -189,7 +189,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 169766}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .942136109, y: -.139274329, z: 0}
+  m_LocalPosition: {x: -2.02999997, y: -6.72399998, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 469758}
@@ -385,7 +385,7 @@ Light:
   m_ShadowAngle: 0
   m_IndirectIntensity: 1
   m_AreaSize: {x: 1, y: 1}
---- !u!114 &11469758
+--- !u!114 &11424442
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -393,32 +393,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 169766}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 20440b7b8329afd4b96605848b7b794a, type: 3}
+  m_Script: {fileID: 11500000, guid: 26b3760896d55c5499a21b9ef8fbcf86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxSpeed: 3
-  grounded: 0
-  groundCheck: {fileID: 469762}
-  whatIsGround:
-    serializedVersion: 2
-    m_Bits: 4294963455
-  jumpForce: 200
-  sightStart: {fileID: 469760}
-  sightEnd: {fileID: 469770}
-  notTraversable: 0
-  onLadder: 0
---- !u!114 &11481428
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 169766}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d93ac3eb1d2ff54d99515cfc5ca36ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerScript: {fileID: 11469758}
   noteRep:
   - 1
   - 2
@@ -444,8 +421,39 @@ MonoBehaviour:
   musicNoteMd: {fileID: 5000000, guid: 3054f7944fb68294485b269e831e09d6, type: 2}
   noteOrigin: {fileID: 469774}
   heWhoShoots: {fileID: 469766}
-  auraAnim: {fileID: 9569760}
+  anim: {fileID: 9569760}
   auraLight: {fileID: 10869758}
+  majorKey: 1
+--- !u!114 &11469758
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 169766}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20440b7b8329afd4b96605848b7b794a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxSpeed: 3
+  facingRight: 1
+  grounded: 0
+  groundCheck: {fileID: 469762}
+  whatIsGround:
+    serializedVersion: 2
+    m_Bits: 4294963455
+  rayCanHit:
+    serializedVersion: 2
+    m_Bits: 0
+  jumpForce: 200
+  sightStart: {fileID: 469760}
+  sightEnd: {fileID: 469770}
+  notTraversable: 0
+  onLadder: 0
+  move: 0
+  keyRight: 100
+  keyLeft: 97
+  keyJump: 32
 --- !u!124 &12469758
 Behaviour:
   m_ObjectHideFlags: 1

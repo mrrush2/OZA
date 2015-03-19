@@ -42,6 +42,10 @@ public class CharacterKontroller : MonoBehaviour {
 		
 		anim.SetFloat ("Speed", Mathf.Abs (move));
 
+		anim.SetBool ("onLadder", onLadder);
+
+		anim.SetBool ("climbingLadder", (onLadder && (Input.GetKey (KeyCode.W) || Input.GetKey (KeyCode.S))));
+
 		if (notTraversable || onLadder)
 			rigidbody2D.velocity = new Vector2(0, rigidbody2D.velocity.y);
 		else
@@ -85,7 +89,7 @@ public class CharacterKontroller : MonoBehaviour {
 		}
 
 
-		if (grounded && Input.GetKeyDown(keyJump))
+		if (grounded && Input.GetKeyDown(keyJump)/* && rigidbody2D.velocity.y < 0.1*/)
 		{
 			anim.SetBool("Ground",false);
 			rigidbody2D.AddForce (new Vector2(0, jumpForce));

@@ -25,18 +25,19 @@ public class FallingPlatform : MonoBehaviour {
 	// Update is called constantly
 	void Update () 
 	{
+		this.name = "Object_CavePlatform";
 		transform.Translate (originX - transform.position.x, 0, 0); //Locks the X-axis of the platform
 		if (rigidbody2D.velocity.y < 0) // Fake Gravity
 			rigidbody2D.AddForce (new Vector2(0, -20));
 			
-		if (rigidbody2D.velocity.y < -3 && canRespawn) 
+		if (rigidbody2D.velocity.y < -4 && canRespawn) 
 		{
 			canRespawn = false;
 			platformInstance = Instantiate ( platform, new Vector3(originX, originY, 0), origin.rotation) as GameObject;
 			//platformInstance.rigidbody2D.velocity = new Vector2(0,0);
 			canRespawn = true;
 		} 
-		if (rigidbody2D.velocity.y < -3) 
+		if (rigidbody2D.velocity.y < -4) 
 			Destroy (this.gameObject);
 		
 		if (rigidbody2D.velocity.y > 0)
