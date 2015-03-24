@@ -2,78 +2,78 @@ fileFormatVersion: 2
 guid: cbe93f947bdc21446883b4ad8cc5d4c6
 TextureImporter:
   fileIDToRecycleName:
-    21300000: ViolinViola_0
-    21300002: ViolinViola_1
-    21300004: ViolinViola_2
-    21300006: ViolinViola_3
-    21300008: ViolinViola_4
-    21300010: ViolinViola_5
-    21300012: ViolinViola_6
-    21300014: ViolinViola_7
-    21300016: ViolinViola_8
-    21300018: ViolinViola_9
-    21300020: ViolinViola_10
-    21300022: ViolinViola_11
-    21300024: ViolinViola_12
-    21300026: ViolinViola_13
-    21300028: ViolinViola_14
-    21300030: ViolinViola_15
-    21300032: ViolinViola_16
-    21300034: ViolinViola_17
-    21300036: ViolinViola_18
-    21300038: ViolinViola_19
-    21300040: ViolinViola_20
-    21300042: ViolinViola_21
-    21300044: ViolinViola_22
-    21300046: ViolinViola_23
-    21300048: ViolinViola_24
-    21300050: ViolinViola_25
-    21300052: ViolinViola_26
-    21300054: ViolinViola_27
-    21300056: ViolinViola_28
-    21300058: ViolinViola_29
-    21300060: ViolinViola_30
-    21300062: ViolinViola_31
-    21300064: ViolinViola_32
-    21300066: ViolinViola_33
-    21300068: ViolinViola_34
-    21300070: ViolinViola_35
-    21300072: ViolinViola_36
-    21300074: ViolinViola_37
-    21300076: ViolinViola_38
-    21300078: ViolinViola_39
-    21300080: ViolinViola_40
-    21300082: ViolinViola_41
-    21300084: ViolinViola_42
-    21300086: ViolinViola_43
-    21300088: ViolinViola_44
-    21300090: ViolinViola_45
-    21300092: ViolinViola_46
-    21300094: ViolinViola_47
-    21300096: ViolinViola_48
-    21300098: ViolinViola_49
-    21300100: ViolinViola_50
-    21300102: ViolinViola_51
-    21300104: ViolinViola_52
-    21300106: ViolinViola_53
-    21300108: ViolinViola_54
-    21300110: ViolinViola_55
-    21300112: ViolinViola_56
-    21300114: ViolinViola_57
-    21300116: ViolinViola_58
-    21300118: ViolinViola_59
-    21300120: ViolinViola_60
-    21300122: ViolinViola_61
-    21300124: ViolinViola_62
-    21300126: ViolinViola_63
-    21300128: ViolinViola_64
-    21300130: ViolinViola_65
-    21300132: ViolinViola_66
-    21300134: ViolinViola_67
-    21300136: ViolinViola_68
-    21300138: ViolinViola_69
-    21300140: ViolinViola_70
-    21300142: ViolinViola_71
+    21300000: 0
+    21300002: 1
+    21300004: 2
+    21300006: 3
+    21300008: 4
+    21300010: 5
+    21300012: 6
+    21300014: 7
+    21300016: 8
+    21300018: 9
+    21300020: 10
+    21300022: 11
+    21300024: 12
+    21300026: 13
+    21300028: 14
+    21300030: 15
+    21300032: 16
+    21300034: 17
+    21300036: 18
+    21300038: 19
+    21300040: 20
+    21300042: 21
+    21300044: 22
+    21300046: 23
+    21300048: 24
+    21300050: 25
+    21300052: 26
+    21300054: 27
+    21300056: 28
+    21300058: 29
+    21300060: 30
+    21300062: 31
+    21300064: 32
+    21300066: 33
+    21300068: 34
+    21300070: 35
+    21300072: 36
+    21300074: 37
+    21300076: 38
+    21300078: 39
+    21300080: 40
+    21300082: 41
+    21300084: 42
+    21300086: 43
+    21300088: 44
+    21300090: 45
+    21300092: 46
+    21300094: 47
+    21300096: 48
+    21300098: 49
+    21300100: 50
+    21300102: 51
+    21300104: 52
+    21300106: 53
+    21300108: 54
+    21300110: 55
+    21300112: 56
+    21300114: 57
+    21300116: 58
+    21300118: 59
+    21300120: 60
+    21300122: 61
+    21300124: 62
+    21300126: 63
+    21300128: 64
+    21300130: 65
+    21300132: 66
+    21300134: 67
+    21300136: 68
+    21300138: 69
+    21300140: 70
+    21300142: 71
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -115,7 +115,7 @@ TextureImporter:
   buildTargetSettings: []
   spriteSheet:
     sprites:
-    - name: ViolinViola_0
+    - name: 0
       rect:
         serializedVersion: 2
         x: 0
@@ -123,9 +123,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ViolinViola_1
+    - name: 1
       rect:
         serializedVersion: 2
         x: 64
@@ -133,9 +133,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ViolinViola_2
+    - name: 2
       rect:
         serializedVersion: 2
         x: 128
@@ -143,9 +143,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ViolinViola_3
+    - name: 3
       rect:
         serializedVersion: 2
         x: 192
@@ -153,9 +153,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ViolinViola_4
+    - name: 4
       rect:
         serializedVersion: 2
         x: 256
@@ -163,9 +163,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ViolinViola_5
+    - name: 5
       rect:
         serializedVersion: 2
         x: 320
@@ -173,9 +173,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ViolinViola_6
+    - name: 6
       rect:
         serializedVersion: 2
         x: 0
@@ -183,9 +183,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ViolinViola_7
+    - name: 7
       rect:
         serializedVersion: 2
         x: 64
@@ -193,9 +193,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ViolinViola_8
+    - name: 8
       rect:
         serializedVersion: 2
         x: 128
@@ -203,9 +203,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ViolinViola_9
+    - name: 9
       rect:
         serializedVersion: 2
         x: 192
@@ -213,9 +213,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ViolinViola_10
+    - name: 10
       rect:
         serializedVersion: 2
         x: 256
@@ -223,9 +223,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ViolinViola_11
+    - name: 11
       rect:
         serializedVersion: 2
         x: 320
@@ -233,9 +233,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ViolinViola_12
+    - name: 12
       rect:
         serializedVersion: 2
         x: 0
@@ -243,9 +243,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ViolinViola_13
+    - name: 13
       rect:
         serializedVersion: 2
         x: 64
@@ -253,9 +253,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ViolinViola_14
+    - name: 14
       rect:
         serializedVersion: 2
         x: 128
@@ -263,9 +263,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ViolinViola_15
+    - name: 15
       rect:
         serializedVersion: 2
         x: 192
@@ -273,9 +273,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ViolinViola_16
+    - name: 16
       rect:
         serializedVersion: 2
         x: 256
@@ -283,9 +283,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ViolinViola_17
+    - name: 17
       rect:
         serializedVersion: 2
         x: 320
@@ -293,9 +293,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ViolinViola_18
+    - name: 18
       rect:
         serializedVersion: 2
         x: 0
@@ -303,9 +303,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ViolinViola_19
+    - name: 19
       rect:
         serializedVersion: 2
         x: 64
@@ -313,9 +313,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ViolinViola_20
+    - name: 20
       rect:
         serializedVersion: 2
         x: 128
@@ -323,9 +323,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ViolinViola_21
+    - name: 21
       rect:
         serializedVersion: 2
         x: 192
@@ -333,9 +333,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ViolinViola_22
+    - name: 22
       rect:
         serializedVersion: 2
         x: 256
@@ -343,9 +343,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ViolinViola_23
+    - name: 23
       rect:
         serializedVersion: 2
         x: 320
@@ -353,9 +353,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ViolinViola_24
+    - name: 24
       rect:
         serializedVersion: 2
         x: 0
@@ -363,9 +363,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ViolinViola_25
+    - name: 25
       rect:
         serializedVersion: 2
         x: 64
@@ -373,9 +373,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ViolinViola_26
+    - name: 26
       rect:
         serializedVersion: 2
         x: 128
@@ -383,9 +383,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ViolinViola_27
+    - name: 27
       rect:
         serializedVersion: 2
         x: 192
@@ -393,9 +393,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ViolinViola_28
+    - name: 28
       rect:
         serializedVersion: 2
         x: 256
@@ -403,9 +403,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ViolinViola_29
+    - name: 29
       rect:
         serializedVersion: 2
         x: 320
@@ -413,9 +413,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ViolinViola_30
+    - name: 30
       rect:
         serializedVersion: 2
         x: 0
@@ -423,9 +423,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ViolinViola_31
+    - name: 31
       rect:
         serializedVersion: 2
         x: 64
@@ -433,9 +433,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ViolinViola_32
+    - name: 32
       rect:
         serializedVersion: 2
         x: 128
@@ -443,9 +443,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ViolinViola_33
+    - name: 33
       rect:
         serializedVersion: 2
         x: 192
@@ -453,9 +453,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ViolinViola_34
+    - name: 34
       rect:
         serializedVersion: 2
         x: 256
@@ -463,9 +463,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ViolinViola_35
+    - name: 35
       rect:
         serializedVersion: 2
         x: 320
@@ -473,9 +473,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ViolinViola_36
+    - name: 36
       rect:
         serializedVersion: 2
         x: 0
@@ -483,9 +483,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ViolinViola_37
+    - name: 37
       rect:
         serializedVersion: 2
         x: 64
@@ -493,9 +493,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ViolinViola_38
+    - name: 38
       rect:
         serializedVersion: 2
         x: 128
@@ -503,9 +503,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ViolinViola_39
+    - name: 39
       rect:
         serializedVersion: 2
         x: 192
@@ -513,9 +513,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ViolinViola_40
+    - name: 40
       rect:
         serializedVersion: 2
         x: 256
@@ -523,9 +523,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ViolinViola_41
+    - name: 41
       rect:
         serializedVersion: 2
         x: 320
@@ -533,9 +533,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ViolinViola_42
+    - name: 42
       rect:
         serializedVersion: 2
         x: 0
@@ -543,9 +543,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ViolinViola_43
+    - name: 43
       rect:
         serializedVersion: 2
         x: 64
@@ -553,9 +553,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ViolinViola_44
+    - name: 44
       rect:
         serializedVersion: 2
         x: 128
@@ -563,9 +563,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ViolinViola_45
+    - name: 45
       rect:
         serializedVersion: 2
         x: 192
@@ -573,9 +573,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ViolinViola_46
+    - name: 46
       rect:
         serializedVersion: 2
         x: 256
@@ -583,9 +583,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ViolinViola_47
+    - name: 47
       rect:
         serializedVersion: 2
         x: 320
@@ -593,9 +593,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ViolinViola_48
+    - name: 48
       rect:
         serializedVersion: 2
         x: 0
@@ -603,9 +603,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ViolinViola_49
+    - name: 49
       rect:
         serializedVersion: 2
         x: 64
@@ -613,9 +613,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ViolinViola_50
+    - name: 50
       rect:
         serializedVersion: 2
         x: 128
@@ -623,9 +623,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ViolinViola_51
+    - name: 51
       rect:
         serializedVersion: 2
         x: 192
@@ -633,9 +633,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ViolinViola_52
+    - name: 52
       rect:
         serializedVersion: 2
         x: 256
@@ -643,9 +643,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ViolinViola_53
+    - name: 53
       rect:
         serializedVersion: 2
         x: 320
@@ -653,9 +653,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ViolinViola_54
+    - name: 54
       rect:
         serializedVersion: 2
         x: 0
@@ -663,9 +663,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ViolinViola_55
+    - name: 55
       rect:
         serializedVersion: 2
         x: 64
@@ -673,9 +673,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ViolinViola_56
+    - name: 56
       rect:
         serializedVersion: 2
         x: 128
@@ -683,9 +683,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ViolinViola_57
+    - name: 57
       rect:
         serializedVersion: 2
         x: 192
@@ -693,9 +693,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ViolinViola_58
+    - name: 58
       rect:
         serializedVersion: 2
         x: 256
@@ -703,9 +703,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ViolinViola_59
+    - name: 59
       rect:
         serializedVersion: 2
         x: 320
@@ -713,9 +713,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ViolinViola_60
+    - name: 60
       rect:
         serializedVersion: 2
         x: 0
@@ -723,9 +723,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ViolinViola_61
+    - name: 61
       rect:
         serializedVersion: 2
         x: 64
@@ -733,9 +733,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ViolinViola_62
+    - name: 62
       rect:
         serializedVersion: 2
         x: 128
@@ -743,9 +743,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ViolinViola_63
+    - name: 63
       rect:
         serializedVersion: 2
         x: 192
@@ -753,9 +753,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ViolinViola_64
+    - name: 64
       rect:
         serializedVersion: 2
         x: 256
@@ -763,9 +763,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ViolinViola_65
+    - name: 65
       rect:
         serializedVersion: 2
         x: 320
@@ -773,9 +773,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ViolinViola_66
+    - name: 66
       rect:
         serializedVersion: 2
         x: 0
@@ -783,9 +783,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ViolinViola_67
+    - name: 67
       rect:
         serializedVersion: 2
         x: 64
@@ -793,9 +793,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ViolinViola_68
+    - name: 68
       rect:
         serializedVersion: 2
         x: 128
@@ -803,9 +803,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ViolinViola_69
+    - name: 69
       rect:
         serializedVersion: 2
         x: 192
@@ -813,9 +813,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ViolinViola_70
+    - name: 70
       rect:
         serializedVersion: 2
         x: 256
@@ -823,9 +823,9 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: ViolinViola_71
+    - name: 71
       rect:
         serializedVersion: 2
         x: 320
@@ -833,7 +833,7 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 

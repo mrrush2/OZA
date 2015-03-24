@@ -80,6 +80,7 @@ GameObject:
   - 95: {fileID: 9569758}
   - 114: {fileID: 11469758}
   - 114: {fileID: 11424442}
+  - 114: {fileID: 11421648}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -385,6 +386,18 @@ Light:
   m_ShadowAngle: 0
   m_IndirectIntensity: 1
   m_AreaSize: {x: 1, y: 1}
+--- !u!114 &11421648
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 169766}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f481b2f381284984d9f9f1045480fdf3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  instrument: ViolinViola
 --- !u!114 &11424442
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -406,6 +419,15 @@ MonoBehaviour:
   - 7
   - 8
   - 9
+  key1: 98
+  key2: 110
+  key3: 109
+  key4: 103
+  key5: 104
+  key6: 106
+  key7: 116
+  key8: 121
+  keyReset: 118
   noteFirstS: {fileID: 8300000, guid: 2a066d9e7c246534598f77ab9127df36, type: 3}
   noteSecondS: {fileID: 8300000, guid: ae3148f07f6c638489c3d38c4d146923, type: 3}
   noteThirdS: {fileID: 8300000, guid: 4f91114c96c371b4cb3f4bc0f70c85b9, type: 3}
