@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class CombatControllerIII : MonoBehaviour {
@@ -51,54 +51,39 @@ public class CombatControllerIII : MonoBehaviour {
 	public Light auraLight;
 
 	int R = 8; 
+	string instrument = "Violin"; 
 	public bool majorKey = true; 
 	public void ChangeKeyMajor(int S)
 	{
 		majorKey = true; 
 		songValue = "";
-		noteFirstS = Resources.Load ("V" + S) as AudioClip;
-		S = S + 2; 
-		noteSecondS = Resources.Load ("V" + S) as AudioClip;
-		S = S + 2;
-		noteThirdS = Resources.Load ("V" + S) as AudioClip;
-		S = S + 1;
-		noteFourthS = Resources.Load ("V" + S) as AudioClip;
-		S = S + 2;
-		noteFifthS = Resources.Load ("V" + S) as AudioClip;
-		S = S + 2;
-		noteSixthS = Resources.Load ("V" + S) as AudioClip;
-		S = S + 2;
-		noteSeventhS = Resources.Load ("V" + S) as AudioClip;
-		S = S + 1;
-		noteEighthS = Resources.Load ("V" + S) as AudioClip;
-		S = S + 2;
-		noteNinthS = Resources.Load ("V" + S) as AudioClip;
+		noteFirstS   = Resources.Load ("Sounds/" + instrument + "/" + S) as AudioClip;
+		noteSecondS  = Resources.Load ("Sounds/" + instrument + "/" + (S + 2)) as AudioClip;
+		noteThirdS   = Resources.Load ("Sounds/" + instrument + "/" + (S + 4)) as AudioClip;
+		noteFourthS  = Resources.Load ("Sounds/" + instrument + "/" + (S + 5)) as AudioClip;
+		noteFifthS   = Resources.Load ("Sounds/" + instrument + "/" + (S + 7)) as AudioClip;
+		noteSixthS   = Resources.Load ("Sounds/" + instrument + "/" + (S + 9)) as AudioClip;
+		noteSeventhS = Resources.Load ("Sounds/" + instrument + "/" + (S + 11)) as AudioClip;
+		noteEighthS  = Resources.Load ("Sounds/" + instrument + "/" + (S + 12)) as AudioClip;
+		noteNinthS   = Resources.Load ("Sounds/" + instrument + "/" + (S + 14)) as AudioClip;
 	}
 	
 	public void ChangeKeyMinor(int S)
 	{
 		majorKey = false; 
 		songValue = ""; 
-		noteFirstS = Resources.Load ("V" + S) as AudioClip;
-		S = S + 2; 
-		noteSecondS = Resources.Load ("V" + S) as AudioClip;
-		S = S + 1;
-		noteThirdS = Resources.Load ("V" + S) as AudioClip;
-		S = S + 2;
-		noteFourthS = Resources.Load ("V" + S) as AudioClip;
-		S = S + 2;
-		noteFifthS = Resources.Load ("V" + S) as AudioClip;
-		S = S + 1;
-		noteSixthS = Resources.Load ("V" + S) as AudioClip;
-		S = S + 2;
-		noteSeventhS = Resources.Load ("V" + S) as AudioClip;
-		S = S + 2;
-		noteEighthS = Resources.Load ("V" + S) as AudioClip;
-		S = S + 2;
-		noteNinthS = Resources.Load ("V" + S) as AudioClip;
+		noteFirstS   = Resources.Load ("Sounds/" + instrument + "/" + S) as AudioClip;
+		noteSecondS  = Resources.Load ("Sounds/" + instrument + "/" + (S + 2)) as AudioClip;
+		noteThirdS   = Resources.Load ("Sounds/" + instrument + "/" + (S + 3)) as AudioClip;
+		noteFourthS  = Resources.Load ("Sounds/" + instrument + "/" + (S + 5)) as AudioClip;
+		noteFifthS   = Resources.Load ("Sounds/" + instrument + "/" + (S + 7)) as AudioClip;
+		noteSixthS   = Resources.Load ("Sounds/" + instrument + "/" + (S + 8)) as AudioClip;
+		noteSeventhS = Resources.Load ("Sounds/" + instrument + "/" + (S + 10)) as AudioClip;
+		noteEighthS  = Resources.Load ("Sounds/" + instrument + "/" + (S + 12)) as AudioClip;
+		noteNinthS   = Resources.Load ("Sounds/" + instrument + "/" + (S + 14)) as AudioClip;
 	}
 
-
+	//public void SharpAssign (int S) 
 
 
 // Use this for initialization
@@ -127,22 +112,36 @@ public class CombatControllerIII : MonoBehaviour {
 		////// CAN PLAY STUFF //////		
 		canPlay = !playerScript.onLadder;
 		
-		
+
 		//Temporary Key change mechanism using keybindings. 
-		if (Input.GetKeyDown (KeyCode.Z)) //A Major
+		if (Input.GetKeyDown (KeyCode.Alpha1)) //A Major
 		{
 			R = 5;
 			ChangeKeyMajor(R); 
 		}
-		if (Input.GetKeyDown (KeyCode.X)) //C Minor
+		if (Input.GetKeyDown (KeyCode.Alpha2)) //C Minor
 		{
 			R = 8; 
 			ChangeKeyMinor(R); 
 		}
-		if (Input.GetKeyDown (KeyCode.C)) //C Major
+		if (Input.GetKeyDown (KeyCode.Alpha3)) //C Major
 		{
 			R = 8;
 			ChangeKeyMajor(R); 
+		}
+
+		//Temporary Instrument change mechanism using keybindings. 
+		if (Input.GetKeyDown (KeyCode.Z)) //Change to trumpet 
+		{
+			instrument = "Trumpet"; 
+			if (majorKey) ChangeKeyMajor(R);
+			else ChangeKeyMinor(R);
+		}
+		if (Input.GetKeyDown (KeyCode.X)) //Change to trumpet 
+		{
+			instrument = "Violin"; 
+			if (majorKey) ChangeKeyMajor(R);
+			else ChangeKeyMinor(R);
 		}
 
 
