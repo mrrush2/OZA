@@ -20,17 +20,17 @@ public class ReSkinPlayer : MonoBehaviour {
 
 
 
-	void LateUpdate()
+	void LateUpdate() // Must be done in LateUpdate
 	{
-		var subSprites = Resources.LoadAll<Sprite> ("PlayerSpritesheets/" + instrument);
+		var subSprites = Resources.LoadAll<Sprite> ("PlayerSpritesheets/" + instrument); // Load all sprites from an instrument.
 
-		foreach (var renderer in GetComponentsInChildren<SpriteRenderer>()) 
+		foreach (var renderer in GetComponentsInChildren<SpriteRenderer>())
 		{
 			string spriteName = renderer.sprite.name;
 			var newSprite = Array.Find(subSprites, item => item.name == spriteName);
 
 			if (newSprite)
-				renderer.sprite = newSprite;
+				renderer.sprite = newSprite; //Set new sprites for aniation
 		}
 	}
 
