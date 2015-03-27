@@ -5,15 +5,15 @@ using System.Collections;
 
 public class Tiling : MonoBehaviour {
 
-	public int offsetX = 2;			// the offset so that we don't get any weird errors
+	public int offsetX = 2;			// avoids seams
 
-	// these are used for checking if we need to instantiate stuff
-	public bool hasARightBuddy = false;
-	public bool hasALeftBuddy = false;
+	// So we don't infinite loop everything, we check to see if we've already tiled in a direction
+	public bool tiledRight = false;
+	public bool tiledLeft = false;
 
-	public bool reverseScale = false;	// used if the object is not tilable
+	public bool reverseScale = false;
 
-	private float spriteWidth = 0f;		// the width of our element
+	private float spriteWidth = 0f;
 	private Camera cam;
 	private Transform myTransform;
 
@@ -28,49 +28,43 @@ public class Tiling : MonoBehaviour {
 		spriteWidth = sRenderer.sprite.bounds.size.x;
 	}
 	
-	// Update is called once per frame
+	// Update is called constantly
 	void Update () {
-		// does it still need buddies? If not do nothing
-		if (hasALeftBuddy == false || hasARightBuddy == false) {
-			// calculate the cameras extend (half the width) of what the camera can see in world coordinates
+		if (tiledLeft == false || tiledRight == false) {
+			// Basically what the camera can SEE
 			float camHorizontalExtend = cam.orthographicSize * Screen.width/Screen.height;
 
-			// calculate the x position where the camera can see the edge of the sprite (element)
+			// Used in checking if we can see the edge of a sprite
 			float edgeVisiblePositionRight = (myTransform.position.x + spriteWidth/2) - camHorizontalExtend;
 			float edgeVisiblePositionLeft = (myTransform.position.x - spriteWidth/2) + camHorizontalExtend;
 
-			// checking if we can see the edge of the element and then calling MakeNewBuddy if we can
-			if (cam.transform.position.x >= edgeVisiblePositionRight - offsetX && hasARightBuddy == false)
+			if (cam.transform.position.x >= edgeVisiblePositionRight - offsetX && tiledRight == false)
 			{
-				MakeNewBuddy (1);
-				hasARightBuddy = true;
+				CreateNewTile (1);
+				tiledRight = true;
 			}
-			else if (cam.transform.position.x <= edgeVisiblePositionLeft + offsetX && hasALeftBuddy == false)
+			else if (cam.transform.position.x <= edgeVisiblePositionLeft + offsetX && tiledLeft == false)
 			{
-				MakeNewBuddy (-1);
-				hasALeftBuddy = true;
+				CreateNewTile (-1);
+				tiledLeft = true;
 			}
 		}
 	}
-
-	// a function that creates a buddy on the side required
-	void MakeNewBuddy (int rightOrLeft) {
-		// calculating the new position for our new buddy
+	
+	void CreateNewTile (int rightOrLeft) {
 		Vector3 newPosition = new Vector3 (myTransform.position.x + spriteWidth * rightOrLeft, myTransform.position.y, myTransform.position.z);
-		// instantating our new body and storing him in a variable
-		Transform newBuddy = Instantiate (myTransform, newPosition, myTransform.rotation) as Transform;
+		Transform newTile = Instantiate (myTransform, newPosition, myTransform.rotation) as Transform;
 
-		// if not tilable let's reverse the x size og our object to get rid of ugly seams
 		if (reverseScale == true) {
-			newBuddy.localScale = new Vector3 (newBuddy.localScale.x*-1, newBuddy.localScale.y, newBuddy.localScale.z);
+			newTile.localScale = new Vector3 (newTile.localScale.x*-1, newTile.localScale.y, newTile.localScale.z);
 		}
 
-		newBuddy.parent = myTransform.parent;
+		newTile.parent = myTransform.parent;
 		if (rightOrLeft > 0) {
-			newBuddy.GetComponent<Tiling>().hasALeftBuddy = true;
+			newTile.GetComponent<Tiling>().tiledLeft = true;
 		}
 		else {
-			newBuddy.GetComponent<Tiling>().hasARightBuddy = true;
+			newTile.GetComponent<Tiling>().tiledRight = true;
 		}
 	}
 }
