@@ -6,19 +6,19 @@ public class ComboTiming : MonoBehaviour {
 	GameObject player;						// A reference to the player object.
 	CombatControllerIII combatController;	// A reference to the combat controller script on the player.
 
-	public int baseNoteInterval = 15; //15 frames = a quarter second.
+	public float baseNoteInterval = 0.25f; //15 frames = a quarter second.
 
-	public int firstNoteTime;		// Time when the first note of a combo is played.
-	public int secondNoteTime;		// Time when the second note of a combo is played.
-	public int noteInterval;		// Time between the first and second notes, as a baseline for "beats."
-	int songTime;			// Time it takes to play an entire song.
-	int predictedSongTime;	// Time the script expects a song to take to play based on the note interval
+	public float firstNoteTime;		// Time when the first note of a combo is played.							ONLY PUBLIC FOR DEBUG
+	public float secondNoteTime;		// Time when the second note of a combo is played.						ONLY PUBLIC FOR DEBUG
+	public float noteInterval;		// Time between the first and second notes, as a baseline for "beats."		ONLY PUBLIC FOR DEBUG
+	float songTime;			// Time it takes to play an entire song.
+	float predictedSongTime;	// Time the script expects a song to take to play based on the note interval
 								// that the player specifies with their first two notes, and the "beats"
 								// defined by the song.
-	int baseTime;			// The "par" time of a song. Based on some standard note Interval and the
+	float baseTime;			// The "par" time of a song. Based on some standard note Interval and the
 								// total beats in a combo, defined by the combo.
-	int shittynessConstant;	// How far away songTime is from predictedSongTime.
-	int speedBonus;			// How far away songTime is from baseTime (par.)
+	float shittynessConstant;	// How far away songTime is from predictedSongTime.
+	float speedBonus;			// How far away songTime is from baseTime (par.)
 
 	private bool firstSet = false;
 	private bool secondSet = false;
@@ -32,22 +32,25 @@ public class ComboTiming : MonoBehaviour {
 	// Update is called constantly
 	void Update () {
 
+		// Simple reset.
 		if (combatController.songValue.Length == 0) 
 		{
 			firstSet = false;
 			secondSet = false;
+			firstNoteTime = 0;
+			secondNoteTime = 0;
 		}
 
 		// Sets the time of the first note played.
 		if (combatController.songValue.Length == 1 && !firstSet)
 		{
-			firstNoteTime = Time.frameCount; // frameCount returns frames since game run.
+			firstNoteTime = Time.time;
 			firstSet = true;
 		}
 		// Sets the time of the second note played.
-		if (combatController.songValue.Length == 2 && !secondSet)
+		if (combatController.songValue.Length >= 2 && !secondSet)
 		{
-			secondNoteTime = Time.frameCount;
+			secondNoteTime = Time.time;
 			secondSet = true;
 			// Sets the note interval based on the two times.
 			noteInterval = secondNoteTime - firstNoteTime;
@@ -58,7 +61,7 @@ public class ComboTiming : MonoBehaviour {
 
 		if (a combo is completed)
 		{
-			songTime = Time.frameCount - firstNoteTime;
+			songTime = Time.time - firstNoteTime;
 			predictedSongTime = noteInterval * songPlayed.intervals;
 			shittynessConstant = Mathf.Abs(predictedSongTime - songTime);
 								
@@ -68,7 +71,7 @@ public class ComboTiming : MonoBehaviour {
 			if (speedBonus < 0)
 				speedBonus = 0;
 										
-			dvalue = baseDamage - shittynessConstant + speedBonus;
+			dvalue = songPlayed.baseDamage - shittynessConstant + speedBonus;
 		}
 */
 
