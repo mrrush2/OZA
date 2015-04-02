@@ -20,11 +20,11 @@ public class ScrollbarHelper : MonoBehaviour
 	// the player hits the buttons above or below the bar.
 	public void ScrollUp()
 	{
-		bar.value -= .1f;
+		bar.value += .1f;
 	}
 	public void ScrollDown()
 	{
-		bar.value += .1f;
+		bar.value -= .1f;
 	}
 
 
@@ -35,7 +35,7 @@ public class ScrollbarHelper : MonoBehaviour
 //		Event e = Event.current;
 //		if (scrollableArea.Contains (e.mousePosition)) 
 //		{
-		bar.value -= (Input.GetAxis ("Mouse ScrollWheel") / 10f);
+		bar.value += (Input.GetAxis ("Mouse ScrollWheel") / 10f);
 //			inRect = true;
 //		}
 //		else
@@ -43,4 +43,8 @@ public class ScrollbarHelper : MonoBehaviour
 
 	}
 
+	void Update()
+	{
+		bar.size = 0f; //Stop the stupid stretching!
+	}
 }
