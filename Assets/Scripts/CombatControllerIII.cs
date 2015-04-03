@@ -280,30 +280,4 @@ public class CombatControllerIII : MonoBehaviour {
 		// AudioSource.PlayClipAtPoint(noteSound[--note], noteOrigin.position);	
 	}
 
-////// COMBO STUFF //////
-// Checks for combos
-	/*
-	void ComboCheck () {
-		//Will revamp to get note values like "19 17 15 17 19 19 19 19" && majorKey to make it simpler 
-		if (specialAttackValue == 0 && songValue.Equals ("6545666") && R == 8 && (majorKey)) {  //Mary Had a Little Lamb 1 in the Key of C Major  
-			FireMd ();
-			specialAttackValue++;
-		}
-		if (specialAttackValue == 1 && songValue.Equals ("6545666" + "555")) {  //Mary Had a Little Lamb 2  
-			FireMd ();
-			specialAttackValue++;
-		}
-		if (specialAttackValue == 2 && songValue.Equals ("6545666" + "555" + "688")) {  //Mary Had a Little Lamb 3  
-			FireMd ();
-			specialAttackValue++;
-		}
-		if (specialAttackValue == 3 && songValue.Equals ("6545666" + "555" + "688" + "6545666655654")) {  //Mary Had a Little Lamb 4  
-			FireMd ();
-			specialAttackValue = 0;
-			songValue = "";
-		}
-		
-	}
-	*/
-
 }

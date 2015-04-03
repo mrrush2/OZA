@@ -28,9 +28,9 @@ public class ComboTiming : MonoBehaviour {
 
 	// Use this for initialization
 	void Awake () {
-		player = GameObject.FindGameObjectWithTag ("Player");
-		combatController = player.GetComponent<CombatControllerIII>();
-		comboScript = player.GetComponent<Combos>();
+		player = GameObject.FindGameObjectWithTag ("Player");			// Finds the player
+		combatController = player.GetComponent<CombatControllerIII>();	// Ref to combat script
+		comboScript = player.GetComponent<Combos>();					// Ref to combo script
 	}
 	
 	// Update is called constantly
@@ -39,12 +39,7 @@ public class ComboTiming : MonoBehaviour {
 		// Manual Reset
 		if (Input.GetKeyDown (KeyCode.Keypad0) || Input.GetKeyDown (combatController.keyReset)) 
 		{
-			firstSet = false;
-			secondSet = false;
-			firstNoteTime = 0;
-			secondNoteTime = 0;
-			songTime = 0;
-			songTimeAccounter = 0;
+			Reset ();
 		}
 
 
@@ -66,44 +61,42 @@ public class ComboTiming : MonoBehaviour {
 
 					// Requires new variables in the soon-to-exist ComboCheck class.
 
+		// All the damage calculations when a combo is played are here
 		if (comboScript.playedCombo)
 		{
-			comboScript.playedCombo = false;
+			comboScript.playedCombo = false; // Resets as it goes so it can be called again afterwards.
 
-			songTimeAccounter = songTime;
-			songTime = Time.time - firstNoteTime - songTimeAccounter;
-			predictedSongTime = noteInterval * comboScript.intervals;
-			shittynessConstant = Mathf.Abs(predictedSongTime - songTime);
+			songTimeAccounter = songTime;									// Makes sure ever part of a multi-part combo has a time that concerns only itself, not the full combo.
+			songTime = Time.time - firstNoteTime - songTimeAccounter;		// Actually does the math for that ^^^
+			predictedSongTime = noteInterval * comboScript.intervals;		// Comes up with how fast you would finish the song if you played perfectly in time.
+			shittynessConstant = Mathf.Abs(predictedSongTime - songTime);	// Tells you how much you suck at being in time.
 								
 								
-			baseTime = comboScript.intervals * baseNoteInterval;
-			speedBonus = baseTime - songTime;
+			baseTime = comboScript.intervals * baseNoteInterval;			// Comes up with the par time for a song based on its intervals (beats.)
+			speedBonus = baseTime - songTime;								// Calculates your speed bonus
 			if (speedBonus < 0)
-				speedBonus = 0;
+				speedBonus = 0;												// No negative bonuses! I am a merciful god.
 										
-			comboScript.Damage = comboScript.Damage - shittynessConstant + speedBonus;
+			comboScript.Damage = comboScript.Damage - shittynessConstant + speedBonus;	// Calculates the new damage after all that silly math.
 
-			// Auto Resets
+			// Auto Resets, only after the final piece of a combo.
 			if (combatController.songValue.Length == 0) 
 			{
-				firstSet = false;
-				secondSet = false;
-				firstNoteTime = 0;
-				secondNoteTime = 0;
-				songTime = 0;
-				songTimeAccounter = 0;
+				Reset ();
 			}
-			// Resets
-			/*
-			songTime = 0;
-			predictedSongTime = 0;
-			baseTime = 0;
-			shittynessConstant = 0;
-			speedBonus = 0;
-			*/
 
 		}
 
 
+	}
+
+	void Reset()
+	{
+		firstSet = false;		// So we can get a new time for the next combo.
+		secondSet = false;		// Ditto
+		firstNoteTime = 0;		// Dittoo
+		secondNoteTime = 0;		// Dittooo
+		songTime = 0;			// Makes sure to reset the time it actually took to play the song so the Accounter grabs the CORRECT value.
+		songTimeAccounter = 0;	// Probably not necessary, but I'm paranoid.
 	}
 }

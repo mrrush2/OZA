@@ -81,6 +81,8 @@ GameObject:
   - 114: {fileID: 11469758}
   - 114: {fileID: 11424442}
   - 114: {fileID: 11421648}
+  - 114: {fileID: 11423302}
+  - 114: {fileID: 11423304}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -190,7 +192,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 169766}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.02999997, y: -6.72399998, z: 0}
+  m_LocalPosition: {x: -1.60000002, y: -5.5999999, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 469758}
@@ -398,6 +400,42 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   instrument: ViolinViola
+--- !u!114 &11423302
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 169766}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9720f6102dab71848a7debb448bbda8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseNoteInterval: .5
+  firstNoteTime: 0
+  secondNoteTime: 0
+  noteInterval: 0
+  songTime: 0
+  songTimeAccounter: 0
+  predictedSongTime: 0
+  baseTime: 0
+  shittynessConstant: 0
+  speedBonus: 0
+--- !u!114 &11423304
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 169766}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 293e165eeb58edb4eae14bbb16298bf2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  specialAttackValue: 0
+  playedCombo: 0
+  intervals: 0
+  Damage: 0
 --- !u!114 &11424442
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -445,6 +483,7 @@ MonoBehaviour:
   heWhoShoots: {fileID: 469766}
   anim: {fileID: 9569760}
   auraLight: {fileID: 10869758}
+  R: 8
   majorKey: 1
 --- !u!114 &11469758
 MonoBehaviour:

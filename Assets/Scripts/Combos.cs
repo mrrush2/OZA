@@ -9,13 +9,13 @@ public class Combos : MonoBehaviour {
 	public int specialAttackValue = 0;
 	public bool playedCombo = false;
 
-	public int intervals;
-	public float Damage;
+	public int intervals;	// The number of "beats" in any one song, in terms of the time between the first two notes of it.
+	public float Damage;	// The damage of any combo attack
 
 	void Awake ()
 	{
-		player = GameObject.FindGameObjectWithTag ("Player");
-		combat = player.GetComponent<CombatControllerIII>();
+		player = GameObject.FindGameObjectWithTag ("Player");	// Finds player
+		combat = player.GetComponent<CombatControllerIII>();	// Ref to combat script
 	}
 
 	public void ComboCheck () 
@@ -24,7 +24,7 @@ public class Combos : MonoBehaviour {
 		if (specialAttackValue == 0 && combat.songValue.Equals ("6545666") && combat.R == 8 && (combat.majorKey)) {  //Mary Had a Little Lamb 1 in the Key of C Major  
 			playedCombo = true;			// Cannot happen inside TimingInfo, must be set before for the timing script to pick up the values.
 			TimingInfo (7, 10f);		// Passes this song's specific info out to be modified by the timing script.
-			combat.FireMd ();			// Fires the projectile. TODO: Push the damage value into it as parameter.
+			combat.FireMd ();			// Fires the projectile. TODO: Push the damage value into all Fire__ functions as a parameter.
 			specialAttackValue++;		// Keeps track of what part of the combo can be played.
 		}
 		if (specialAttackValue == 1 && combat.songValue.Equals ("6545666" + "555")) {  //Mary Had a Little Lamb 2  
@@ -44,7 +44,7 @@ public class Combos : MonoBehaviour {
 			TimingInfo (14, 20f);
 			combat.FireMd ();
 			specialAttackValue = 0;		// Reset because song is complete.
-			combat.songValue = "";		// Reset this too, same reason.
+			combat.songValue = "";		// Ditto.
 		}
 		
 	}
