@@ -5,6 +5,7 @@ public class CombatControllerIII : MonoBehaviour {
 
 	GameObject player; //Player refernce.
 	CharacterKontroller playerScript;
+	Combos comboScript;
 
 	public string[] noteRep = {"1", "2", "3", "4", "5", "6", "7", "8", "9"}; 
 
@@ -44,13 +45,13 @@ public class CombatControllerIII : MonoBehaviour {
 	Rigidbody2D noteMdInstance;
 	public Transform noteOrigin;
 	public Transform heWhoShoots;
-	float specialAttackValue = 0; //On a per-special basis, this controls how many times a combo runs when activated.	
+	//public float specialAttackValue = 0; //On a per-special basis, this controls how many times a combo runs when activated.	
 	// For visual manipulation
 	
 	public Animator anim;
 	public Light auraLight;
 
-	int R = 8; 
+	public int R = 8; 
 	string instrument = "Violin"; 
 	public bool majorKey = true; 
 	public void ChangeKeyMajor(int S)
@@ -91,6 +92,7 @@ public class CombatControllerIII : MonoBehaviour {
 		{
 			player = GameObject.FindGameObjectWithTag ("Player"); //Initialize player references.
 			playerScript = player.GetComponent<CharacterKontroller>();
+			comboScript = player.GetComponent<Combos>();
 		}
 
 // Update is called constantly
@@ -248,22 +250,22 @@ public class CombatControllerIII : MonoBehaviour {
 		if (Input.GetKeyDown (KeyCode.Keypad0) || Input.GetKeyDown (keyReset)) //Reset button
 		{
 			songValue = "";
-			specialAttackValue = 0;
+			comboScript.specialAttackValue = 0;
 		}
 		
 		// Check for combos
-		ComboCheck();
+		comboScript.ComboCheck();
 		
 	}
 
 ////// PROJECTILES AND EFFECTS ////// 
 
-	void FireSm () {	
+	public void FireSm () {	
 		noteSmInstance = Instantiate(musicNoteSm, noteOrigin.position, noteOrigin.rotation) as Rigidbody2D;	
 		noteSmInstance.velocity = new Vector2((heWhoShoots.localScale.x * 4), 0);	
 	}
 
-	void FireMd () {
+	public void FireMd () {
 		noteMdInstance = Instantiate(musicNoteMd, noteOrigin.position, noteOrigin.rotation) as Rigidbody2D;	
 		noteMdInstance.velocity = new Vector2((heWhoShoots.localScale.x * 4), 0);	
 	}
@@ -280,6 +282,7 @@ public class CombatControllerIII : MonoBehaviour {
 
 ////// COMBO STUFF //////
 // Checks for combos
+	/*
 	void ComboCheck () {
 		//Will revamp to get note values like "19 17 15 17 19 19 19 19" && majorKey to make it simpler 
 		if (specialAttackValue == 0 && songValue.Equals ("6545666") && R == 8 && (majorKey)) {  //Mary Had a Little Lamb 1 in the Key of C Major  
@@ -301,5 +304,6 @@ public class CombatControllerIII : MonoBehaviour {
 		}
 		
 	}
+	*/
 
 }
