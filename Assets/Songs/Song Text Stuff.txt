@@ -1,0 +1,336 @@
+35 songs currently implemented 
+
+   E Major: 0
+
+   E Minor: 0
+	 
+
+   F Major: 1
+	Happy Birthday to You								1121431 121541 186432665454 (Restores 10% HP at the end of the combo) 
+	
+
+   F Minor: 1
+	Like a Plastic Bag (Katy Perry)						57754344333443334433 57754344333443334433 57754344333443334433 (Achievement: "Like a Plastic Bag") 
+	Firework (Katy Perry)								7654435 7654431 7654445 76544431
+
+-- F#/Gb Major: 2 
+	 
+
+   F#/Gb Minor: 2
+**	Numb (Linkin Park)									55588785559799 8887888897 8887888878 8887888897 8887888878 (Needs 9th note) (damage taken is half for 2s, 4s, 6s, 8s, )
+	Immortals (FOB) (Tech F#m)							87676568888866 87676566787676 6876987868668769878686 (Health is doubled for 2s, 6s, 12s (stackable)) 
+
+
+5- G Major: 3
+	Wake me Up When September Ends (Green Day)			23123323316532152151123 23323323343215152151123 (Puts enemies to sleep in an x radius for 5s, 10s (Add up effect))
+	Make a Man Out of You (Mulan)						63523523452 63523523455 56781112114321 56781112114321 56781112114321 11111132178 (Strength buff) 
+	 
+
+6- G Minor: 3
+	Breakeven (The Script)								555334353 555334353 55785444543 555334353 (med broken heart, med broken heart, large broken heart, large broken heart) 
+	 
+
+   G#/Ab Major: 4
+
+
+   G#/Ab Minor: 4
+	 
+	
+1- A Major: 5
+**	Gerudo Valley 										36783678 46784678 256725676763 (Actually in F# minor but better range) (Needs 9th note) 
+	Pompeii (Bastille)									111321 11532122212111321 1153212221222256
+**	Get Lucky (Daft Punk)								4456678897 4456678899 4444454444453333352222321
+	 
+
+2- A Minor: 5
+	Stairway to Heaven (Led Zepplin) 					123212123431 3454342778 322321 322321 (Last part is the "Oooo it make's me wonder")
+	While my Guitar Gently Weeps (The Beatles) 			11231231234321 5312332211 11231231234321 5312332211 
+	Bad Romance (Lady Gaga)								34536665442345555432111 11556511556511556533133 11556511556511556533133
+	 
+   
+=- A#/Bb Major: 6
+	Karma Chemeleon (Culture Club)						33333333222321 11123211232 33333333222321 11123211
+	Pokemon Theme (Pokemon Anime)						3563356655 6678765 4888588 8887 3356633566356
+	 
+
+   A#/Bb Minor: 6
+	 
+
+   B Major: 7
+	 
+
+   B Minor: 7
+	 Radioactive (Imagine Dragons)						888775777442 5454515451545451333341 (part two notes have chance of poisoning, last note 100% poison)
+
+3- C Major: 8
+	Ode to Joy 											87654321 566778 8876554388765543 3333454322234 3218654343218
+**#	Clarity (Zedd) 										25525665523587 55256655223587 	(Needs 9th note/sharps in chorus?) 
+	Mary Had a Little Lamb 								654566 655568 86545666655654
+	Hallelujah (Jeff Buckley) 							35666533 356665343211
+###	Mario Overworld	(Mario 64)							3331357 (Needs sharps and flats) 
+	Ode to Joy (Bethoven's 9th)							334554321123322 334554321123211
+	My Dearest (Supercell)								1876552343434321 18765523433443565 1876552343432111 1221
+	 
+
+4- C Minor: 8
+	Through the Fire and Flames (Intro, Dragonforce)	313131313131 515151515151 414141414141 313131212121 3313313133133131 5515515155155151 4414414144141141 3313313122121121 (This needs an achievement "Better than Dragonforce") 
+	Through the Fire and Flames (Chorus, Dragonforce)	55788874575 34445435 5578887457545 3344455578
+	Turning Tables (Adele)								757566653345 7575666533457 876543346513333 (Zombies hit are dizzy for 3s, 5s, 7s (can stack))
+	Symphony No. 5 (Beethoven)							5553 4442 55533338 66642227 5543 5543 5543 1 5
+	 
+
+   C#/Db Major: 9
+	 
+
+   C#/Db Minor: 9
+   	My Heart Will Go On (Celine Dion) (Solo)			344565434765312 344565434757855543 (Achievement: "Pennywhistle Virtuoso" if played on Pennywhistle) 
+   	My Heart Will Go On (Celine Dion) (Chorus)			334476545654323212 3344765456543233234565433 (Ice based attacks on the second half, finish with ice note that can freeze enemy for 10 sec except bosses) 
+
+9- D Major: 10
+	Canon in D (Pachabel) 								87654345 87654345 876543453
+	 
+
+0- D Minor: 10
+	Balled of the Goddess (LoZ SS)						1323478542 111422111422 1323478542113278 
+###	Tocotta and Fugue (Needs sharps/flats obviously)
+	Unravel (TK from LTS)								18778777665653 38777665676 68756665456
+	 
+
+7- D#/Eb Major: 11
+	Dearly Beloved (Kingdom Hearts)						66332277 66332277 88773322 117766556
+	Treasure (Bruno Mars)								3343122 256113 343212 1234558
+	Eye of the Tiger (Survivor)							665665663344 665665663344 8568785687856834 66
+	Demons (Imagine Dragons)							33512555786 333334444453 33512555786 333334444453
+	 
+
+8- D#/Eb Minor: 11
+	 
+
+
+
+Song... SONG QUEUE
+	POP MUSIC 
+		Uptown Funk
+		Latch
+
+		American Idiot (Green Day)
+		Boulavard of Broken Dreams (Green Day)
+		Bohemian Rasphody (Queen)
+		Don't Stop Believing 
+
+		Superstition(Stevie Wonder) (Might be doable in this F#)
+	
+		Pheonix (FOB)
+		Thanks for the Memories (FOB)
+		Kanzen Kankaku Dreamer (OOR)
+		Gangnam Style (Psy) (D Major, Could Also be B Minor?)
+		Secrets (OneRepublic) (D Major supposedly) 
+
+		Take me to Church 
+		Every Time we Touch (Cascada) 
+		How You Remind Me (Nickelback)	(Achievement: "Become Your Worst Enemy(s)")
+		Paradise (Coldplay)
+		Viva la Vida (Coldplay)
+		Harder, Better, Faster, Stronger (Daft Punk)
+		One More Time (Daft Punk) 
+		Mad World Gary Jules w/ Micheal Andrews
+		old mcdonald
+		Enigma (Trapt) 
+		Forgotten (Linkin Park) 
+		We Were Men (Theory of a Deadman)
+		White America (Eminem) 
+		Tom Sawyer Rush
+		Red Barchetta Rush
+		YYZ for triangle (the beginning) Rush 
+		Cashmire Ledd Zepplin
+		Battle of Evermore Ledd Zepplin 
+		another one bites the dust 
+		we are the champions 
+		Hotel California 
+		moby dick 
+		immigrant song
+		Stevie Ray Vaughan 
+		Yellow Submarine (The Beatles) 
+		Hey Jude (The Beatles) (Brings out your friend Jude to distract zombies for x, y, z amount of seconds) 
+		Help (The Beatles) 
+		Here Comes the Sun (The Beatles) 
+		I am the Walrus (Summons/Transforms into a walrus for 30s) 
+		Back in the U.S.S.R. (The Beatles) (fires cocktail bombs) 
+		My Girl (Temptations) 
+		Life in the Fastlane (The Eagles) 
+		Purple Haze (Jimmy Hendrix) 
+		I Want You Back (Jackson 5)
+		ABC (Jackson Five) 
+		Smooth Criminal (Micheal Jackson) 
+		Back in Black AC/DC 
+		Highway to Hell AC/DC 
+		Dream on Aerosmith
+		Dude (Looks Like A Lady) Aerosmith 
+		Walk this Way (Aerosmith) 
+		Janie Got a Gun (Aerosmith) 
+		Video Games (Lana Del Ray) (Self referential) 
+		Smells like Teen Spirit (Nirvana) 
+		Drain You (Nirvana) 
+		All Apologies (Nirvana)
+		Baba O'Riley (The Who) 
+		Pinball Wizard (The Who)
+		One (Metallica) 
+		1984 (Metallica)
+		Jump (Metallica) 
+		Panama (Metallica) 
+		Welcome to the Jungle (Guns N Roses) 
+		Paradise City (Guns N Roses) 
+		Sweet Child of Mine (Guns N Roses) 
+		Dani California(Red Hot Chili Peppers)
+		Short Skirt, Long Jacket (Cake) 
+		Neever There (Cake) 
+		Distance (Cake) 
+		New Divide (Linkin Park)
+		Pink Panther  
+		Kiss
+		Bon Jovi
+		
+	BOSS SONGS 
+		Thriller (Micheal Jackson) (Makes Zombies do the Zombie walk) 
+		Dovakhin (Skyrim) (FUS, FUS ROH, FUS ROH DAH)
+		Elvis Song
+		
+	CLASSICAL MUSIC
+		In the Hall of the Mountain 
+		Romeo and Juliet (Tchaicovsky) 
+		
+	MOVIE SONGS 
+		Hobbit Theme
+		Harry Potter Theme
+		Hey Now, You're a Rockstar (Smash Mouth) (Summons an ogre for 30s) 
+		It'S Tough to Be a God (Road to El Dorado) 
+		Mombassa (Inception) 
+		You've Got a Friend in Me (Toy Story) 
+		Star Wars Theme
+		Darth Vader Theme
+		Mission Impossible (Invisibility for x seconds ) 
+		Skyfall (James Bond) 
+		Jursassic Park (Velociraptor to ride on??) 
+		Superman Returns (The iconic superman theme) (Invunerable for x seconds) 
+		Batman Theme (nananananana) 
+		Pacific Rim Theme 
+		Spacejam 
+		Star Trek 2009 Theme 
+		Tesla Coil Song Sorcerer's Apprentice 
+		Davy Jones Theme (Pirates)
+		Ghostbusters Theme (Who you gonna call) 
+		Back to the Future Theme
+		Danger Zone (Top Gun) 
+		Pirates of the Carribean Theme (Pirates) 
+	
+	MEME SONGS
+		Nyan Cat (Supposedly B Major)	(Achievement: "The Power of Poptart(cat)")
+		Trololol	(Achievement: "Trololol")
+		Chocolate Rain (Achievement: "You stayed dry while others felt the pain")
+ 
+		Never Gonna Give You Up (Rick Astley) 	(Achievement: "Never Gave You Up")
+		Numa Numa 
+		Sandstorm (Darude) 
+		4' 33" (John Cage) (Wipes the map of all enemies so long as you stay in aggro range) (Achievement: "4' 33"") 
+		What is Love 
+	
+	DISNEY SONGS 
+		A Whole New World (Aladin)
+		Under the Sea (Little Mermaid)
+		I Just Can't Wait/Hakkuna Mattata (Lion King)
+		Beauty and the Beast (Beauty and the Beast...)
+		Let it Go (Frozen) (Only cause it's popular)
+		You'll be in my Heart (Tarzan)
+		Hawaiin RollerCoaster Ride (Lilo and Stitch) 
+		Colors of the Wind (Pochahantas) 
+		Go the Distance (Hercules) 
+		Atlantis Theme (Atlantis the Lost Empire) 
+		Hellfire (Hunchback of Notre Dame) 
+		The Wonderful Thing About Tiggers (Winnie the Pooh) 
+		This is Halloween (The Nightmare Before Christmas) 
+		Supercalifragilisticexpialidocious (Mary Poppins) 
+		Some Day My Prince Will Come (Snow White)
+		Bare Necessities (The Jungle Book) 
+		When You Wish Upon a Star (Pinocchio) 
+		We're All In This Together (High School Musical) 
+		I See the Light (Tangled) 
+		
+	VIDEO GAMES
+		Still Alive (Portal 2)
+		Still Alive (Mirror's Edge) (Speed up for x amount of seconds) 
+		Main Theme of Final Fantasy VII (FFVII)
+		Surfing Theme (Pokemon GSC)
+		Champion Battle (Pokemon GSC)
+		Vs. Green (Pokemon FRLG)
+		Pokemon Theme (Pokemon RBY)
+		Lost Woods (LoZ) (Summon's a fairy for 30s to pester you) (Achievement: "Hey! Listen!") 
+		Tetris Theme 
+		
+	TV SHOW SONGS
+		Yu-Gi-Oh! Theme 
+		Big Bang Theory Theme
+		The Office Theme
+		Game of Thrones Theme
+
+		
+		if (Input.GetKeyDown (KeyCode.Alpha1)) //A Major
+		{
+			R = 5;
+			ChangeKeyMajor(R); 
+		}
+		if (Input.GetKeyDown (KeyCode.Alpha2)) //A Minor
+		{
+			R = 5;
+			ChangeKeyMinor(R); 
+		}
+		if (Input.GetKeyDown (KeyCode.Alpha3)) //C Major
+		{
+			R = 8;
+			ChangeKeyMajor(R); 
+		}
+		if (Input.GetKeyDown (KeyCode.Alpha4)) //C Minor
+		{
+			R = 8; 
+			ChangeKeyMinor(R); 
+		}
+		if (Input.GetKeyDown (KeyCode.Alpha5)) //G Major 
+		{
+			R = 3;
+			ChangeKeyMajor(R); 
+		}
+		if (Input.GetKeyDown (KeyCode.Alpha6)) //G Minor
+		{
+			R = 3; 
+			ChangeKeyMinor(R); 
+		}
+		if (Input.GetKeyDown (KeyCode.Alpha7)) //Eb Major
+		{
+			R = 11;
+			ChangeKeyMajor(R); 
+		}
+		if (Input.GetKeyDown (KeyCode.Alpha8)) //Eb Minor
+		{
+			R = 11; 
+			ChangeKeyMinor(R); 
+		}
+		if (Input.GetKeyDown (KeyCode.Alpha9)) //D Major
+		{
+			R = 10; 
+			ChangeKeyMajor(R); 
+		}
+		if (Input.GetKeyDown (KeyCode.Alpha0)) //D Major
+		{
+			R = 10; 
+			ChangeKeyMinor(R); 
+		}
+		if (Input.GetKeyDown (KeyCode.Minus)) //A Major
+		{
+			R = 4; 
+			ChangeKeyMajor(R); 
+		}
+		if (Input.GetKeyDown (KeyCode.Equals)) //B Minor
+		{
+			R = 7; 
+			ChangeKeyMinor (R);
+		}
+		

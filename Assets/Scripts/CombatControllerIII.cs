@@ -113,21 +113,66 @@ public class CombatControllerIII : MonoBehaviour {
 		canPlay = !playerScript.onLadder;
 		
 
-		//Temporary Key change mechanism using keybindings. 
+		//Temporary Key change mechanism using keybindings. Will bind to UI later hopefully
 		if (Input.GetKeyDown (KeyCode.Alpha1)) //A Major
 		{
 			R = 5;
 			ChangeKeyMajor(R); 
 		}
-		if (Input.GetKeyDown (KeyCode.Alpha2)) //C Minor
+		if (Input.GetKeyDown (KeyCode.Alpha2)) //A Minor
 		{
-			R = 8; 
+			R = 5;
 			ChangeKeyMinor(R); 
 		}
 		if (Input.GetKeyDown (KeyCode.Alpha3)) //C Major
 		{
 			R = 8;
 			ChangeKeyMajor(R); 
+		}
+		if (Input.GetKeyDown (KeyCode.Alpha4)) //C Minor
+		{
+			R = 8; 
+			ChangeKeyMinor(R); 
+		}
+		if (Input.GetKeyDown (KeyCode.Alpha5)) //G Major 
+		{
+			R = 3;
+			ChangeKeyMajor(R); 
+		}
+		if (Input.GetKeyDown (KeyCode.Alpha6)) //G Minor
+		{
+			R = 3; 
+			ChangeKeyMinor(R); 
+		}
+		if (Input.GetKeyDown (KeyCode.Alpha7)) //Eb Major
+		{
+			R = 11;
+			ChangeKeyMajor(R); 
+		}
+		if (Input.GetKeyDown (KeyCode.Alpha8)) //Eb Minor
+		{
+			R = 11; 
+			ChangeKeyMinor(R); 
+		}
+		if (Input.GetKeyDown (KeyCode.Alpha9)) //D Major
+		{
+			R = 10; 
+			ChangeKeyMajor(R); 
+		}
+		if (Input.GetKeyDown (KeyCode.Alpha0)) //D Major
+		{
+			R = 10; 
+			ChangeKeyMinor(R); 
+		}
+		if (Input.GetKeyDown (KeyCode.Minus)) //A Major
+		{
+			R = 4; 
+			ChangeKeyMajor(R); 
+		}
+		if (Input.GetKeyDown (KeyCode.Equals)) //B Minor
+		{
+			R = 7; 
+			ChangeKeyMinor (R);
 		}
 
 		//Temporary Instrument change mechanism using keybindings. 
