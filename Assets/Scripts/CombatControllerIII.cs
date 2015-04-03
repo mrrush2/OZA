@@ -250,11 +250,10 @@ public class CombatControllerIII : MonoBehaviour {
 		if (Input.GetKeyDown (KeyCode.Keypad0) || Input.GetKeyDown (keyReset)) //Reset button
 		{
 			songValue = "";
-			comboScript.specialAttackValue = 0;
 		}
 		
 		// Check for combos
-		comboScript.ComboCheck();
+		comboScript.ComboCheckII();
 		
 	}
 
