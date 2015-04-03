@@ -11,6 +11,7 @@ public class ZombieFollow : MonoBehaviour {
 	public bool edge;
 	//bool chase = false;
 	private float distance;
+	float startTime;
 
 	void Start()
 	{
@@ -67,9 +68,13 @@ public class ZombieFollow : MonoBehaviour {
 	}
 
 	void Flip(){
-		facingRight = !facingRight;
-		Vector3 theScale = transform.localScale;
-		theScale.x *= -1;
-		transform.localScale = theScale;
+		if((Time.time - startTime) > 1) 
+		{
+			startTime = Time.time;
+			facingRight = !facingRight;
+			Vector3 theScale = transform.localScale;
+			theScale.x *= -1;
+			transform.localScale = theScale;
+		}
 		}
 }
