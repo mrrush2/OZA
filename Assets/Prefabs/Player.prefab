@@ -519,7 +519,7 @@ MonoBehaviour:
     m_Bits: 4294963455
   rayCanHit:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 1
   jumpForce: 200
   sightStart: {fileID: 469760}
   sightEnd: {fileID: 469770}

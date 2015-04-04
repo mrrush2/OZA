@@ -512,6 +512,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &163608
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 463608}
+  - 108: {fileID: 10863608}
+  m_Layer: 0
+  m_Name: StandLight
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &188142
 GameObject:
   m_ObjectHideFlags: 0
@@ -542,8 +558,21 @@ Transform:
   m_Children:
   - {fileID: 22422370}
   - {fileID: 488142}
+  - {fileID: 463608}
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!4 &463608
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 163608}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -.00300000003, y: -.0130000003, z: -.100000001}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 422368}
+  m_RootOrder: 2
 --- !u!4 &488142
 Transform:
   m_ObjectHideFlags: 1
@@ -571,6 +600,41 @@ Animator:
   m_ApplyRootMotion: 1
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!108 &10863608
+Light:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 163608}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Type: 2
+  m_Color: {r: 1, g: .848275959, b: 0, a: 1}
+  m_Intensity: 1.76999998
+  m_Range: 1
+  m_SpotAngle: 30
+  m_CookieSize: 10
+  m_Shadows:
+    m_Type: 0
+    m_Resolution: -1
+    m_Strength: 1
+    m_Bias: .0500000007
+    m_Softness: 4
+    m_SoftnessFade: 1
+  m_Cookie: {fileID: 0}
+  m_DrawHalo: 0
+  m_ActuallyLightmapped: 0
+  m_Flare: {fileID: 0}
+  m_RenderMode: 1
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_Lightmapping: 1
+  m_ShadowSamples: 1
+  m_ShadowRadius: 0
+  m_ShadowAngle: 0
+  m_IndirectIntensity: 1
+  m_AreaSize: {x: 1, y: 1}
 --- !u!114 &11417496
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1428,6 +1492,7 @@ MonoBehaviour:
   clickSound: {fileID: 8300000, guid: 572c8a15709bc2c43993d618420edecf, type: 3}
   menuOpenSound: {fileID: 8300000, guid: 917d45045093cf94eb3cf6109e42c1b7, type: 3}
   menuCloseSound: {fileID: 8300000, guid: c940c63fee3bb9b4484f55e4590c9984, type: 3}
+  standLight: {fileID: 10863608}
 --- !u!114 &11422378
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2115,8 +2180,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 11441090}
   m_HandleRect: {fileID: 22441078}
   m_Direction: 2
-  m_Value: .99999994
-  m_Size: .13693057
+  m_Value: 1
+  m_Size: .136930585
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -2786,7 +2851,7 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: 2, y: -1050.07495}
+  m_AnchoredPosition: {x: 2, y: -1050.0752}
   m_SizeDelta: {x: 160, y: 2291.04004}
   m_Pivot: {x: .5, y: .5}
 --- !u!224 &22441066
