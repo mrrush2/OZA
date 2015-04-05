@@ -85,6 +85,7 @@ GameObject:
   - 114: {fileID: 11423302}
   - 114: {fileID: 11423304}
   - 114: {fileID: 11407658}
+  - 114: {fileID: 11408728}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -194,7 +195,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 169766}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.41499996, y: -6.76000023, z: 0}
+  m_LocalPosition: {x: -3.05100012, y: -6.75400019, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 469758}
@@ -365,7 +366,7 @@ Light:
   serializedVersion: 3
   m_Type: 2
   m_Color: {r: .522058845, g: .782454431, b: 1, a: 1}
-  m_Intensity: 8
+  m_Intensity: 1.63
   m_Range: 1.39999998
   m_SpotAngle: 30
   m_CookieSize: 10
@@ -402,6 +403,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   specialAttackValue: 0
+--- !u!114 &11408728
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 169766}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d991687871ac9d48adf64ea2def676f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &11421648
 MonoBehaviour:
   m_ObjectHideFlags: 1

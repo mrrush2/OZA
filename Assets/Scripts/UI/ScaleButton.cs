@@ -10,12 +10,14 @@ public class ScaleButton : MonoBehaviour {
 	ScalesOBJ.Scale scaleToActivate;	// Which scale this button activates
 	
 	public Button scaleButton;			// Ref to this button
+	RectTransform scaleButtonRect;
 	public string name;					// The name of the scale this button activates.
 	
 	// Use this for initialization
 	void Awake ()
 	{
 		scaleButton = this.GetComponent<Button>();				// Init this button ref
+		scaleButtonRect = scaleButton.GetComponent<RectTransform>();
 		player = GameObject.FindGameObjectWithTag ("Player"); 	// Init player references
 		scales = player.GetComponent<ScalesOBJ>();				// Init scale script ref
 	}
@@ -32,10 +34,11 @@ public class ScaleButton : MonoBehaviour {
 	
 		scaleButton.onClick.AddListener(() => 				// Adds an event to the button
 		{ 
-			scales.ChangeKey (scaleToActivate);				// Changes the k
+			scales.ChangeKey (scaleToActivate);				// Changes the key
 		});
 		
 
+		
 	}
 
 }
