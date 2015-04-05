@@ -261,12 +261,26 @@ public class CombatControllerIII : MonoBehaviour {
 
 	public void FireSm () {	
 		noteSmInstance = Instantiate(musicNoteSm, noteOrigin.position, noteOrigin.rotation) as Rigidbody2D;	
-		noteSmInstance.velocity = new Vector2((heWhoShoots.localScale.x * 4), 0);	
+		CustomProjectile note = noteSmInstance.gameObject.GetComponent<CustomProjectile>();
+		note.setDirection (heWhoShoots.localScale.x);
+		note.setDamage (3);
+		note.setSpeed (4);
 	}
 
 	public void FireMd () {
 		noteMdInstance = Instantiate(musicNoteMd, noteOrigin.position, noteOrigin.rotation) as Rigidbody2D;	
-		noteMdInstance.velocity = new Vector2((heWhoShoots.localScale.x * 4), 0);	
+		CustomProjectile note = noteMdInstance.gameObject.GetComponent<CustomProjectile>();
+		note.setDirection (heWhoShoots.localScale.x);
+		note.setDamage (10);
+		note.setSpeed (4);
+	}
+
+	public void FireMd (float damage, float speed) {
+		noteMdInstance = Instantiate(musicNoteMd, noteOrigin.position, noteOrigin.rotation) as Rigidbody2D;	
+		CustomProjectile note = noteMdInstance.gameObject.GetComponent<CustomProjectile>();
+		note.setDirection (heWhoShoots.localScale.x);
+		note.setDamage (damage);
+		note.setSpeed (speed);
 	}
 
 	////// NOTE METHOD //////
