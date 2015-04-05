@@ -54,6 +54,8 @@ public class CombatControllerIII : MonoBehaviour {
 	public int R = 8; 
 	string instrument = "Violin"; 
 	public bool majorKey = true; 
+			
+	
 	public void ChangeKeyMajor(int S)
 	{
 		majorKey = true; 
