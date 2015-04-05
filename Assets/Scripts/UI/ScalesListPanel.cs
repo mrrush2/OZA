@@ -9,7 +9,6 @@ public class ScalesListPanel : MonoBehaviour
 	
 	public GameObject buttonBase;
 	public GameObject thisPanel;
-	RectTransform thisTransform;
 	
 	GameObject player;
 	ScalesOBJ scales;
@@ -21,7 +20,6 @@ public class ScalesListPanel : MonoBehaviour
 	
 	void Awake ()
 	{
-		thisTransform = thisPanel.GetComponent<RectTransform>();
 		
 		player = GameObject.FindGameObjectWithTag ("Player"); 	// Init player references
 		scales = player.GetComponent<ScalesOBJ>();				// Init scale script ref
@@ -43,6 +41,6 @@ public class ScalesListPanel : MonoBehaviour
 
 	void Update ()
 	{
-		thisPanel.GetComponent<RectTransform>().sizeDelta = new Vector2 (161.2f, (float)((numberOfButtons * 60f) + 1));
+		thisPanel.GetComponent<RectTransform>().sizeDelta = new Vector2 (161.2f, (float)((numberOfButtons * 20f) + 1));
 	}
 }

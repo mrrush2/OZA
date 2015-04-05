@@ -15,10 +15,6 @@ public class ScalesOBJ : MonoBehaviour
 		// DEBUG: Adds cMajor and Minor to the list, for testing purposes.
 		scaleList.Add (cMajor);
 		scaleList.Add (cMinor);
-		scaleList.Add (Bullshit);
-		scaleList.Add (Bullshit2);
-		scaleList.Add (Bullshit3);
-		scaleList.Add (Bullshit4);
 		
 	}
 
@@ -43,10 +39,6 @@ public class ScalesOBJ : MonoBehaviour
 	////// COMBO DEFINITIONS //////
 	Scale cMajor = new Scale ("C Major", 8, true);
 	Scale cMinor = new Scale ("C Minor", 8, false);
-	Scale Bullshit = new Scale ("Bullshit", 7, true);
-	Scale Bullshit2 = new Scale ("Bullshit", 7, true);
-	Scale Bullshit3 = new Scale ("Bullshit", 7, true);
-	Scale Bullshit4 = new Scale ("Bullshit", 7, true);
 	
 
 
