@@ -506,6 +506,7 @@ GameObject:
   - 222: {fileID: 22253968}
   - 114: {fileID: 11453972}
   - 114: {fileID: 11453970}
+  - 114: {fileID: 11490102}
   m_Layer: 5
   m_Name: InstrumentsPanel
   m_TagString: Untagged
@@ -3496,6 +3497,19 @@ MonoBehaviour:
   m_FirstSelected: {fileID: 0}
   m_sendNavigationEvents: 0
   m_DragThreshold: 5
+--- !u!114 &11490102
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 153968}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9bfd94d9981ab4b41892303dbfda0808, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonBase: {fileID: 104158, guid: e82260916bf450641ad739197b07b701, type: 2}
+  thisPanel: {fileID: 153968}
 --- !u!212 &21222368
 SpriteRenderer:
   m_ObjectHideFlags: 1

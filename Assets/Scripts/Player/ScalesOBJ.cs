@@ -7,6 +7,9 @@ public class ScalesOBJ : MonoBehaviour
 	GameObject player;									// Ref to player
 	CombatControllerIII combat;							// Ref to combat script
 	public List<Scale> scaleList = new List<Scale>();	// The list of all scales unlocked
+	
+	public bool currentKeyMajor = true;
+	public int currentRoot = 8;
 
 	void Awake ()
 	{
@@ -48,10 +51,14 @@ public class ScalesOBJ : MonoBehaviour
 		if (scale.major)
 		{
 			combat.ChangeKeyMajor (scale.root);
+			currentKeyMajor = true;
+			currentRoot = scale.root;
 		}
 		else
 		{
 			combat.ChangeKeyMinor (scale.root);
+			currentKeyMajor = false;
+			currentRoot = scale.root;
 		}
 	}
 

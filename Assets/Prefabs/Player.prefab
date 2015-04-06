@@ -87,6 +87,7 @@ GameObject:
   - 114: {fileID: 11407658}
   - 114: {fileID: 11408728}
   - 114: {fileID: 11482310}
+  - 114: {fileID: 11415566}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -415,6 +416,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d991687871ac9d48adf64ea2def676f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentKeyMajor: 1
+  currentRoot: 8
+--- !u!114 &11415566
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 169766}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 385be4abb65204c49b9c03ae692365b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &11421648
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -511,6 +525,7 @@ MonoBehaviour:
   anim: {fileID: 9569760}
   auraLight: {fileID: 10869758}
   R: 8
+  instrument: Violin
   majorKey: 1
 --- !u!114 &11469758
 MonoBehaviour:

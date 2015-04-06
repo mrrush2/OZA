@@ -52,7 +52,7 @@ public class CombatControllerIII : MonoBehaviour {
 	public Light auraLight;
 
 	public int R = 8; 
-	string instrument = "Violin"; 
+	public string instrument = "Violin"; 
 	public bool majorKey = true; 
 			
 	
@@ -186,7 +186,7 @@ public class CombatControllerIII : MonoBehaviour {
 			if (majorKey) ChangeKeyMajor(R);
 			else ChangeKeyMinor(R);
 		}
-		if (Input.GetKeyDown (KeyCode.X)) //Change to trumpet 
+		if (Input.GetKeyDown (KeyCode.X)) //Change to violin
 		{
 			instrument = "Violin"; 
 			if (majorKey) ChangeKeyMajor(R);
