@@ -6,6 +6,7 @@ public class Combos : MonoBehaviour {
 	GameObject player;
 	CombatControllerIII combat;
 	SongsOBJ songs;
+	ComboTiming combotiming;
 
 	public int specialAttackValue = 0;
 	public bool playedCombo = false;
@@ -18,6 +19,7 @@ public class Combos : MonoBehaviour {
 		player = GameObject.FindGameObjectWithTag ("Player");	// Finds player
 		combat = player.GetComponent<CombatControllerIII>();	// Ref to combat script
 		songs = player.GetComponent<SongsOBJ> ();				// Ref to songs script
+		combotiming = player.GetComponent<ComboTiming>();
 	}
 
 	// For passing a combo's timing info into the ComboTiming script.
@@ -36,7 +38,9 @@ public class Combos : MonoBehaviour {
 			{
 				playedCombo = true;			// Cannot happen inside TimingInfo, must be set before for the timing script to pick up the values.
 				TimingInfo (songs.comboList[i].intervals, songs.comboList[i].damage);	// Sends out the timing info for this combo.
-				//combat.FireMd (Damage, 4f);			// Will be generalized later to send out ANY effect.
+				
+				combat.FireMd (combotiming.CalculateNewDamage(), 4f);			// Will be generalized later to send out ANY effect.
+																				// Like a general Invoke() method with a string param. for effects.
 				if (songs.comboList[i].finalPart)	// Last part?
 				{
 					songs.specialAttackValue = 0;		// Reset because song is complete.
