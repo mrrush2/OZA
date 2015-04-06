@@ -79,6 +79,8 @@ public class ComboTiming : MonoBehaviour {
 										
 			comboScript.Damage = comboScript.Damage - shittynessConstant + speedBonus;	// Calculates the new damage after all that silly math.
 
+
+			combatController.FireMd (comboScript.Damage, 4f);	
 			// Auto Resets, only after the final piece of a combo.
 			if (combatController.songValue.Length == 0) 
 			{
