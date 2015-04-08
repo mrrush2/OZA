@@ -3,8 +3,8 @@ using System.Collections;
 
 public class ZombieFollow : MonoBehaviour {
 	public Transform target;//set target from inspector instead of looking in Update
-	public float followSpeed = .5f;
-	public float patrolSpeed = .2f;
+	public float followSpeed = .8f;
+	public float patrolSpeed = .65f;
 	bool facingRight = true;
 	Animator anim;
 	public Transform sightStart, sightEnd;
@@ -15,11 +15,15 @@ public class ZombieFollow : MonoBehaviour {
 	public float patrolTimer;
 	public float chaseDistance = 2f;
 	bool isChasing = false;
-	
+	float startTime;
+	Vector3 theScale;
+	float timer;
+
 	void Start()
 	{
 		anim = GetComponent < Animator > ();
 		patrolTimer = initialPatrolTime;
+		theScale = transform.localScale;
 	}
 	void Update() {
 		
@@ -52,34 +56,40 @@ public class ZombieFollow : MonoBehaviour {
 	}
 	
 	void Flip(){
-		facingRight = !facingRight;
-		Vector3 theScale = transform.localScale;
-		theScale.x *= -1;
-		transform.localScale = theScale;
+		if((Time.time - startTime) > 1) 
+		{
+			startTime = Time.time;
+			facingRight = !facingRight;
+			theScale = transform.localScale;
+			theScale.x *= -1;
+			transform.localScale = theScale;
+		}
 	}
 	
 	void Chase () {
-		if (distance == 0) {
-			rigidbody2D.velocity = new Vector2 (0, rigidbody2D.velocity.y);
-		} else if (facingRight) {
-			rigidbody2D.velocity = new Vector2 (-1 * followSpeed, rigidbody2D.velocity.y);
+		//if (distance == 0) {
+			//rigidbody2D.velocity = new Vector2 (0, rigidbody2D.velocity.y);
+		 if (facingRight) {
+			rigidbody2D.velocity = new Vector2 (theScale.x * followSpeed, rigidbody2D.velocity.y);
 		} else {
-			rigidbody2D.velocity = new Vector2 (1 * followSpeed, rigidbody2D.velocity.y);
+			rigidbody2D.velocity = new Vector2 (theScale.x * followSpeed, rigidbody2D.velocity.y);
 		}
 	}
 	
 	void Patrol(){
-		if (patrolTimer > initialPatrolTime/2) {
-			rigidbody2D.velocity = new Vector2 (-1 * patrolSpeed, rigidbody2D.velocity.y);
+		if (patrolTimer > initialPatrolTime/timer) {
+			rigidbody2D.velocity = new Vector2 (theScale.x * patrolSpeed, rigidbody2D.velocity.y);
 			patrolTimer -= Time.deltaTime;
 		}
 		else if (patrolTimer > 0) {
 			Flip();
-			rigidbody2D.velocity = new Vector2 (1 * patrolSpeed, rigidbody2D.velocity.y);
+			rigidbody2D.velocity = new Vector2 (theScale.x * patrolSpeed, rigidbody2D.velocity.y);
 			patrolTimer -= Time.deltaTime;
 		}
 		else {
 			Flip();
+			timer = (Random.Range (1,5));
+			Debug.Log(timer);
 			patrolTimer = initialPatrolTime;
 		}
 	}
