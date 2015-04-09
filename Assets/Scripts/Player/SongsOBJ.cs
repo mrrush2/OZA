@@ -5,6 +5,7 @@ using System.Collections.Generic;
 public class SongsOBJ : MonoBehaviour 
 {
 	public List<Combo> comboList = new List<Combo>();		// Holds all songs unlocked by the player.
+	public List<Combo> significantComboList = new List<Combo>();		// Holds all songs which get a button.
 	public int specialAttackValue = 0;
 
 	// Defines Combo object.

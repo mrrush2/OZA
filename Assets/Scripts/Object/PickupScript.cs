@@ -46,6 +46,7 @@ public class PickupScript : MonoBehaviour {
 			songs.comboList.Add (songs.MHLL2);
 			songs.comboList.Add (songs.MHLL3);
 			songs.comboList.Add (songs.MHLL4);
+			songs.significantComboList.Add (songs.MHLL4);
 		}
 	}
 

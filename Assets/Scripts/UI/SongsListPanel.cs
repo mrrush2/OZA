@@ -51,9 +51,9 @@ public class SongsListPanel : MonoBehaviour
 	
 	public void AddSongToMenu()
 	{
-		if (numberOfButtons < songs.comboList.Count)
+		if (numberOfButtons < songs.significantComboList.Count)
 		{
-			for (int i = numberOfButtons; i < songs.comboList.Count; i++)
+			for (int i = numberOfButtons; i < songs.significantComboList.Count; i++)
 			{
 				newInstance = Instantiate (buttonBase) as GameObject;
 				newInstance.transform.SetParent(thisPanel.transform, false);
