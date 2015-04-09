@@ -20,7 +20,7 @@ public class ScalesOBJ : MonoBehaviour
 		combat = player.GetComponent<CombatControllerIII>();
 		// DEBUG: Adds cMajor and Minor to the list, for testing purposes.
 		scaleList.Add (cMajor);
-		scaleList.Add (cMinor);
+		//scaleList.Add (cMinor);
 		
 	}
 
@@ -43,8 +43,8 @@ public class ScalesOBJ : MonoBehaviour
 
 
 	////// COMBO DEFINITIONS //////
-	Scale cMajor = new Scale ("C Major", 8, true);
-	Scale cMinor = new Scale ("C Minor", 8, false);
+	public Scale cMajor = new Scale ("C Major", 8, true);
+	public Scale cMinor = new Scale ("C Minor", 8, false);
 	
 
 

@@ -20,6 +20,8 @@ public class InstrumentsOBJ : MonoBehaviour
 		//DEBUG adds instruments to test
 		instrumentList.Add (violin);
 		//instrumentList.Add (trumpet);
+		
+		// All instruments in the game must be added to this list.
 	}
 
 	public class Instrument
@@ -44,6 +46,8 @@ public class InstrumentsOBJ : MonoBehaviour
 	////// INSTRUMENT DEFINITIONS //////
 	public Instrument violin = new Instrument ("Violin");
 	public Instrument trumpet = new Instrument ("Trumpet");
+	
+	
 
 
 	public void ChangeInstrument(Instrument instrument)

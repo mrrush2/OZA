@@ -8,16 +8,12 @@ public class PickupScript : MonoBehaviour {
 	InstrumentsOBJ instruments;
 	ScalesOBJ scales;
 	SongsOBJ songs;
-
-	public bool unlockInst = false;
-	public bool unlockScale = false;
-	public bool unlockSong = false;
 	
-	public bool DEBUG = false;
+	public bool trumpet = false;
 	
-	public string[] instrumentUnlocks;
-	public string[] scaleUnlocks;
-	public string[] songUnlocks;
+	public bool cMinor = false;
+	
+	public bool MHLL = false;
 	
 	void Awake ()
 	{
@@ -38,43 +34,18 @@ public class PickupScript : MonoBehaviour {
 	
 	void Unlock()
 	{
-
-		if (DEBUG)
+		if (trumpet)
 			instruments.instrumentList.Add (instruments.trumpet);
-
-
-		if (unlockInst)
+			
+		if (cMinor)
+			scales.scaleList.Add (scales.cMinor);
+			
+		if (MHLL)
 		{
-			foreach (InstrumentsOBJ.Instrument i in instruments.instrumentList)
-			{
-				foreach (string a in instrumentUnlocks)
-				{
-					if (i.name.Equals (a))
-						instruments.instrumentList.Add (i);
-				}
-			}
-		}
-		if (unlockScale)
-		{
-			foreach (ScalesOBJ.Scale i in scales.scaleList)
-			{
-				foreach (string a in scaleUnlocks)
-				{
-					if (i.name.Equals (a))
-						scales.scaleList.Add (i);
-				}
-			}
-		}
-		if (unlockSong)
-		{
-			foreach (SongsOBJ.Combo i in songs.comboList)
-			{
-				foreach (string a in songUnlocks)
-				{
-					if (i.name.Equals (a))
-						songs.comboList.Add (i);
-				}
-			}
+			songs.comboList.Add (songs.MHLL1);
+			songs.comboList.Add (songs.MHLL2);
+			songs.comboList.Add (songs.MHLL3);
+			songs.comboList.Add (songs.MHLL4);
 		}
 	}
 

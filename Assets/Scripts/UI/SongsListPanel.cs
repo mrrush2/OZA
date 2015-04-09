@@ -46,16 +46,23 @@ public class SongsListPanel : MonoBehaviour
 	void Update ()
 	{
 		thisPanel.GetComponent<RectTransform>().sizeDelta = new Vector2 (173.1f, (float)((numberOfButtons * 20f) + 1));
+		AddSongToMenu();
 	}
 	
-	public void AddSongToMenu(SongsOBJ.Combo song)
+	public void AddSongToMenu()
 	{
-		newInstance = Instantiate (buttonBase) as GameObject;
-		newInstance.transform.SetParent (thisPanel.transform, false);
-		info = newInstance.GetComponent<SongButton>();
-		info.name = song.name;
-		newInstance.name = info.name;
-		newInstance.GetComponentInChildren<Text>().text = info.name;
-		numberOfButtons++;
+		if (numberOfButtons < songs.comboList.Count)
+		{
+			for (int i = numberOfButtons; i < songs.comboList.Count; i++)
+			{
+				newInstance = Instantiate (buttonBase) as GameObject;
+				newInstance.transform.SetParent(thisPanel.transform, false);
+				info = newInstance.GetComponent<SongButton>();
+				info.name = songs.comboList[i].name;
+				newInstance.name = info.name;
+				newInstance.GetComponentInChildren<Text>().text = info.name;
+				numberOfButtons++;
+			}
+		}
 	}
 }

@@ -34,19 +34,19 @@ public class SongsOBJ : MonoBehaviour
 
 
 	////// COMBO DEFINITIONS //////
-	Combo MHLL1 = new Combo ("Mary Had a Little Lamb", 0, "6545666", 7, 10f, 0, false);			// Mary Had a Little Lamb
-	Combo MHLL2 = new Combo ("Mary Had a Little Lamb", 1, "6545666"+"555", 4, 10f, 0, false);
-	Combo MHLL3 = new Combo ("Mary Had a Little Lamb", 2, "6545666"+"555"+"688", 4, 10f, 0, false);
-	Combo MHLL4 = new Combo ("Mary Had a Little Lamb", 3, "6545666"+"555"+"688"+"6545666655654", 14, 20f, 0, true);
+	public Combo MHLL1 = new Combo ("Mary Had a Little Lamb", 0, "6545666", 7, 10f, 0, false);			// Mary Had a Little Lamb
+	public Combo MHLL2 = new Combo ("Mary Had a Little Lamb", 1, "6545666"+"555", 4, 10f, 0, false);
+	public Combo MHLL3 = new Combo ("Mary Had a Little Lamb", 2, "6545666"+"555"+"688", 4, 10f, 0, false);
+	public Combo MHLL4 = new Combo ("Mary Had a Little Lamb", 3, "6545666"+"555"+"688"+"6545666655654", 14, 20f, 0, true);
 
 
 	// For debug purposes, initialize with songs in the list.
 	void Awake()
 	{
-		comboList.Add (MHLL1);
-		comboList.Add (MHLL2);
-		comboList.Add (MHLL3);
-		comboList.Add (MHLL4);
+	//	comboList.Add (MHLL1);
+	//	comboList.Add (MHLL2);
+	//	comboList.Add (MHLL3);
+	//	comboList.Add (MHLL4);
 	}
 
 
