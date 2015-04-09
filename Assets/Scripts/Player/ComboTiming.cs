@@ -68,7 +68,7 @@ public class ComboTiming : MonoBehaviour {
 		{
 			comboScript.playedCombo = false; // Resets as it goes so it can be called again afterwards.
 			
-			songTimeAccounter = songTime;									// Makes sure ever part of a multi-part combo has a time that concerns only itself, not the full combo.
+			songTimeAccounter += songTime;									// Makes sure ever part of a multi-part combo has a time that concerns only itself, not the full combo.
 			songTime = Time.time - firstNoteTime - songTimeAccounter;		// Actually does the math for that ^^^
 			predictedSongTime = noteInterval * comboScript.intervals;		// Comes up with how fast you would finish the song if you played perfectly in time.
 			shittynessConstant = Mathf.Abs(predictedSongTime - songTime);	// Tells you how much you suck at being in time.
