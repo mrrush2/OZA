@@ -27,7 +27,7 @@ public class ScalesListPanel : MonoBehaviour
 
 	void Start ()
 	{
-		for (int i = 0; i < scales.scaleList.Count; i++)
+		for (int i = 0; i < scales.scaleList.Count; i++)		// Add all unlocked scales
 		{
 			newInstance = Instantiate (buttonBase) as GameObject;
 			newInstance.transform.SetParent(thisPanel.transform, false);
@@ -42,5 +42,16 @@ public class ScalesListPanel : MonoBehaviour
 	void Update ()
 	{
 		thisPanel.GetComponent<RectTransform>().sizeDelta = new Vector2 (173.1f, (float)((numberOfButtons * 20f) + 1));
+	}
+	
+	public void AddScaleToMenu(ScalesOBJ.Scale scale)	// Add a single scale
+	{
+		newInstance = Instantiate (buttonBase) as GameObject;
+		newInstance.transform.SetParent (thisPanel.transform, false);
+		info = newInstance.GetComponent<ScaleButton>();
+		info.name = scale.name;
+		newInstance.name = info.name;
+		newInstance.GetComponentInChildren<Text>().text = info.name;
+		numberOfButtons++;
 	}
 }
