@@ -85,6 +85,11 @@ GameObject:
   - 114: {fileID: 11423302}
   - 114: {fileID: 11423304}
   - 114: {fileID: 11407658}
+  - 114: {fileID: 11408728}
+  - 114: {fileID: 11482310}
+  - 114: {fileID: 11415566}
+  - 114: {fileID: 11468312}
+  - 114: {fileID: 11462686}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -194,7 +199,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 169766}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.41499996, y: -6.76000023, z: 0}
+  m_LocalPosition: {x: -3.05100012, y: -6.75400019, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 469758}
@@ -365,7 +370,7 @@ Light:
   serializedVersion: 3
   m_Type: 2
   m_Color: {r: .522058845, g: .782454431, b: 1, a: 1}
-  m_Intensity: 8
+  m_Intensity: 1.63
   m_Range: 1.39999998
   m_SpotAngle: 30
   m_CookieSize: 10
@@ -402,6 +407,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   specialAttackValue: 0
+--- !u!114 &11408728
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 169766}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d991687871ac9d48adf64ea2def676f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentKeyMajor: 1
+  currentRoot: 8
+--- !u!114 &11415566
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 169766}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 385be4abb65204c49b9c03ae692365b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &11421648
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -498,7 +527,32 @@ MonoBehaviour:
   anim: {fileID: 9569760}
   auraLight: {fileID: 10869758}
   R: 8
+  instrument: Violin
   majorKey: 1
+--- !u!114 &11462686
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 169766}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe135bae914dba44b87ddc6c161384a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stepSound: {fileID: 8300000, guid: d1e7312e12ac1a647b8c5fc0addd6d05, type: 3}
+--- !u!114 &11468312
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 169766}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee8a4ee1d7211b242aeb84e3b459e99a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  med: {fileID: 5000000, guid: 3054f7944fb68294485b269e831e09d6, type: 2}
 --- !u!114 &11469758
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -524,11 +578,28 @@ MonoBehaviour:
   sightStart: {fileID: 469760}
   sightEnd: {fileID: 469770}
   notTraversable: 0
+  reachedApex: 1
   onLadder: 0
   move: 0
   keyRight: 100
   keyLeft: 97
   keyJump: 32
+--- !u!114 &11482310
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 169766}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1a2980ab5f13264f872123267c7dc91, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+  health: 0
+  maxArmor: 0
+  armor: 0
+  regeneration: 0
 --- !u!114 &11484464
 MonoBehaviour:
   m_ObjectHideFlags: 1

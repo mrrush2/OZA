@@ -16,6 +16,7 @@ public class CharacterKontroller : MonoBehaviour {
 	public float jumpForce = 50f;
 	public Transform sightStart, sightEnd;
 	public bool notTraversable;
+	public bool reachedApex = true;
 
 	public bool onLadder = false;
 
@@ -81,7 +82,7 @@ public class CharacterKontroller : MonoBehaviour {
 				move = 0F; // Reset velocity if sufficiently slow
 		}
 
-		if (grounded && Input.GetKeyDown (keyJump) && rigidbody2D.velocity.y < 0) 
+		if (grounded && Input.GetKeyDown (keyJump) && rigidbody2D.velocity.y < 0 && reachedApex) 
 		{
 			anim.SetBool ("Ground", false);
 			rigidbody2D.AddForce (new Vector2 (0, (-50*rigidbody2D.velocity.y)));
@@ -89,10 +90,15 @@ public class CharacterKontroller : MonoBehaviour {
 		}
 
 
-		if (grounded && Input.GetKeyDown(keyJump)/* && rigidbody2D.velocity.y < 0.1*/)
+		if (grounded && Input.GetKeyDown(keyJump) && reachedApex)
 		{
 			anim.SetBool("Ground",false);
 			rigidbody2D.AddForce (new Vector2(0, jumpForce));
+			reachedApex = false;
+		}
+		if (!reachedApex && rigidbody2D.velocity.y <= -0.001f)
+		{
+			reachedApex = true;
 		}
 	}
 

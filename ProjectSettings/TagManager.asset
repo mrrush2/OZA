@@ -3,6 +3,10 @@
 --- !u!78 &1
 TagManager:
   tags:
+  - DamageableObject
+  - EnemyAttack
+  - 
+  - PlayerAttack
   - 
   Builtin Layer 0: Default
   Builtin Layer 1: TransparentFX
@@ -14,9 +18,9 @@ TagManager:
   Builtin Layer 7: 
   User Layer 8: Player
   User Layer 9: Enemy
-  User Layer 10: PlayerProjectile
+  User Layer 10: PlayerAttack
   User Layer 11: Trigger
-  User Layer 12: 
+  User Layer 12: EnemyAttack
   User Layer 13: 
   User Layer 14: 
   User Layer 15: 

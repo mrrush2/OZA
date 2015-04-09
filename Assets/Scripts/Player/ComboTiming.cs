@@ -2,47 +2,49 @@
 using System.Collections;
 
 public class ComboTiming : MonoBehaviour {
-
+	
 	GameObject player;						// A reference to the player object.
 	CombatControllerIII combatController;	// A reference to the combat controller script on the player.
 	Combos comboScript;
-
+	ComboEffects effects;
+	
 	public float baseNoteInterval = 0.5f; // for the "par time"
-
+	
 	public float firstNoteTime;			// Time when the first note of a combo is played.								ONLY PUBLIC FOR DEBUG
 	public float secondNoteTime;		// Time when the second note of a combo is played.								ONLY PUBLIC FOR DEBUG
 	public float noteInterval;			// Time between the first and second notes, as a baseline for "beats."			ONLY PUBLIC FOR DEBUG
 	public float songTime;				// Time it takes to play an entire song.										YOU GET THE IDEA
 	public float songTimeAccounter = 0;	// Accounts for previous song time.
 	public float predictedSongTime;		// Time the script expects a song to take to play based on the note interval
-										// that the player specifies with their first two notes, and the "beats"
-										// defined by the song.
+	// that the player specifies with their first two notes, and the "beats"
+	// defined by the song.
 	public float baseTime;					// The "par" time of a song. Based on some standard note Interval and the
-										// total beats in a combo, defined by the combo.
+	// total beats in a combo, defined by the combo.
 	public float shittynessConstant;		// How far away songTime is from predictedSongTime.
 	public float speedBonus;				// How far away songTime is from baseTime (par.)
-
-
+	
+	
 	private bool firstSet = false;
 	private bool secondSet = false;
-
+	
 	// Use this for initialization
 	void Awake () {
 		player = GameObject.FindGameObjectWithTag ("Player");			// Finds the player
 		combatController = player.GetComponent<CombatControllerIII>();	// Ref to combat script
 		comboScript = player.GetComponent<Combos>();					// Ref to combo script
+		effects = player.GetComponent<ComboEffects>();
 	}
 	
 	// Update is called constantly
 	void Update () {
-
+		
 		// Manual Reset
 		if (Input.GetKeyDown (KeyCode.Keypad0) || Input.GetKeyDown (combatController.keyReset)) 
 		{
 			Reset ();
 		}
-
-
+		
+		
 		// Sets the time of the first note played.
 		if (combatController.songValue.Length == 1 && !firstSet)
 		{
@@ -57,39 +59,42 @@ public class ComboTiming : MonoBehaviour {
 			// Sets the note interval based on the two times.
 			noteInterval = secondNoteTime - firstNoteTime;
 		}
-						
-
-					// Requires new variables in the soon-to-exist ComboCheck class.
-
+		
+		
+		// Requires new variables in the soon-to-exist ComboCheck class.
+		
 		// All the damage calculations when a combo is played are here
 		if (comboScript.playedCombo)
 		{
 			comboScript.playedCombo = false; // Resets as it goes so it can be called again afterwards.
-
-			songTimeAccounter = songTime;									// Makes sure ever part of a multi-part combo has a time that concerns only itself, not the full combo.
+			
+			songTimeAccounter += songTime;									// Makes sure ever part of a multi-part combo has a time that concerns only itself, not the full combo.
 			songTime = Time.time - firstNoteTime - songTimeAccounter;		// Actually does the math for that ^^^
 			predictedSongTime = noteInterval * comboScript.intervals;		// Comes up with how fast you would finish the song if you played perfectly in time.
 			shittynessConstant = Mathf.Abs(predictedSongTime - songTime);	// Tells you how much you suck at being in time.
-								
-								
+			
+			
 			baseTime = comboScript.intervals * baseNoteInterval;			// Comes up with the par time for a song based on its intervals (beats.)
 			speedBonus = baseTime - songTime;								// Calculates your speed bonus
 			if (speedBonus < 0)
 				speedBonus = 0;												// No negative bonuses! I am a merciful god.
-										
+			
 			comboScript.Damage = comboScript.Damage - shittynessConstant + speedBonus;	// Calculates the new damage after all that silly math.
-
+			
+			
+			effects.Invoke (comboScript.comboMostRecentlyPlayed);	// Invokes the effect of the combo most recently played.
+			//combatController.FireMd (comboScript.Damage, 4f);	// This where the effect of a combo is ACTUALLY INVOKED. This line will be generalized.
 			// Auto Resets, only after the final piece of a combo.
 			if (combatController.songValue.Length == 0) 
 			{
 				Reset ();
 			}
-
+			
 		}
-
-
+		
+		
 	}
-
+	
 	void Reset()
 	{
 		firstSet = false;		// So we can get a new time for the next combo.
