@@ -41,6 +41,6 @@ public class ScalesListPanel : MonoBehaviour
 
 	void Update ()
 	{
-		thisPanel.GetComponent<RectTransform>().sizeDelta = new Vector2 (161.2f, (float)((numberOfButtons * 20f) + 1));
+		thisPanel.GetComponent<RectTransform>().sizeDelta = new Vector2 (173.1f, (float)((numberOfButtons * 20f) + 1));
 	}
 }

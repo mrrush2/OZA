@@ -10,9 +10,12 @@ public class ScalesOBJ : MonoBehaviour
 	
 	public bool currentKeyMajor = true;
 	public int currentRoot = 8;
+	public Scale currentScale;
 
 	void Awake ()
 	{
+		currentScale = cMajor; // Init so buttons know what color to be.
+						
 		player = GameObject.FindGameObjectWithTag ("Player"); //Initialize player references.
 		combat = player.GetComponent<CombatControllerIII>();
 		// DEBUG: Adds cMajor and Minor to the list, for testing purposes.
@@ -51,12 +54,14 @@ public class ScalesOBJ : MonoBehaviour
 		if (scale.major)
 		{
 			combat.ChangeKeyMajor (scale.root);
+			currentScale = scale;
 			currentKeyMajor = true;
 			currentRoot = scale.root;
 		}
 		else
 		{
 			combat.ChangeKeyMinor (scale.root);
+			currentScale = scale;
 			currentKeyMajor = false;
 			currentRoot = scale.root;
 		}
