@@ -6,6 +6,7 @@ public class ComboTiming : MonoBehaviour {
 	GameObject player;						// A reference to the player object.
 	CombatControllerIII combatController;	// A reference to the combat controller script on the player.
 	Combos comboScript;
+	ComboEffects effects;
 	
 	public float baseNoteInterval = 0.5f; // for the "par time"
 	
@@ -31,6 +32,7 @@ public class ComboTiming : MonoBehaviour {
 		player = GameObject.FindGameObjectWithTag ("Player");			// Finds the player
 		combatController = player.GetComponent<CombatControllerIII>();	// Ref to combat script
 		comboScript = player.GetComponent<Combos>();					// Ref to combo script
+		effects = player.GetComponent<ComboEffects>();
 	}
 	
 	// Update is called constantly
@@ -80,7 +82,8 @@ public class ComboTiming : MonoBehaviour {
 			comboScript.Damage = comboScript.Damage - shittynessConstant + speedBonus;	// Calculates the new damage after all that silly math.
 			
 			
-			combatController.FireMd (comboScript.Damage, 4f);	// This where the effect of a combo is ACTUALLY INVOKED. This line will be generalized.
+			effects.Invoke (comboScript.comboMostRecentlyPlayed);	// Invokes the effect of the combo most recently played.
+			//combatController.FireMd (comboScript.Damage, 4f);	// This where the effect of a combo is ACTUALLY INVOKED. This line will be generalized.
 			// Auto Resets, only after the final piece of a combo.
 			if (combatController.songValue.Length == 0) 
 			{

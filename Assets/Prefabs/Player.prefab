@@ -88,6 +88,7 @@ GameObject:
   - 114: {fileID: 11408728}
   - 114: {fileID: 11482310}
   - 114: {fileID: 11415566}
+  - 114: {fileID: 11468312}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -527,6 +528,18 @@ MonoBehaviour:
   R: 8
   instrument: Violin
   majorKey: 1
+--- !u!114 &11468312
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 169766}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee8a4ee1d7211b242aeb84e3b459e99a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  med: {fileID: 5000000, guid: 3054f7944fb68294485b269e831e09d6, type: 2}
 --- !u!114 &11469758
 MonoBehaviour:
   m_ObjectHideFlags: 1

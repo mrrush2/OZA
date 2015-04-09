@@ -10,6 +10,7 @@ public class Combos : MonoBehaviour {
 
 	public int specialAttackValue = 0;
 	public bool playedCombo = false;
+	public SongsOBJ.Combo comboMostRecentlyPlayed;
 
 	public int intervals;	// The number of "beats" in any one song, in terms of the time between the first two notes of it.
 	public float Damage;	// The damage of any combo attack
@@ -36,6 +37,7 @@ public class Combos : MonoBehaviour {
 			// If you play a song and it is the correct part of the combo.
 			if ((combat.songValue == songs.comboList[i].songValue) && (songs.specialAttackValue == songs.comboList[i].indexOfFullSong))
 			{
+				comboMostRecentlyPlayed = songs.comboList[i];
 				playedCombo = true;			// Cannot happen inside TimingInfo, must be set before for the timing script to pick up the values.
 				TimingInfo (songs.comboList[i].intervals, songs.comboList[i].damage);	// Sends out the timing info for this combo.
 				if (songs.comboList[i].finalPart)	// Last part?
