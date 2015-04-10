@@ -15,6 +15,7 @@ GameObject:
   - 95: {fileID: 9504756}
   - 114: {fileID: 11468000}
   - 114: {fileID: 11419664}
+  - 114: {fileID: 11480284}
   m_Layer: 9
   m_Name: Zombie01
   m_TagString: Untagged
@@ -52,6 +53,23 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &192248
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 492248}
+  - 61: {fileID: 6192248}
+  - 114: {fileID: 11425326}
+  m_Layer: 12
+  m_Name: HitBoxDamage
+  m_TagString: EnemyAttack
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!4 &404756
 Transform:
   m_ObjectHideFlags: 1
@@ -59,11 +77,12 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 104756}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.36863136, y: .396359652, z: 0}
+  m_LocalPosition: {x: -2.48000002, y: -.779999971, z: 0}
   m_LocalScale: {x: -1, y: 1, z: 1}
   m_Children:
   - {fileID: 467998}
   - {fileID: 468000}
+  - {fileID: 492248}
   m_Father: {fileID: 0}
   m_RootOrder: 0
 --- !u!4 &467998
@@ -90,6 +109,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 404756}
   m_RootOrder: 1
+--- !u!4 &492248
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 192248}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 404756}
+  m_RootOrder: 2
 --- !u!50 &5004756
 Rigidbody2D:
   m_ObjectHideFlags: 1
@@ -127,6 +158,17 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_Size: {x: .129999995, y: .280000001}
   m_Center: {x: 0, y: 0}
+--- !u!61 &6192248
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 192248}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Size: {x: .22299099, y: .451695204}
+  m_Center: {x: -.00733017921, y: -.0894293785}
 --- !u!95 &9504756
 Animator:
   serializedVersion: 3
@@ -158,6 +200,29 @@ MonoBehaviour:
   maxArmor: 0
   armor: 0
   regeneration: 0
+--- !u!114 &11425326
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 192248}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f3cd0c879f232740bd61cefad3d9a7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 10
+  speed: 2.5
+  gravity: 0
+  timeout: 10
+  direction: 1
+  knockback: 1
+  wallLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  thisNote: {fileID: 0}
+  damageValue: 20
+  knockbackValue: 3
 --- !u!114 &11468000
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -177,6 +242,19 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1
   edge: 0
+--- !u!114 &11480284
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 104756}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf9bc86f4ea1dde44a79791a0bdc3575, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  zombieAttack: {fileID: 0}
+  attackOrigin: {fileID: 0}
 --- !u!212 &21204756
 SpriteRenderer:
   m_ObjectHideFlags: 1
