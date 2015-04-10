@@ -5,8 +5,10 @@ public class BackgroundMusics2 : MonoBehaviour {
 
 	public Transform playerposition; 
 	public	float starttime; 
+	ScalesOBJ	ScalesTime;
 
 	int Root = 8;
+	public int DDelay = 0;
 	public AudioClip[] note = new AudioClip[10]; 
 
 	public void LoadSounds(int S) //Sounds are loaded in the relative minor of the major key, will implement that if minor then keep minor..? 
@@ -66,16 +68,12 @@ public class BackgroundMusics2 : MonoBehaviour {
 		return send;
 	}
 
-	void NotePlay()
+	public void NotePlay()
 	{
-		if ((Time.time - starttime) > 1) 
-		{
-			starttime = Time.time; 
 			nextnote = BassNotes (TrueProbability, currentnote);
 			currentnote = nextnote; 
 			AudioSource.PlayClipAtPoint (note [currentnote], playerposition.position);
 			playnote = false;
-		}
 	}
 
 	//Used to initialize
@@ -88,6 +86,13 @@ public class BackgroundMusics2 : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{
-		NotePlay (); 
+		if ((Time.time - starttime) > 1) {
+			starttime = Time.time; 
+			NotePlay ();
+		}
+		int R = ScalesTime.currentRoot;
+		if (R != Root)
+				LoadSounds (R);
+		
 	}
 }
