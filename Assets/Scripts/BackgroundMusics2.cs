@@ -7,20 +7,19 @@ public class BackgroundMusics2 : MonoBehaviour {
 	public	float starttime; 
 
 	int Root = 8;
-	string instrument = "violin"; 
 	public AudioClip[] note = new AudioClip[10]; 
 
 	public void LoadSounds(int S) //Sounds are loaded in the relative minor of the major key, will implement that if minor then keep minor..? 
 	{
-		note[0] = Resources.Load ("Sounds/" + instrument + "/" + (S- 3)) 	as AudioClip;	
-		note[1] = Resources.Load ("Sounds/" + instrument + "/" + (S - 1)) 	as AudioClip;
-		note[2] = Resources.Load ("Sounds/" + instrument + "/" + (S))	 	as AudioClip;
-		note[3] = Resources.Load ("Sounds/" + instrument + "/" + (S + 2)) 	as AudioClip;
-		note[4] = Resources.Load ("Sounds/" + instrument + "/" + (S + 4)) 	as AudioClip;
-		note[5] = Resources.Load ("Sounds/" + instrument + "/" + (S + 5)) 	as AudioClip;
-		note[6] = Resources.Load ("Sounds/" + instrument + "/" + (S + 7)) 	as AudioClip;
-		note[7] = Resources.Load ("Sounds/" + instrument + "/" + (S + 9)) 	as AudioClip;
-		note[8] = Resources.Load ("Sounds/" + instrument + "/" + (S + 11))	as AudioClip; //should be an empty file of no sound for "rest" 
+		note[0] = Resources.Load ("Sounds/SineSynth/" + (S- 3)) 	as AudioClip;	
+		note[1] = Resources.Load ("Sounds/SineSynth/" + (S - 1)) 	as AudioClip;
+		note[2] = Resources.Load ("Sounds/SineSynth/" + (S))	 	as AudioClip;
+		note[3] = Resources.Load ("Sounds/SineSynth/" + (S + 2)) 	as AudioClip;
+		note[4] = Resources.Load ("Sounds/SineSynth/" + (S + 4)) 	as AudioClip;
+		note[5] = Resources.Load ("Sounds/SineSynth/" + (S + 5)) 	as AudioClip;
+		note[6] = Resources.Load ("Sounds/SineSynth/" + (S + 7)) 	as AudioClip;
+		note[7] = Resources.Load ("Sounds/SineSynth/" + (S + 9)) 	as AudioClip;
+		note[8] = Resources.Load ("Sounds/SineSynth/" + (S + 11))	as AudioClip; //should be an empty file of no sound for "rest" 
 	}
 
 	public int[,] NoteProbabilityGenerator()
