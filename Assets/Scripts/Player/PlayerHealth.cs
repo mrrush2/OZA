@@ -8,7 +8,7 @@ public class PlayerHealth : DamageableObject {
 			Debug.Log ("Player collider triggered as attack hit.");
 			CustomProjectile attack = other.gameObject.GetComponent<CustomProjectile>();
 			damage (attack.getDamage());
-			attack.die ();
+			attack.die (true);
 		}
 		Debug.Log ("-Player collision- HP: " + getHealth ());
 	}
