@@ -85,6 +85,7 @@ GameObject:
   - 114: {fileID: 11423302}
   - 114: {fileID: 11423304}
   - 114: {fileID: 11407658}
+  - 114: {fileID: 11497638}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -541,6 +542,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cursor: {fileID: 2800000, guid: a72530337c062a44c8691674f5c7ea05, type: 3}
+--- !u!114 &11497638
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 169766}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1a2980ab5f13264f872123267c7dc91, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+  health: 0
+  maxArmor: 0
+  armor: 0
+  regeneration: 0
 --- !u!124 &12469758
 Behaviour:
   m_ObjectHideFlags: 1

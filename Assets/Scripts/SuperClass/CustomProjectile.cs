@@ -39,11 +39,12 @@ using System.Collections;
 
 public class CustomProjectile : MonoBehaviour {
 
-	protected float damage = 10f,
+	public float damage = 10f,
 					speed = 2.5f,
 					gravity = 0f,
 					timeout = 10f,
-					direction = 1f;
+					direction = 1f,
+					knockback = 1f;
 
 	protected bool canPunch = false,
 				   directionRight = true;
@@ -71,6 +72,8 @@ public class CustomProjectile : MonoBehaviour {
 		if (value < 0) this.direction = -1;
 		if (value > 0) this.direction = 1;
 	}
+	public float getKnockback() {return this.knockback;}
+	public void setKnockback(float value) {this.knockback = value;}
 
 	// Manipulation methods
 
@@ -89,6 +92,17 @@ public class CustomProjectile : MonoBehaviour {
 		Destroy (this.gameObject);
 	}
 
+	public void die(bool checkForPunch) {
+		if (checkForPunch) {
+			if (this.getCanPunch ()) {
+				Debug.Log ("Projectile cannot die; it can puncture");
+				return;
+			}
+		}
+		Debug.Log ("Projectile WILL die");
+		this.die ();
+	}
+
 	// Use this for initialization
 	void Start () {
 		startTime = Time.time;
@@ -100,9 +114,11 @@ public class CustomProjectile : MonoBehaviour {
 	
 	// Update is called once per frame
 	void FixedUpdate () {
-		rigidbody2D.velocity = new Vector2(direction * speed,0);
+		if (speed != 0) {
+			rigidbody2D.velocity = new Vector2 (direction * speed, 0);
+		}
 		bool noteHit = Physics2D.OverlapCircle (thisNote.position , .02f, wallLayer);
-		if (Time.time - startTime >= timeout || noteHit)
+		if ((timeout != 0 && Time.time - startTime >= timeout) || noteHit)
 			die ();
 	}
 }
