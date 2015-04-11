@@ -21,8 +21,7 @@ public class BackgroundMusics2 : MonoBehaviour {
 		note[5] = Resources.Load ("Sounds/SineSynth/" + (S + 5)) 	as AudioClip;
 		note[6] = Resources.Load ("Sounds/SineSynth/" + (S + 7)) 	as AudioClip;
 		note[7] = Resources.Load ("Sounds/SineSynth/" + (S + 9)) 	as AudioClip;
-		//note[8] = Resources.Load ("Sounds/SineSynth/" + (S + 11))	as AudioClip; //should be an empty file of no sound for "rest" 
-		note[8] = Resources.Load ("Sounds/SineSynth/Rest")	as AudioClip; //should be an empty file of no sound for "rest" 
+		note[8] = Resources.Load ("Sounds/SineSynth/Rest")			as AudioClip;
 	}
 
 	public int[,] NoteProbabilityGenerator()
@@ -81,6 +80,7 @@ public class BackgroundMusics2 : MonoBehaviour {
 	void Start () 
 	{
 		LoadSounds (Root);
+		AudioSource.PlayClipAtPoint(note[0], playerposition.position);
 		TrueProbability = NoteProbabilityGenerator ();
 	}
 	
