@@ -1,52 +1,43 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class CameraLogic : MonoBehaviour {
-
-	GameObject player;
-	bool followingPlayer = true;
-
-	float Xpos, Ypos, Zpos;
-
-
-	// Use this for initialization
-	void Start ()
+public class CameraLogic : MonoBehaviour 
+{
+	GameObject mainCamera;
+	static float shake = 0f;
+	static float shakeMult = 0.7f;
+	static float decreaseTime = 1.0f;
+	
+	void Awake ()
 	{
-		player = GameObject.FindGameObjectWithTag ("Player");
-		Xpos = player.transform.position.x;
-		Ypos = player.transform.position.y;
-		Zpos = -10;
-		transform.position = new Vector3 (Xpos, Ypos, Zpos);
+		mainCamera = GameObject.FindGameObjectWithTag("MainCamera");
 	}
 	
-	// Update is called constantly
 	void Update ()
 	{
-		if (followingPlayer)
+		if (shake > 0)
 		{
-			////// X //////
-			if ((transform.position.x < player.transform.position.x + 1) && player.transform.localScale == new Vector3(1, 1, 1))
-			{
-				transform.Translate (5 * Time.deltaTime,0 , 0);
-			}
-
-
-			if ((transform.position.x > player.transform.position.x - 1) && player.transform.localScale == new Vector3(-1, 1, 1))
-			{
-				transform.Translate (-5 * Time.deltaTime,0 , 0);
-			}
-		
-			////// Y //////
-			Ypos = player.transform.position.y;
-
-			////// Set Position //////
-			transform.position = new Vector3(transform.position.x, Ypos, Zpos);
+			//mainCamera.transform.localPosition = Random.insideUnitSphere * shakeMult * shake;
+			mainCamera.transform.localPosition = new Vector3 ((float)Random.Range (-2,2) * shakeMult * shake, ((float)Random.Range (-2,2) * shakeMult * shake) + 0.1733569f, -10);
+			shake -= Time.deltaTime * decreaseTime;
 		}
+		else
+		{
+			shake = 0.0f;
+		}
+	
+	// TODO: Get rid of this debug screenshake call!
+	if (Input.GetKeyDown (KeyCode.C))
+	{
+		ShakeItUp (0.25f, 0.2f, 1.0f);
+	}
+	
 	}
 
-	// FixedUpdate is called once per frame
-	void FixedUpdate()
+	public static void ShakeItUp (float amount, float mult, float falloff)
 	{
-
+		shake = amount;
+		shakeMult = mult;
+		falloff = 1.0f;
 	}
 }

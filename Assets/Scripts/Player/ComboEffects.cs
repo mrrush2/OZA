@@ -44,6 +44,7 @@ public class ComboEffects : MonoBehaviour
 			note.setDirection (combat.heWhoShoots.localScale.x);
 			note.setDamage (combos.Damage);
 			note.setSpeed (2);
+			CameraLogic.ShakeItUp(0.25f, 0.2f, 1.0f);
 		}
 	}
 }

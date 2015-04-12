@@ -13,6 +13,7 @@ GameObject:
   - 124: {fileID: 12469758}
   - 81: {fileID: 8169758}
   - 114: {fileID: 11484464}
+  - 114: {fileID: 11452480}
   m_Layer: 8
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -529,6 +530,17 @@ MonoBehaviour:
   R: 8
   instrument: Violin
   majorKey: 1
+--- !u!114 &11452480
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 169758}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d3624ea9610ec54eb90ebe47aa17294, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &11462686
 MonoBehaviour:
   m_ObjectHideFlags: 1
