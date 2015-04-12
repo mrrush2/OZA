@@ -14,6 +14,8 @@ public class InstrumentButton : MonoBehaviour
 	
 	ColorBlock buttonColors;
 	
+	AudioClip clickSound;
+	
 	// Useful color definitions.
 	Color transparent = new Color(0f, 0f, 0f, 0f);
 	Color mouseover = new Color(0.7f, 0.7f, 0.7f, 1f);
@@ -25,6 +27,8 @@ public class InstrumentButton : MonoBehaviour
 		player = GameObject.FindGameObjectWithTag ("Player");
 		instruments = player.GetComponent<InstrumentsOBJ> ();
 		combat = player.GetComponent<CombatControllerIII> ();
+		
+		clickSound = Resources.Load ("Sounds/Generic/ClickBeep") as AudioClip;
 	}
 
 	void Start ()
@@ -59,5 +63,11 @@ public class InstrumentButton : MonoBehaviour
 			buttonColors.highlightedColor = mouseover;
 			instrumentButton.colors = buttonColors; // To update to the new values
 		}		
+	}
+	
+	
+	public void Click()
+	{
+		AudioSource.PlayClipAtPoint (clickSound, player.transform.position);
 	}
 }

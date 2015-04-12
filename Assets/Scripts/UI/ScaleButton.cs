@@ -15,6 +15,8 @@ public class ScaleButton : MonoBehaviour {
 	
 	ColorBlock buttonColors;	// Temp var for changing colors
 	
+	AudioClip clickSound;
+	
 	// Useful color definitions.
 	Color transparent = new Color(0f, 0f, 0f, 0f);
 	Color mouseover = new Color(0.7f, 0.7f, 0.7f, 1f);
@@ -26,6 +28,8 @@ public class ScaleButton : MonoBehaviour {
 		scaleButton = this.GetComponent<Button>();				// Init this button ref
 		player = GameObject.FindGameObjectWithTag ("Player"); 	// Init player references
 		scales = player.GetComponent<ScalesOBJ>();				// Init scale script ref
+		
+		clickSound = Resources.Load ("Sounds/Generic/ClickBeep") as AudioClip;
 	}
 	
 	
@@ -66,4 +70,8 @@ public class ScaleButton : MonoBehaviour {
 		}		
 	}
 
+	public void Click()
+	{
+		AudioSource.PlayClipAtPoint (clickSound, player.transform.position);
+	}
 }

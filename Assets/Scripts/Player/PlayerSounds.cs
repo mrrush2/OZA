@@ -5,11 +5,13 @@ public class PlayerSounds : MonoBehaviour
 {
 	GameObject player;
 	
-	public AudioClip stepSound;
+	AudioClip stepSound;
 
 	void Awake ()
 	{
 		player = GameObject.FindGameObjectWithTag ("Player");
+		stepSound = Resources.Load ("Sounds/Generic/Footstep") as AudioClip;
+
 	}
 
 	

@@ -11,12 +11,16 @@ public class SongButton : MonoBehaviour {
 	public string name;					// The name of the scale this button activates.
 	SongsOBJ.Combo songToView;
 	
+	AudioClip clickSound;
+	
 	// Use this for initialization
 	void Awake ()
 	{
 		songButton = this.GetComponent<Button>();				// Init this button ref
 		player = GameObject.FindGameObjectWithTag ("Player"); 	// Init player references
 		songs = player.GetComponent<SongsOBJ>();				// Init scale script ref
+		
+		clickSound = Resources.Load ("Sounds/Generic/ClickBeep") as AudioClip;
 	}
 	
 	
@@ -38,6 +42,9 @@ public class SongButton : MonoBehaviour {
 		
 	}
 	
-	
+	public void Click()
+	{
+		AudioSource.PlayClipAtPoint (clickSound, player.transform.position);
+	}
 
 }

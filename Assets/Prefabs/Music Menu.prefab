@@ -1843,9 +1843,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   openRadius: .25
-  clickSound: {fileID: 8300000, guid: 572c8a15709bc2c43993d618420edecf, type: 3}
-  menuOpenSound: {fileID: 8300000, guid: 917d45045093cf94eb3cf6109e42c1b7, type: 3}
-  menuCloseSound: {fileID: 8300000, guid: c940c63fee3bb9b4484f55e4590c9984, type: 3}
   standLight: {fileID: 10863608}
 --- !u!114 &11422378
 MonoBehaviour:
@@ -2720,7 +2717,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 11454004}
   m_HandleRect: {fileID: 22453988}
   m_Direction: 2
-  m_Value: 1
+  m_Value: 0
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -4361,7 +4358,7 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: 1.10000002, y: 0}
+  m_AnchoredPosition: {x: 1.10000002, y: -1.52587891e-05}
   m_SizeDelta: {x: 173.100006, y: 58.9000015}
   m_Pivot: {x: .5, y: .5}
 --- !u!224 &22453970
@@ -4522,7 +4519,7 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: 1.10000002, y: -3.05175781e-05}
+  m_AnchoredPosition: {x: 1.10000002, y: -1.52587891e-05}
   m_SizeDelta: {x: 173.100006, y: 58.9000015}
   m_Pivot: {x: .5, y: .5}
 --- !u!224 &22453988
@@ -4717,7 +4714,7 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: 1.10000002, y: 6.77108765e-05}
+  m_AnchoredPosition: {x: 1.10000002, y: -2.28881836e-05}
   m_SizeDelta: {x: 173.100006, y: 58.9000015}
   m_Pivot: {x: .5, y: .5}
 --- !u!1001 &100100000

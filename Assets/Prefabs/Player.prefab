@@ -540,7 +540,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe135bae914dba44b87ddc6c161384a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stepSound: {fileID: 8300000, guid: d1e7312e12ac1a647b8c5fc0addd6d05, type: 3}
 --- !u!114 &11468312
 MonoBehaviour:
   m_ObjectHideFlags: 1

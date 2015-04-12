@@ -17,9 +17,9 @@ public class MusicMenuScript : MonoBehaviour {
 	bool menuCurrentlyOpen = false;
 
 	// Sounds
-	public AudioClip clickSound;
-	public AudioClip menuOpenSound;
-	public AudioClip menuCloseSound;
+	AudioClip clickSound;
+	AudioClip menuOpenSound;
+	AudioClip menuCloseSound;
 
 	// Visual
 	Animator anim;
@@ -27,6 +27,11 @@ public class MusicMenuScript : MonoBehaviour {
 
 	// Use this for initialization
 	void Start() {
+		clickSound = Resources.Load ("Sounds/Generic/ClickBeep") as AudioClip;
+		menuOpenSound = Resources.Load ("Sounds/Generic/Open") as AudioClip;
+		menuCloseSound = Resources.Load ("Sounds/Generic/Close") as AudioClip;
+		
+				
 		anim = GetComponent < Animator > ();
 		KillAllMenus();
 	}
