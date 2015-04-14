@@ -200,7 +200,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 169766}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.05100012, y: -6.75400019, z: 0}
+  m_LocalPosition: {x: -1.59399998, y: .663999975, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 469758}
@@ -577,6 +577,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxSpeed: 3
   facingRight: 1
+  healthBar: {fileID: 0}
   grounded: 0
   groundCheck: {fileID: 469762}
   whatIsGround:
@@ -611,6 +612,8 @@ MonoBehaviour:
   maxArmor: 0
   armor: 0
   regeneration: 0
+  iFrameDuration: 0
+  iFrameTime: 0
 --- !u!114 &11484464
 MonoBehaviour:
   m_ObjectHideFlags: 1
