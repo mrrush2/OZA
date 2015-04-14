@@ -3,14 +3,10 @@ using System.Collections;
 
 public class PlayerHealth : DamageableObject {
 
-	void OnTriggerEnter2D(Collider2D other) {
-		if (other.gameObject.tag == "EnemyAttack") {
-			Debug.Log ("Player collider triggered as attack hit.");
-			CustomProjectile attack = other.gameObject.GetComponent<CustomProjectile>();
-			damage (attack.getDamage());
-			attack.die (true);
-		}
-		Debug.Log ("-Player collision- HP: " + getHealth ());
+	public override void Customize() {
+		this.setMaxHealth (100);
+		this.setIFrameDuration (50);
+		this.setIsPlayer (true);
 	}
 
 }
