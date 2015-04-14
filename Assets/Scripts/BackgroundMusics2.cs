@@ -4,8 +4,9 @@ using System.Collections;
 public class BackgroundMusics2 : MonoBehaviour {
 
 	public Transform playerposition; 
-	public	float starttime; 
+	public float starttime; 
 	ScalesOBJ	ScalesTime;
+	public bool play;
 
 	int Root = 8;
 	public int DDelay = 0;
@@ -82,14 +83,22 @@ public class BackgroundMusics2 : MonoBehaviour {
 		LoadSounds (Root);
 		AudioSource.PlayClipAtPoint(note[0], playerposition.position);
 		TrueProbability = NoteProbabilityGenerator ();
+		play = true;
 	}
 	
 	// Update is called once per frame
 	void Update () 
 	{
-		if ((Time.time - starttime) > 1) {
-			starttime = Time.time; 
-			NotePlay ();
+		if (Input.GetKeyDown (KeyCode.R))
+			play = false;
+		if (Input.GetKeyDown (KeyCode.F))
+			play = true;
+		if (play)
+		{
+			if ((Time.time - starttime) > 1) {
+				starttime = Time.time; 
+				NotePlay ();
+			}
 		}
 		int R = ScalesTime.currentRoot;
 		if (R != Root)

@@ -2,25 +2,34 @@
 using System.Collections;
 
 public class BackGroundNoteDelay : MonoBehaviour {
-
-	public BackgroundMusics2 DelayNote;
+	
 	double thisDelay;
 	public Transform playerposition; 
 	public float currenttime;
+	bool updates;
+	bool ifplay;
+	float ttime;
 
 	// Use this for initialization
 	void Start () {
 		thisDelay = 1.75;
 		currenttime = 0;
+		updates = false;
+		ifplay = GetComponent<BackgroundMusics2> ().play;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		if (Time.time > thisDelay) {
-			if (Time.time - currenttime > 1){
-				currenttime = Time.time;
-				GetComponent<BackgroundMusics2> ().NotePlay ();
+		ifplay = GetComponent<BackgroundMusics2> ().play;
+		if (ifplay) {
+			if (Time.time > thisDelay) {
+				if (Time.time - currenttime > 1) {
+					currenttime = Time.time;
+					GetComponent<BackgroundMusics2> ().NotePlay ();
+					updates = true;
+				}
 			}
-		}
+		} else 
+			thisDelay = 1.75 + Time.time;
 	}
 }
