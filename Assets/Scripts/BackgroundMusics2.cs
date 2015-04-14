@@ -5,8 +5,9 @@ public class BackgroundMusics2 : MonoBehaviour {
 
 	public Transform playerposition; 
 	public float starttime; 
-	ScalesOBJ	ScalesTime;
-	public bool play;
+	ScalesOBJ	ScalesTime;	// DECLARES ScalesOBJ ref, but does not set to anything
+	GameObject player;		// DECLARES player ref, but does not set
+	public bool play;		
 
 	int Root = 8;
 	public int DDelay = 0;
@@ -84,6 +85,8 @@ public class BackgroundMusics2 : MonoBehaviour {
 		AudioSource.PlayClipAtPoint(note[0], playerposition.position);
 		TrueProbability = NoteProbabilityGenerator ();
 		play = true;
+		player = GameObject.FindGameObjectWithTag("Player");	// SETS player ref
+		ScalesTime = player.GetComponent<ScalesOBJ>();			// SETS ScalesOBJ ref
 	}
 	
 	// Update is called once per frame
