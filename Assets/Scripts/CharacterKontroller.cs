@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class CharacterKontroller : MonoBehaviour {
 
@@ -7,6 +8,7 @@ public class CharacterKontroller : MonoBehaviour {
 	public bool facingRight = true;
 
 	DamageableObject player;
+	public Slider healthBar;
 	Animator anim;
 
 	public bool grounded = false;
@@ -105,6 +107,9 @@ public class CharacterKontroller : MonoBehaviour {
 		{
 			reachedApex = true;
 		}
+
+		// Quick healthbar stuff
+		healthBar.value = player.getHealth () / player.getMaxHealth ();
 	}
 
 	void Flip()
