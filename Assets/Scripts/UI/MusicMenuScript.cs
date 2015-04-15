@@ -11,7 +11,8 @@ public class MusicMenuScript : MonoBehaviour {
 	public Transform menuObject;			//The item that opens the menu
 	public LayerMask menuOpener;			//Player, basically
 	public float openRadius = 0.25f;		//How close the player must be
-
+	
+	Vector2 initial;
 	// Control variables
 	bool menuCanBeOpened = false;
 	bool menuCurrentlyOpen = false;
@@ -31,6 +32,7 @@ public class MusicMenuScript : MonoBehaviour {
 		menuOpenSound = Resources.Load ("Sounds/Generic/Open") as AudioClip;
 		menuCloseSound = Resources.Load ("Sounds/Generic/Close") as AudioClip;
 		
+		initial = menuObject.position;
 				
 		anim = GetComponent < Animator > ();
 		KillAllMenus();
@@ -55,6 +57,16 @@ public class MusicMenuScript : MonoBehaviour {
 			KillAllMenus();
 		}
 
+
+		// World's hackiest hack to make sure the menu is centered. Sleek and stupid.
+		if (menuCurrentlyOpen)
+		{
+			menuObject.position = new Vector2(0,0);
+		}
+		else
+		{
+			menuObject.position = initial;
+		}
 	
 	}
 	public void KillAllMenus() {
