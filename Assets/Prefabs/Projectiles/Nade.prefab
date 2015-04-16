@@ -12,6 +12,7 @@ GameObject:
   - 50: {fileID: 5015942}
   - 61: {fileID: 6115942}
   - 114: {fileID: 11415942}
+  - 61: {fileID: 6133846}
   m_Layer: 10
   m_Name: Nade
   m_TagString: Untagged
@@ -56,6 +57,17 @@ BoxCollider2D:
   m_Material: {fileID: 6200000, guid: cbe84634f01f7b84488850d21436b68f, type: 2}
   m_IsTrigger: 0
   m_Size: {x: .0700000003, y: .159999996}
+  m_Center: {x: 0, y: 0}
+--- !u!61 &6133846
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 115942}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Size: {x: .0900000036, y: .180000007}
   m_Center: {x: 0, y: 0}
 --- !u!114 &11415942
 MonoBehaviour:

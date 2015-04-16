@@ -26,7 +26,8 @@ public class Arpegginade : CustomProjectile {
 		effect = player.GetComponent<ComboEffects>();
 		combat = player.GetComponent<CombatControllerIII>();
 		radianMult =  6.28f / (float)explosionBitCount;		// For nice equal spacing of notes in a radial manner
-		nade.rigidbody2D.AddForce (new Vector2((player.transform.localScale.x * 100f),150f));	// Manually hardcoded initial velocity
+		nade.rigidbody2D.AddForce (new Vector2((player.transform.localScale.x * 120f) + (player.rigidbody2D.velocity.x*20),150f + (player.rigidbody2D.velocity.y*30)));	// Manually hardcoded initial velocity
+		nade.rigidbody2D.AddTorque (-1f);
 		
 		noteOne = combat.noteFirstS;
 		noteTwo = combat.noteThirdS;
@@ -43,7 +44,7 @@ public class Arpegginade : CustomProjectile {
 	}
 	void OnTriggerEnter2D(Collider2D other) 
 	{
-		if (other.gameObject.tag == "Enemy") 
+		if (other.tag == "Enemy") 
 		{
 			ChordSplosion();
 		}
@@ -53,7 +54,7 @@ public class Arpegginade : CustomProjectile {
 	{
 		for (int i = 0; i < explosionBitCount; i++)
 		{
-			chordElement = Instantiate(effect.med, nade.transform.position, nade.transform.rotation) as Rigidbody2D;	
+			chordElement = Instantiate(effect.med, nade.transform.position, player.transform.rotation) as Rigidbody2D;	
 			CustomProjectile note = chordElement.gameObject.GetComponent<CustomProjectile>();			
 			note.setDamage (7f);
 			note.setSpeed (0f);
