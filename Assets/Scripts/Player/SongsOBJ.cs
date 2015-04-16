@@ -37,7 +37,7 @@ public class SongsOBJ : MonoBehaviour
 	////// COMBO DEFINITIONS //////
 	/// ("Song Name", "Part of Song", "Notes to Play it", "# of Notes Including Rests", "Effect", "If End of Song")
 	/// C Major
-	public Combo MHLL1 = new Combo ("Mary Had a Little Lamb", 0, "6545666", 7, 10f, "Med", false);			// Mary Had a Little Lamb
+	public Combo MHLL1 = new Combo ("Mary Had a Little Lamb", 0, "6545666", 7, 10f, "Arpegginade", false);			// Mary Had a Little Lamb
 	public Combo MHLL2 = new Combo ("Mary Had a Little Lamb", 1, "6545666"+"555", 4, 10f, "Med", false);
 	public Combo MHLL3 = new Combo ("Mary Had a Little Lamb", 2, "6545666"+"555"+"688", 4, 10f, "Med", false);
 	public Combo MHLL4 = new Combo ("Mary Had a Little Lamb", 3, "6545666"+"555"+"688"+"6545666655654", 14, 20f, "SlowMed", true);

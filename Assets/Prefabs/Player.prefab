@@ -47,7 +47,7 @@ GameObject:
   m_Layer: 8
   m_Name: GroundCheck
   m_TagString: Untagged
-  m_Icon: {fileID: 266726316, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -200,7 +200,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 169766}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 77.7509995, y: -6.45300007, z: 0}
+  m_LocalPosition: {x: -2.02999997, y: -6.75500011, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 469758}
@@ -564,6 +564,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   med: {fileID: 5000000, guid: 3054f7944fb68294485b269e831e09d6, type: 2}
+  arpegginade: {fileID: 5015942, guid: 57869e5616ee1c94a95cef36d365298e, type: 2}
 --- !u!114 &11469758
 MonoBehaviour:
   m_ObjectHideFlags: 1
