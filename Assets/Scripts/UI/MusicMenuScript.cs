@@ -3,6 +3,10 @@ using System.Collections;
 
 public class MusicMenuScript : MonoBehaviour {
 
+	GameObject player;
+
+
+
 	public Canvas mainCanvas;				//All of the different menu sections are divided based on their canvas.
 	public Canvas musicMenuCanvas;
 	public Canvas instrumentsMenuCanvas;
@@ -36,6 +40,8 @@ public class MusicMenuScript : MonoBehaviour {
 				
 		anim = GetComponent < Animator > ();
 		KillAllMenus();
+		
+		player = GameObject.FindGameObjectWithTag("Player");
 	}
 	
 	// Update is called once per frame
@@ -82,15 +88,15 @@ public class MusicMenuScript : MonoBehaviour {
 	// This is an easy way to call sounds through the UI toolset.
 	public void ClickSound() {
 		if (menuCurrentlyOpen)
-			AudioSource.PlayClipAtPoint (clickSound, menuObject.position);
+			AudioSource.PlayClipAtPoint (clickSound, player.transform.position);
 	}
 	public void MenuOpenSound() {
 		if (!menuCurrentlyOpen)
-			AudioSource.PlayClipAtPoint (menuOpenSound, menuObject.position);
+			AudioSource.PlayClipAtPoint (menuOpenSound, player.transform.position);
 	}
 	public void MenuCloseSound() {
 		if (menuCurrentlyOpen)
-			AudioSource.PlayClipAtPoint (menuCloseSound, menuObject.position);
+			AudioSource.PlayClipAtPoint (menuCloseSound, player.transform.position);
 	}
 
 
