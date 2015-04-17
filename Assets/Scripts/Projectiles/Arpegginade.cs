@@ -54,7 +54,8 @@ public class Arpegginade : CustomProjectile {
 	{
 		for (int i = 0; i < explosionBitCount; i++)
 		{
-			chordElement = Instantiate(effect.med, nade.transform.position, player.transform.rotation) as Rigidbody2D;	
+			chordElement = Instantiate(effect.med, nade.transform.position, player.transform.rotation) as Rigidbody2D;
+			chordElement.GetComponentInChildren<Light>().enabled = false;	
 			CustomProjectile note = chordElement.gameObject.GetComponent<CustomProjectile>();			
 			note.setDamage (7f);
 			note.setSpeed (0f);
