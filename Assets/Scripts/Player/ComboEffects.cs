@@ -55,9 +55,9 @@ public class ComboEffects : MonoBehaviour
 	
 	void Update ()
 	{
-		if (Input.GetKeyDown (KeyCode.C))
-		{
-			effectInstance = Instantiate(arpegginade, combat.noteOrigin.position, combat.noteOrigin.rotation) as Rigidbody2D;
-		}
+//		if (Input.GetKeyDown (KeyCode.C))
+//		{
+//			effectInstance = Instantiate(arpegginade, combat.noteOrigin.position, combat.noteOrigin.rotation) as Rigidbody2D;
+//		}
 	}
 }

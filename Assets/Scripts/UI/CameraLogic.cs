@@ -26,11 +26,11 @@ public class CameraLogic : MonoBehaviour
 			shake = 0.0f;
 		}
 	
-	// TODO: Get rid of this debug screenshake call!
-	if (Input.GetKeyDown (KeyCode.C))
-	{
-		ShakeItUp (0.25f, 0.2f, 1.0f);
-	}
+	// Got rid of this debug screenshake call!
+//	if (Input.GetKeyDown (KeyCode.C))
+//	{
+//		ShakeItUp (0.25f, 0.2f, 1.0f);
+//	}
 	
 	}
 
