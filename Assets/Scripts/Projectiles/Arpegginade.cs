@@ -64,10 +64,10 @@ public class Arpegginade : CustomProjectile {
 			chordElement.rigidbody2D.AddForce(new Vector2((64*Mathf.Cos(radianMult*i)), 64*Mathf.Sin(radianMult*i)));
 			// MATH MAKES PRETTY EXPLOSIONS	
 		}
+		CameraLogic.ShakeItUp(0.25f, 0.2f, 1.0f);
 		AudioSource.PlayClipAtPoint(noteOne, nade.transform.position);
 		AudioSource.PlayClipAtPoint(noteTwo, nade.transform.position);
 		AudioSource.PlayClipAtPoint(noteThree, nade.transform.position);
-		CameraLogic.ShakeItUp(0.25f, 0.2f, 1.0f);
 		die();
 	}
 }
