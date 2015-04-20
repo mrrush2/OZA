@@ -50,6 +50,8 @@ public class ComboEffects : MonoBehaviour
 		if (invoked.effect.Equals("Arpegginade"))
 		{
 			effectInstance = Instantiate(arpegginade, combat.noteOrigin.position, combat.noteOrigin.rotation) as Rigidbody2D;
+			CustomProjectile note = effectInstance.gameObject.GetComponent<CustomProjectile>();
+			note.setDamage (combos.Damage);
 		}
 	}
 	
