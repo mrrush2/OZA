@@ -28,24 +28,36 @@ public class InstrumentsOBJ : MonoBehaviour
 	{
 		public string name;
 		public string spritesheetName;
+		public string perk1,
+					  perk2,
+					  perk3;
+		public string description;
 
-		//Constructor
-		public Instrument(string name)
+		//Constructors
+		public Instrument(string name, string perk1, string perk2, string perk3, string description)
 		{
 			this.name = name;
 			this.spritesheetName = name;
+			this.perk1 = perk1;
+			this.perk2 = perk2;
+			this.perk3 = perk3;
+			this.description = description;
 		}
-		public Instrument(string name, string spritesheetName)
+		public Instrument(string name, string spritesheetName, string perk1, string perk2, string perk3, string description)
 		{
 			this.name = name;
 			this.spritesheetName = spritesheetName;
+			this.perk1 = perk1;
+			this.perk2 = perk2;
+			this.perk3 = perk3;
+			this.description = description;
 		}
 	}
 
 
 	////// INSTRUMENT DEFINITIONS //////
-	public Instrument violin = new Instrument ("Violin");
-	public Instrument trumpet = new Instrument ("Trumpet");
+	public Instrument violin = new Instrument ("Violin", "testPerk1", "testPerk2", "testPerk3", "It's a violin.");
+	public Instrument trumpet = new Instrument ("Trumpet", "testPerk4", "testPerk5", "testperk6", "Toot toot.");
 	
 	
 
