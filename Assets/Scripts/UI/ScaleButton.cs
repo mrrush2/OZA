@@ -19,6 +19,8 @@ public class ScaleButton : MonoBehaviour {
 	
 	public static string nameOfCurrentScale;
 	
+	GameObject[] controllers;
+	
 	// Useful color definitions.
 	Color transparent = new Color(0f, 0f, 0f, 0f);
 	Color mouseover = new Color(0.7f, 0.7f, 0.7f, 1f);
@@ -30,8 +32,9 @@ public class ScaleButton : MonoBehaviour {
 		scaleButton = this.GetComponent<Button>();				// Init this button ref
 		player = GameObject.FindGameObjectWithTag ("Player"); 	// Init player references
 		scales = player.GetComponent<ScalesOBJ>();				// Init scale script ref
-		
 		clickSound = Resources.Load ("Sounds/Generic/ClickBeep") as AudioClip;
+		
+		controllers = GameObject.FindGameObjectsWithTag("ScaleController");
 	}
 	
 	
@@ -50,6 +53,7 @@ public class ScaleButton : MonoBehaviour {
 		scaleButton.onClick.AddListener(() => 				// Adds an event to the button
 		{ 
 			scales.ChangeKey (scaleToActivate);				// Changes the key
+			SetAllInfo(scaleToActivate);
 			nameOfCurrentScale = scaleToActivate.name;
 		});
 		
@@ -57,13 +61,14 @@ public class ScaleButton : MonoBehaviour {
 		
 	}
 	
-	void Update ()
+	void FixedUpdate ()
 	{
 		if (scaleButton.name.Equals(scales.currentScale.name))	// When selected, this button is green
 		{
 			buttonColors.normalColor = selected;
 			buttonColors.highlightedColor = selected;
 			scaleButton.colors = buttonColors; // To update to the new values
+			SetAllInfo(scaleToActivate);
 		}
 		else 											// When unselected, be normal			
 		{
@@ -76,5 +81,16 @@ public class ScaleButton : MonoBehaviour {
 	public void Click()
 	{
 		AudioSource.PlayClipAtPoint (clickSound, player.transform.position);
+	}
+	
+	
+	
+	void SetAllInfo (ScalesOBJ.Scale newScale)
+	{
+		foreach (GameObject i in controllers)
+		{
+			ScaleController controller = i.GetComponentInChildren<ScaleController>();
+			controller.SetInfo (newScale);
+		}
 	}
 }
