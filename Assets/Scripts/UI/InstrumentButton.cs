@@ -16,6 +16,8 @@ public class InstrumentButton : MonoBehaviour
 	
 	AudioClip clickSound;
 	
+	public static string nameOfCurrentInst;
+	
 	// Useful color definitions.
 	Color transparent = new Color(0f, 0f, 0f, 0f);
 	Color mouseover = new Color(0.7f, 0.7f, 0.7f, 1f);
@@ -44,7 +46,8 @@ public class InstrumentButton : MonoBehaviour
 		
 		instrumentButton.onClick.AddListener(() => 				// Adds an event to the button
 		{ 
-			instruments.ChangeInstrument(instrumentChosen);	
+			instruments.ChangeInstrument(instrumentChosen);
+			nameOfCurrentInst = instrumentChosen.name;	
 		});
 	}
 

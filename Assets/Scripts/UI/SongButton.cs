@@ -13,6 +13,8 @@ public class SongButton : MonoBehaviour {
 	
 	AudioClip clickSound;
 	
+	public static string nameOfCurrentSong;
+	
 	// Use this for initialization
 	void Awake ()
 	{
@@ -35,6 +37,7 @@ public class SongButton : MonoBehaviour {
 		
 		songButton.onClick.AddListener(() => 				// Adds an event to the button
 		{ 
+			nameOfCurrentSong = songToView.name;
 			// Add functions here to show various info about the chosen instrument		
 		});
 		

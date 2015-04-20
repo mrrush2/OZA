@@ -17,6 +17,8 @@ public class ScaleButton : MonoBehaviour {
 	
 	AudioClip clickSound;
 	
+	public static string nameOfCurrentScale;
+	
 	// Useful color definitions.
 	Color transparent = new Color(0f, 0f, 0f, 0f);
 	Color mouseover = new Color(0.7f, 0.7f, 0.7f, 1f);
@@ -48,6 +50,7 @@ public class ScaleButton : MonoBehaviour {
 		scaleButton.onClick.AddListener(() => 				// Adds an event to the button
 		{ 
 			scales.ChangeKey (scaleToActivate);				// Changes the key
+			nameOfCurrentScale = scaleToActivate.name;
 		});
 		
 
