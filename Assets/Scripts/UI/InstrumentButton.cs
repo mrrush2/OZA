@@ -18,7 +18,8 @@ public class InstrumentButton : MonoBehaviour
 	AudioClip clickSound;
 	
 	public static string nameOfCurrentInst;
-	InstrumentController controller;
+	
+	GameObject[] controllers;
 	
 	
 	// Useful color definitions.
@@ -34,7 +35,7 @@ public class InstrumentButton : MonoBehaviour
 		combat = player.GetComponent<CombatControllerIII> ();		
 		clickSound = Resources.Load ("Sounds/Generic/ClickBeep") as AudioClip;
 		
-		controller = GameObject.FindGameObjectWithTag("InstController").GetComponent<InstrumentController>();
+		controllers = GameObject.FindGameObjectsWithTag("InstController");
 	}
 
 	void Start ()
@@ -51,7 +52,7 @@ public class InstrumentButton : MonoBehaviour
 		instrumentButton.onClick.AddListener(() => 				// Adds an event to the button
 		{ 
 			instruments.ChangeInstrument(instrumentChosen);
-			controller.SetInfo(instrumentChosen);
+			SetAllInfo(instrumentChosen);
 			nameOfCurrentInst = instrumentChosen.name;	
 		});
 	}
@@ -64,7 +65,7 @@ public class InstrumentButton : MonoBehaviour
 			buttonColors.normalColor = selected;
 			buttonColors.highlightedColor = selected;
 			instrumentButton.colors = buttonColors; // To update to the new values
-			controller.SetInfo(instrumentChosen);
+			SetAllInfo(instrumentChosen);
 		}
 		else 											// When unselected, be normal			
 		{
@@ -80,6 +81,13 @@ public class InstrumentButton : MonoBehaviour
 		AudioSource.PlayClipAtPoint (clickSound, player.transform.position);
 	}
 
-		
+	void SetAllInfo (InstrumentsOBJ.Instrument newInstrument)
+	{
+		foreach (GameObject i in controllers)
+		{
+			InstrumentController controller = i.GetComponentInChildren<InstrumentController>();
+			controller.SetInfo (newInstrument);
+		}
+	}
 
 }
