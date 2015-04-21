@@ -7,6 +7,7 @@ public class Combos : MonoBehaviour {
 	CombatControllerIII combat;
 	SongsOBJ songs;
 	ComboTiming combotiming;
+	ScalesOBJ scales;
 
 	public int specialAttackValue = 0;
 	public bool playedCombo = false;
@@ -21,6 +22,7 @@ public class Combos : MonoBehaviour {
 		combat = player.GetComponent<CombatControllerIII>();	// Ref to combat script
 		songs = player.GetComponent<SongsOBJ> ();				// Ref to songs script
 		combotiming = player.GetComponent<ComboTiming>();
+		scales = player.GetComponent<ScalesOBJ>();
 	}
 
 	// For passing a combo's timing info into the ComboTiming script.
@@ -35,7 +37,7 @@ public class Combos : MonoBehaviour {
 		for (int i = 0; i < songs.comboList.Count; i++)
 		{
 			// If you play a song and it is the correct part of the combo.
-			if ((combat.songValue == songs.comboList[i].songValue) && (songs.specialAttackValue == songs.comboList[i].indexOfFullSong))
+			if ((combat.songValue == songs.comboList[i].songValue) && (songs.specialAttackValue == songs.comboList[i].indexOfFullSong) && (scales.currentScale == songs.comboList[i].scale))
 			{
 				comboMostRecentlyPlayed = songs.comboList[i];
 				playedCombo = true;			// Cannot happen inside TimingInfo, must be set before for the timing script to pick up the values.
