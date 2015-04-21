@@ -24,7 +24,7 @@ public class DEBUGViewer : MonoBehaviour
 		songCurrentlySelected = SongButton.nameOfCurrentSong;
 		scaleCurrentlySelected = ScaleButton.nameOfCurrentScale;
 		instCurrentlySelected = InstrumentButton.nameOfCurrentInst;
-		songValueTest = songs.getNotesArray(songs.MHLL4);
+		songValueTest = songs.getNotesArray(songs.CScale);
 	}
 	
 }

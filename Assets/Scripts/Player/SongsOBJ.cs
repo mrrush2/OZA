@@ -48,7 +48,7 @@ public class SongsOBJ : MonoBehaviour
 	public Combo MHLL3 = new Combo ("Mary Had a Little Lamb", ScalesOBJ.cMajor, 2, "6545666"+"555"+"688", 4, 10f, "Med", false);
 	public Combo MHLL4 = new Combo ("Mary Had a Little Lamb", ScalesOBJ.cMajor, 3, "6545666"+"555"+"688"+"6545666655654", 14, 20f, "SlowMed", true);
 	
-	public Combo CScale = new Combo("C Major Scale", ScalesOBJ.cMajor, 0, "123456789", 9, 10f, "Med", true);
+	public Combo CScale = new Combo("C Major Scale", ScalesOBJ.cMinor, 0, "123456789", 9, 10f, "Med", true);
 
 
 	// For debug purposes, initialize with songs in the list.
@@ -72,17 +72,32 @@ public class SongsOBJ : MonoBehaviour
 			notesArray[i] = rawNotes[i].ToString();			// Copies the base values of the notes to the string array.
 			
 			//int correctionFactor = 0;	// Accounts for the intervals of major and minor keys.
-			// Corrections for major keys
-			if (notesArray[i].Equals("1")) notesArray[i] = "0 ";
-			if (notesArray[i].Equals("2")) notesArray[i] = "2 ";
-			if (notesArray[i].Equals("3")) notesArray[i] = "4 ";
-			if (notesArray[i].Equals("4")) notesArray[i] = "5 ";
-			if (notesArray[i].Equals("5")) notesArray[i] = "7 ";
-			if (notesArray[i].Equals("6")) notesArray[i] = "9 ";
-			if (notesArray[i].Equals("7")) notesArray[i] = "11 ";
-			if (notesArray[i].Equals("8")) notesArray[i] = "12 ";
-			if (notesArray[i].Equals("9")) notesArray[i] = "14 ";
-			
+			// Base corrections for major keys
+			if (combo.scale.major)
+			{
+				if (notesArray[i].Equals("1")) notesArray[i] = "0 ";
+				if (notesArray[i].Equals("2")) notesArray[i] = "2 ";
+				if (notesArray[i].Equals("3")) notesArray[i] = "4 ";
+				if (notesArray[i].Equals("4")) notesArray[i] = "5 ";
+				if (notesArray[i].Equals("5")) notesArray[i] = "7 ";
+				if (notesArray[i].Equals("6")) notesArray[i] = "9 ";
+				if (notesArray[i].Equals("7")) notesArray[i] = "11 ";
+				if (notesArray[i].Equals("8")) notesArray[i] = "12 ";
+				if (notesArray[i].Equals("9")) notesArray[i] = "14 ";
+			}
+			// Base corrections for minor keys
+			else
+			{
+				if (notesArray[i].Equals("1")) notesArray[i] = "0 ";
+				if (notesArray[i].Equals("2")) notesArray[i] = "2 ";
+				if (notesArray[i].Equals("3")) notesArray[i] = "3 ";
+				if (notesArray[i].Equals("4")) notesArray[i] = "5 ";
+				if (notesArray[i].Equals("5")) notesArray[i] = "7 ";
+				if (notesArray[i].Equals("6")) notesArray[i] = "8 ";
+				if (notesArray[i].Equals("7")) notesArray[i] = "10 ";
+				if (notesArray[i].Equals("8")) notesArray[i] = "12 ";
+				if (notesArray[i].Equals("9")) notesArray[i] = "14 ";
+			}
 			
 			
 			notesArray[i] = ((int.Parse(notesArray[i]) + combo.scale.root) % 12).ToString();	// Maths it to translateable offsets
