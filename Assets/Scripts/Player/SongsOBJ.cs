@@ -21,9 +21,10 @@ public class SongsOBJ : MonoBehaviour
 		public float damage;				// The damage of any combo attack
 		public string effect;				// The ID of the effect
 		public bool finalPart;				// Controls whether there are more parts in any specific combo
+		public string description;
 
 		// Constructor for Combos.
-		public Combo(string name, ScalesOBJ.Scale scale, int indexOfFullSong, string songValue, int intervals, float damage, string effect, bool finalPart)
+		public Combo(string name, ScalesOBJ.Scale scale, int indexOfFullSong, string songValue, int intervals, float damage, string effect, bool finalPart, string description)
 		{
 			this.name = name;
 			this.scale = scale;
@@ -33,6 +34,7 @@ public class SongsOBJ : MonoBehaviour
 			this.damage = damage;
 			this.effect = effect;
 			this.finalPart = finalPart;
+			this.description = description;
 		}
 		
 
@@ -41,14 +43,14 @@ public class SongsOBJ : MonoBehaviour
 
 
 	////// COMBO DEFINITIONS //////
-	/// ("Song Name", "scale", "Part of Song", "Notes to Play it", "# of Notes Including Rests", "Damage", "Effect", "If End of Song")
+	/// ("Song Name", "scale", "Part of Song", "Notes to Play it", "# of Notes Including Rests", "Damage", "Effect", "If End of Song", "Description")
 	/// C Major
-	public Combo MHLL1 = new Combo ("Mary Had a Little Lamb", ScalesOBJ.cMajor, 0, "6545666", 7, 4f, "Arpegginade", false);			// Mary Had a Little Lamb
-	public Combo MHLL2 = new Combo ("Mary Had a Little Lamb", ScalesOBJ.cMajor, 1, "6545666"+"555", 4, 10f, "Med", false);
-	public Combo MHLL3 = new Combo ("Mary Had a Little Lamb", ScalesOBJ.cMajor, 2, "6545666"+"555"+"688", 4, 10f, "Med", false);
-	public Combo MHLL4 = new Combo ("Mary Had a Little Lamb", ScalesOBJ.cMajor, 3, "6545666"+"555"+"688"+"6545666655654", 14, 20f, "SlowMed", true);
+	public Combo MHLL1 = new Combo ("Mary Had a Little Lamb", ScalesOBJ.cMajor, 0, "6545666", 7, 4f, "Arpegginade", false, "");			// Mary Had a Little Lamb
+	public Combo MHLL2 = new Combo ("Mary Had a Little Lamb", ScalesOBJ.cMajor, 1, "6545666"+"555", 4, 10f, "Med", false, "");
+	public Combo MHLL3 = new Combo ("Mary Had a Little Lamb", ScalesOBJ.cMajor, 2, "6545666"+"555"+"688", 4, 10f, "Med", false, "");
+	public Combo MHLL4 = new Combo ("Mary Had a Little Lamb", ScalesOBJ.cMajor, 3, "6545666"+"555"+"688"+"6545666655654", 14, 20f, "SlowMed", true, "Shoots debug garbage for now. Have fun.");
 	
-	public Combo Scale = new Combo("C Major Scale", ScalesOBJ.cMinor, 0, "123456789", 9, 10f, "Med", true);
+	public Combo Scale = new Combo("C Major Scale", ScalesOBJ.cMinor, 0, "123456789", 9, 10f, "Med", true, "A Test scale. This does not exist");
 
 
 	// For debug purposes, initialize with songs in the list.
@@ -124,7 +126,7 @@ public class SongsOBJ : MonoBehaviour
 	{
 		string[] notesArray = {"1", "2", "3", "4", "5", "6", "7", "8", "9"};
 		ScalesOBJ.Scale scaleToTest = new ScalesOBJ.Scale("Scale", root, major, "This scale should not exist");
-		Combo scaleNotes = new Combo("Scale", scaleToTest, 0, "123456789", 9, 9001f, "(╯°□°)╯︵ ┻━┻", true);
+		Combo scaleNotes = new Combo("Scale", scaleToTest, 0, "123456789", 9, 9001f, "(╯°□°)╯︵ ┻━┻", true, "Wat.");
 		return getNotesArray(scaleNotes);
 	}
 
