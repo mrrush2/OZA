@@ -7,11 +7,12 @@ public class DEBUGViewer : MonoBehaviour
 	SongsOBJ songs;
 	
 	
-	
+	// Vars to test
 	public string songCurrentlySelected;
 	public string scaleCurrentlySelected;
 	public string instCurrentlySelected;
 	public string[] songValueTest;
+	public string[] getScaleTest;
 	
 	void Start ()
 	{
@@ -24,7 +25,8 @@ public class DEBUGViewer : MonoBehaviour
 		songCurrentlySelected = SongButton.nameOfCurrentSong;
 		scaleCurrentlySelected = ScaleButton.nameOfCurrentScale;
 		instCurrentlySelected = InstrumentButton.nameOfCurrentInst;
-		songValueTest = songs.getNotesArray(songs.CScale);
+		songValueTest = songs.getNotesArray(songs.Scale);
+		getScaleTest = songs.getNotesOfScale(8, false);
 	}
 	
 }

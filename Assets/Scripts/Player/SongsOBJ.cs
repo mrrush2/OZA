@@ -48,7 +48,7 @@ public class SongsOBJ : MonoBehaviour
 	public Combo MHLL3 = new Combo ("Mary Had a Little Lamb", ScalesOBJ.cMajor, 2, "6545666"+"555"+"688", 4, 10f, "Med", false);
 	public Combo MHLL4 = new Combo ("Mary Had a Little Lamb", ScalesOBJ.cMajor, 3, "6545666"+"555"+"688"+"6545666655654", 14, 20f, "SlowMed", true);
 	
-	public Combo CScale = new Combo("C Major Scale", ScalesOBJ.cMinor, 0, "123456789", 9, 10f, "Med", true);
+	public Combo Scale = new Combo("C Major Scale", ScalesOBJ.cMinor, 0, "123456789", 9, 10f, "Med", true);
 
 
 	// For debug purposes, initialize with songs in the list.
@@ -73,6 +73,7 @@ public class SongsOBJ : MonoBehaviour
 			
 			//int correctionFactor = 0;	// Accounts for the intervals of major and minor keys.
 			// Base corrections for major keys
+			// The weird spaces at the end of the corrections stop corrections from being overwritten, but still allow Parse to work later. It's a hack.
 			if (combo.scale.major)
 			{
 				if (notesArray[i].Equals("1")) notesArray[i] = "0 ";
@@ -119,7 +120,13 @@ public class SongsOBJ : MonoBehaviour
 		
 		return notesArray;
 	}
-
+	public string[] getNotesOfScale(int root, bool major)
+	{
+		string[] notesArray = {"1", "2", "3", "4", "5", "6", "7", "8", "9"};
+		ScalesOBJ.Scale scaleToTest = new ScalesOBJ.Scale("Scale", root, major, "This scale should not exist");
+		Combo scaleNotes = new Combo("Scale", scaleToTest, 0, "123456789", 9, 9001f, "(╯°□°)╯︵ ┻━┻", true);
+		return getNotesArray(scaleNotes);
+	}
 
 
 }
