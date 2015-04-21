@@ -7,18 +7,6 @@ public class ReSkinPlayer : MonoBehaviour {
 	public string instrument;
 
 
-	void Update() // VERY TEMPORARY spritesheet changer based on Austen's also temporary sound changer.
-	{
-		if (Input.GetKeyDown (KeyCode.X))
-			instrument = "ViolinViola";
-		if (Input.GetKeyDown (KeyCode.Z))
-			instrument = "Trumpet";
-	}
-	
-
-
-
-
 
 	void LateUpdate() // Must be done in LateUpdate
 	{

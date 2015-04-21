@@ -44,8 +44,8 @@ public class ScalesOBJ : MonoBehaviour
 
 
 	////// COMBO DEFINITIONS //////
-	public static Scale cMajor = new Scale ("C Major", 8, true, "I see major events in your future, kid.");
-	public static Scale cMinor = new Scale ("C Minor", 8, false, "I see minor problems in everyone.");
+	public static Scale cMajor = new Scale ("C Major", 8, true, "This is a C Major scale. Puns go here.");
+	public static Scale cMinor = new Scale ("C Minor", 8, false, "C minor needs a description, too.");
 	
 
 
