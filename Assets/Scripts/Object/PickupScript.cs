@@ -38,7 +38,7 @@ public class PickupScript : MonoBehaviour {
 			instruments.instrumentList.Add (instruments.trumpet);
 			
 		if (cMinor)
-			scales.scaleList.Add (scales.cMinor);
+			scales.scaleList.Add (ScalesOBJ.cMinor);
 			
 		if (MHLL)
 		{

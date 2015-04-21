@@ -39,14 +39,13 @@ public class ScalesOBJ : MonoBehaviour
 			this.major = major;
 			this.description = description;
 		}
-		
 
 	}
 
 
 	////// COMBO DEFINITIONS //////
-	public Scale cMajor = new Scale ("C Major", 8, true, "I see major events in your future, kid.");
-	public Scale cMinor = new Scale ("C Minor", 8, false, "I see minor problems in everyone.");
+	public static Scale cMajor = new Scale ("C Major", 8, true, "I see major events in your future, kid.");
+	public static Scale cMinor = new Scale ("C Minor", 8, false, "I see minor problems in everyone.");
 	
 
 
