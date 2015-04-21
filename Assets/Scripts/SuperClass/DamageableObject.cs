@@ -40,10 +40,17 @@ public class DamageableObject : MonoBehaviour {
 					health = 0f,
 					maxArmor = 0f,
 					armor = 0f,
-					regeneration = 0f;
+					regeneration = 0f,
+					iFrameDuration = 0f,
+					iFrameTime = 0f;
 
 	protected bool isDead = false,
-				   hasHealthBar = true;
+				   hasHealthBar = true,
+				   isDamageable = true,
+				   inKnockback = false,
+				   isPlayer = false;
+
+	private float knockbackTime = 0f;
 
 	// Getters and setters
 	public float getMaxHealth() {return this.maxHealth;}
@@ -68,6 +75,14 @@ public class DamageableObject : MonoBehaviour {
 	}
 	public float getRegeneration() {return this.regeneration;}
 	public void setRegeneration(float value) {this.regeneration = value;}
+	public float getIFrameDuration() {return this.iFrameDuration;}
+	public void setIFrameDuration(float value) {this.iFrameDuration = value;}
+
+	public bool getDamageable() {return this.isDamageable;}
+	public void setDamageable(bool value) {this.isDamageable = value;}
+	public bool getKnockback() {return this.inKnockback;} // Potentially worthless
+	public bool getIsPlayer() {return this.isPlayer;}
+	public void setIsPlayer(bool value) {this.isPlayer = value;}
 
 	// Manipulation methods
 
@@ -87,7 +102,42 @@ public class DamageableObject : MonoBehaviour {
 	 * @param	amount
 	 * 		Points of health to damage
 	 **/
-	public void damage(float amount) {Debug.Log ("Damaged: " + amount); this.setHealth (this.health - amount);}
+	public void damage(float amount) {
+		if (this.isDamageable) {
+			Debug.Log ("Damaged: " + amount);
+			if (this.iFrameDuration > 0)
+				this.startIFrame();
+			this.setHealth (this.health - amount);
+		}
+	}
+
+	/**
+	 * Knocks the object in the specified direction and power
+	 * 
+	 * @param	direction
+	 * 		Either negative or positive, signifying left or right respectively
+	 * @param	power
+	 * 		The power of the knockback
+	 **/
+	public void knockback(int direction, float power, float upPower) {
+		if (this.isDamageable) {
+			Debug.Log ("Knocking back object for amount: " + power);
+			rigidbody2D.AddForce (new Vector2 (direction * power, upPower));
+			this.knockbackTime = 75;
+			this.inKnockback = true;
+
+			if (this.isPlayer)
+				CameraLogic.ShakeItUp(0.25f, 0.2f, 1.0f);
+		}
+	}
+
+	/**
+	 * Starts the invincibility frame counter
+	 **/
+	public void startIFrame() {
+		this.isDamageable = false;
+		this.iFrameTime = this.iFrameDuration;
+	}
 
 	/**
 	 * Sets the object's health to 0, thus calling the die() method through
@@ -96,7 +146,7 @@ public class DamageableObject : MonoBehaviour {
 	public void kill() {this.setHealth (0f);}
 
 	void OnTriggerEnter2D(Collider2D other) {
-		Debug.Log ("-Projectile collision with damageable object-");
+		//Debug.Log ("-Projectile collision with damageable object-");
 	}
 
 	/**
@@ -110,14 +160,34 @@ public class DamageableObject : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		health = maxHealth;
-		armor = maxArmor;
-		Debug.Log (this.getHealth ());
-		Debug.Log (getHealth ());
+		this.Customize ();
+		this.health = this.maxHealth;
+		this.armor = this.maxArmor;
+	}
+
+	// Customize the variables for the object, overriden in each object subclass
+	public virtual void Customize () {
 	}
 	
-	// Update is called once per frame
+	// Fixed update for invincibility frames
+	void FixedUpdate () {
+		if (this.iFrameDuration > 0 && this.iFrameTime > 0) {
+			this.iFrameTime--;
+			//Debug.Log("Object is invincibile!");
+		}
+		else if (this.iFrameTime >= 0)
+			this.setDamageable(true);
+
+		if (this.knockbackTime > 0)
+			this.knockbackTime--;
+		else if (this.knockbackTime <= 0)
+			this.inKnockback = false;
+
+		if (this.getHealth () > this.getMaxHealth())
+			this.setHealth (this.getMaxHealth());
+	}
+
+	// Regular update
 	void Update () {
-		
 	}
 }

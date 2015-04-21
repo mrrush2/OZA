@@ -3,7 +3,7 @@ using System.Collections;
 
 public class BackGroundNoteDelay : MonoBehaviour {
 	
-	double thisDelay;
+	public double thisDelay = 1.75;
 	public Transform playerposition; 
 	public float currenttime;
 	bool updates;
@@ -12,7 +12,7 @@ public class BackGroundNoteDelay : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		thisDelay = 1.75;
+		//thisDelay = 1.5;
 		currenttime = 0;
 		updates = false;
 		ifplay = GetComponent<BackgroundMusics2> ().play;
@@ -30,6 +30,6 @@ public class BackGroundNoteDelay : MonoBehaviour {
 				}
 			}
 		} else 
-			thisDelay = 1.75 + Time.time;
+			thisDelay = thisDelay + Time.time;
 	}
 }

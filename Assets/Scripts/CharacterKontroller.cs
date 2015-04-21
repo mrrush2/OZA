@@ -1,11 +1,14 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class CharacterKontroller : MonoBehaviour {
 
 	public float maxSpeed = 10f;
 	public bool facingRight = true;
 
+	DamageableObject player;
+	public Slider healthBar;
 	Animator anim;
 
 	public bool grounded = false;
@@ -20,6 +23,7 @@ public class CharacterKontroller : MonoBehaviour {
 
 	public bool onLadder = false;
 
+
 	// Move variable
 	public float move = 0F;
 
@@ -30,6 +34,7 @@ public class CharacterKontroller : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		player = GetComponent < DamageableObject > ();
 		anim = GetComponent < Animator > ();
 	}
 	
@@ -75,12 +80,14 @@ public class CharacterKontroller : MonoBehaviour {
 		} else if (Input.GetKey (keyLeft)) {
 			if (move > 0F) move = 0F;
 			if (move > -1F) move -= 0.15F;
-		} else {
+		} else {//if (!player.getKnockback()) {
 			if (Mathf.Abs(move) - 0.15F > 0) // Slow down
 				move += (move > 0F ? -0.15F : 0.15F);
 			else
 				move = 0F; // Reset velocity if sufficiently slow
 		}
+
+		//Debug.Log ("Knockback value: " + player.getKnockback ());
 
 		if (grounded && Input.GetKeyDown (keyJump) && rigidbody2D.velocity.y < 0 && reachedApex) 
 		{
@@ -100,6 +107,9 @@ public class CharacterKontroller : MonoBehaviour {
 		{
 			reachedApex = true;
 		}
+
+		// Quick healthbar stuff
+		healthBar.value = player.getHealth () / player.getMaxHealth ();
 	}
 
 	void Flip()

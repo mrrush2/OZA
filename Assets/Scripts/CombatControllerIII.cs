@@ -186,6 +186,8 @@ public class CombatControllerIII : MonoBehaviour {
 		noteSmInstance = Instantiate(musicNoteSm, noteOrigin.position, noteOrigin.rotation) as Rigidbody2D;	
 		CustomProjectile note = noteSmInstance.gameObject.GetComponent<CustomProjectile>();
 		note.setDirection (heWhoShoots.localScale.x);
+		note.setKnockback (250f);
+		note.setKnockbackVertical (20f);
 		note.setDamage (3);
 		note.setSpeed (4);
 	}

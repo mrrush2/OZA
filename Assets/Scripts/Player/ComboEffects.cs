@@ -14,6 +14,7 @@ public class ComboEffects : MonoBehaviour
 	
 	// Define all prefab'd effects.
 	public Rigidbody2D med;
+	public Rigidbody2D arpegginade;
 
 		
 						
@@ -46,5 +47,19 @@ public class ComboEffects : MonoBehaviour
 			note.setSpeed (2);
 			CameraLogic.ShakeItUp(0.25f, 0.2f, 1.0f);
 		}
+		if (invoked.effect.Equals("Arpegginade"))
+		{
+			effectInstance = Instantiate(arpegginade, combat.noteOrigin.position, combat.noteOrigin.rotation) as Rigidbody2D;
+			CustomProjectile note = effectInstance.gameObject.GetComponent<CustomProjectile>();
+			note.setDamage (combos.Damage);
+		}
+	}
+	
+	void Update ()
+	{
+//		if (Input.GetKeyDown (KeyCode.C))
+//		{
+//			effectInstance = Instantiate(arpegginade, combat.noteOrigin.position, combat.noteOrigin.rotation) as Rigidbody2D;
+//		}
 	}
 }

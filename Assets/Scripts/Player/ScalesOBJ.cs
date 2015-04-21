@@ -29,22 +29,23 @@ public class ScalesOBJ : MonoBehaviour
 		public string name;		// Instance vars
 		public int root;		
 		public bool major;
+		public string description;
 
 		// Constructor for scales
-		public Scale(string name, int root, bool major)
+		public Scale(string name, int root, bool major, string description)
 		{
 			this.name = name;
 			this.root = root;
 			this.major = major;
+			this.description = description;
 		}
-		
 
 	}
 
 
 	////// COMBO DEFINITIONS //////
-	public Scale cMajor = new Scale ("C Major", 8, true);
-	public Scale cMinor = new Scale ("C Minor", 8, false);
+	public static Scale cMajor = new Scale ("C Major", 8, true, "This is a C Major scale. Puns go here.");
+	public static Scale cMinor = new Scale ("C Minor", 8, false, "C minor needs a description, too.");
 	
 
 

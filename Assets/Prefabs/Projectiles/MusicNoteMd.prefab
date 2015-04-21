@@ -145,9 +145,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 100000}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62b8255017d8e1a4793620cfa2ace203, type: 3}
+  m_Script: {fileID: 11500000, guid: 4b4587f0abbd3a94589c1ac95a72bea3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damage: 10
+  speed: 2.5
+  gravity: 0
+  timeout: 10
+  direction: 1
+  knockback: 1
+  knockbackVertical: 0
   wallLayer:
     serializedVersion: 2
     m_Bits: 1

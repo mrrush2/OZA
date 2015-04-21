@@ -44,10 +44,12 @@ public class CustomProjectile : MonoBehaviour {
 					gravity = 0f,
 					timeout = 10f,
 					direction = 1f,
-					knockback = 1f;
+					knockback = 0f,
+					knockbackVertical = 0f;
 
 	protected bool canPunch = false,
-				   directionRight = true;
+				   directionRight = true,
+				   isEnemyAttack = true;
 
 	// For the timer
 	float startTime;
@@ -74,6 +76,11 @@ public class CustomProjectile : MonoBehaviour {
 	}
 	public float getKnockback() {return this.knockback;}
 	public void setKnockback(float value) {this.knockback = value;}
+	public float getKnockbackVertical() {return this.knockbackVertical;}
+	public void setKnockbackVertical(float value) {this.knockbackVertical = value;}
+
+	public bool getIsEnemyAttack() {return this.isEnemyAttack;}
+	public void setIsEnemyAttack(bool value) {this.isEnemyAttack = value;}
 
 	// Manipulation methods
 
@@ -82,7 +89,7 @@ public class CustomProjectile : MonoBehaviour {
 	 * the projectile does not have punchtrough.
 	 **/
 	void OnTriggerEnter2D(Collider2D other) {
-		Debug.Log ("-Projectile collision-");
+		//Debug.Log ("-Projectile collision-");
 	}
 
 	/**
@@ -95,30 +102,33 @@ public class CustomProjectile : MonoBehaviour {
 	public void die(bool checkForPunch) {
 		if (checkForPunch) {
 			if (this.getCanPunch ()) {
-				Debug.Log ("Projectile cannot die; it can puncture");
 				return;
 			}
 		}
-		Debug.Log ("Projectile WILL die");
 		this.die ();
 	}
 
 	// Use this for initialization
 	void Start () {
-		startTime = Time.time;
+		this.Customize ();
+		rigidbody2D.gravityScale = this.getGravity ();
+		this.startTime = Time.time;
+	}
+
+	// Customize the variables for the object, overriden in each object subclass
+	public virtual void Customize () {
 	}
 
 	void Update() {
-
 	}
 	
 	// Update is called once per frame
 	void FixedUpdate () {
 		if (speed != 0) {
-			rigidbody2D.velocity = new Vector2 (direction * speed, 0);
+			rigidbody2D.velocity = new Vector2 (direction * speed, rigidbody2D.velocity.y);
 		}
 		bool noteHit = Physics2D.OverlapCircle (thisNote.position , .02f, wallLayer);
-		if ((timeout != 0 && Time.time - startTime >= timeout) || noteHit)
-			die ();
+		if ((timeout != 0 && Time.time - this.startTime >= timeout) || noteHit)
+			this.die ();
 	}
 }

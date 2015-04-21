@@ -11,10 +11,16 @@ public class InstrumentButton : MonoBehaviour
 	public string name;
 	InstrumentsOBJ.Instrument instrumentChosen;
 	CombatControllerIII combat;
+
 	
 	ColorBlock buttonColors;
 	
 	AudioClip clickSound;
+	
+	public static string nameOfCurrentInst;
+	
+	GameObject[] controllers;
+	
 	
 	// Useful color definitions.
 	Color transparent = new Color(0f, 0f, 0f, 0f);
@@ -26,9 +32,10 @@ public class InstrumentButton : MonoBehaviour
 		instrumentButton = this.GetComponent<Button> ();
 		player = GameObject.FindGameObjectWithTag ("Player");
 		instruments = player.GetComponent<InstrumentsOBJ> ();
-		combat = player.GetComponent<CombatControllerIII> ();
-		
+		combat = player.GetComponent<CombatControllerIII> ();		
 		clickSound = Resources.Load ("Sounds/Generic/ClickBeep") as AudioClip;
+		
+		controllers = GameObject.FindGameObjectsWithTag("InstController");
 	}
 
 	void Start ()
@@ -44,18 +51,21 @@ public class InstrumentButton : MonoBehaviour
 		
 		instrumentButton.onClick.AddListener(() => 				// Adds an event to the button
 		{ 
-			instruments.ChangeInstrument(instrumentChosen);	
+			instruments.ChangeInstrument(instrumentChosen);
+			SetAllInfo(instrumentChosen);
+			nameOfCurrentInst = instrumentChosen.name;	
 		});
 	}
 
 	
-	void Update ()
+	void FixedUpdate ()
 	{
 		if (instrumentButton.name.Equals(combat.instrument))	// When selected, this button is green
 		{
 			buttonColors.normalColor = selected;
 			buttonColors.highlightedColor = selected;
 			instrumentButton.colors = buttonColors; // To update to the new values
+			SetAllInfo(instrumentChosen);
 		}
 		else 											// When unselected, be normal			
 		{
@@ -70,4 +80,14 @@ public class InstrumentButton : MonoBehaviour
 	{
 		AudioSource.PlayClipAtPoint (clickSound, player.transform.position);
 	}
+
+	void SetAllInfo (InstrumentsOBJ.Instrument newInstrument)
+	{
+		foreach (GameObject i in controllers)
+		{
+			InstrumentController controller = i.GetComponentInChildren<InstrumentController>();
+			controller.SetInfo (newInstrument);
+		}
+	}
+
 }

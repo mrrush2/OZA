@@ -13,6 +13,10 @@ public class SongButton : MonoBehaviour {
 	
 	AudioClip clickSound;
 	
+	public static string nameOfCurrentSong;
+	
+	GameObject[] controllers;
+	
 	// Use this for initialization
 	void Awake ()
 	{
@@ -21,6 +25,8 @@ public class SongButton : MonoBehaviour {
 		songs = player.GetComponent<SongsOBJ>();				// Init scale script ref
 		
 		clickSound = Resources.Load ("Sounds/Generic/ClickBeep") as AudioClip;
+		
+		controllers = GameObject.FindGameObjectsWithTag("SongController");
 	}
 	
 	
@@ -35,6 +41,8 @@ public class SongButton : MonoBehaviour {
 		
 		songButton.onClick.AddListener(() => 				// Adds an event to the button
 		{ 
+			nameOfCurrentSong = songToView.name;
+			SetAllInfo(songToView);
 			// Add functions here to show various info about the chosen instrument		
 		});
 		
@@ -46,5 +54,15 @@ public class SongButton : MonoBehaviour {
 	{
 		AudioSource.PlayClipAtPoint (clickSound, player.transform.position);
 	}
+
+	void SetAllInfo (SongsOBJ.Combo newSong)
+	{
+		foreach (GameObject i in controllers)
+		{
+			SongController controller = i.GetComponentInChildren<SongController>();
+			controller.SetInfo (newSong);
+		}
+	}
+
 
 }

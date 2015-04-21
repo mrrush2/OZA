@@ -3,6 +3,10 @@ using System.Collections;
 
 public class MusicMenuScript : MonoBehaviour {
 
+	GameObject player;
+
+
+
 	public Canvas mainCanvas;				//All of the different menu sections are divided based on their canvas.
 	public Canvas musicMenuCanvas;
 	public Canvas instrumentsMenuCanvas;
@@ -11,7 +15,8 @@ public class MusicMenuScript : MonoBehaviour {
 	public Transform menuObject;			//The item that opens the menu
 	public LayerMask menuOpener;			//Player, basically
 	public float openRadius = 0.25f;		//How close the player must be
-
+	
+	Vector2 initial;
 	// Control variables
 	bool menuCanBeOpened = false;
 	bool menuCurrentlyOpen = false;
@@ -31,9 +36,12 @@ public class MusicMenuScript : MonoBehaviour {
 		menuOpenSound = Resources.Load ("Sounds/Generic/Open") as AudioClip;
 		menuCloseSound = Resources.Load ("Sounds/Generic/Close") as AudioClip;
 		
+		initial = menuObject.position;
 				
 		anim = GetComponent < Animator > ();
 		KillAllMenus();
+		
+		player = GameObject.FindGameObjectWithTag("Player");
 	}
 	
 	// Update is called once per frame
@@ -55,6 +63,16 @@ public class MusicMenuScript : MonoBehaviour {
 			KillAllMenus();
 		}
 
+
+		// World's hackiest hack to make sure the menu is centered. Sleek and stupid.
+		if (menuCurrentlyOpen)
+		{
+			menuObject.position = new Vector2(0,0);
+		}
+		else
+		{
+			menuObject.position = initial;
+		}
 	
 	}
 	public void KillAllMenus() {
@@ -70,15 +88,15 @@ public class MusicMenuScript : MonoBehaviour {
 	// This is an easy way to call sounds through the UI toolset.
 	public void ClickSound() {
 		if (menuCurrentlyOpen)
-			AudioSource.PlayClipAtPoint (clickSound, menuObject.position);
+			AudioSource.PlayClipAtPoint (clickSound, player.transform.position);
 	}
 	public void MenuOpenSound() {
 		if (!menuCurrentlyOpen)
-			AudioSource.PlayClipAtPoint (menuOpenSound, menuObject.position);
+			AudioSource.PlayClipAtPoint (menuOpenSound, player.transform.position);
 	}
 	public void MenuCloseSound() {
 		if (menuCurrentlyOpen)
-			AudioSource.PlayClipAtPoint (menuCloseSound, menuObject.position);
+			AudioSource.PlayClipAtPoint (menuCloseSound, player.transform.position);
 	}
 
 
