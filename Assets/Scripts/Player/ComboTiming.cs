@@ -95,7 +95,7 @@ public class ComboTiming : MonoBehaviour {
 		
 	}
 	
-	void Reset()
+	public void Reset()
 	{
 		firstSet = false;		// So we can get a new time for the next combo.
 		secondSet = false;		// Ditto

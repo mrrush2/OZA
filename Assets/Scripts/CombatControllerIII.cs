@@ -3,9 +3,11 @@ using System.Collections;
 
 public class CombatControllerIII : MonoBehaviour {
 
-	GameObject player; //Player refernce.
+	GameObject player; //Player reference.
 	CharacterKontroller playerScript;
 	Combos comboScript;
+	ComboTiming comboTiming;
+	SongsOBJ songs;
 
 	public string[] noteRep = {"1", "2", "3", "4", "5", "6", "7", "8", "9"}; 
 
@@ -54,6 +56,8 @@ public class CombatControllerIII : MonoBehaviour {
 	public int R = 8; 
 	public string instrument = "Violin"; 
 	public bool majorKey = true; 
+	
+	public float resetTimer = 0f;
 			
 	
 	public void ChangeKeyMajor(int S)
@@ -95,6 +99,8 @@ public class CombatControllerIII : MonoBehaviour {
 			player = GameObject.FindGameObjectWithTag ("Player"); //Initialize player references.
 			playerScript = player.GetComponent<CharacterKontroller>();
 			comboScript = player.GetComponent<Combos>();
+			songs = player.GetComponent<SongsOBJ>();
+			comboTiming = player.GetComponent<ComboTiming>();
 		}
 
 // Update is called constantly
@@ -173,11 +179,26 @@ public class CombatControllerIII : MonoBehaviour {
 		if (Input.GetKeyDown (KeyCode.Keypad0) || Input.GetKeyDown (keyReset)) //Reset button
 		{
 			songValue = "";
+			resetTimer = 0f;
 		}
+		
+		resetTimer += Time.deltaTime;
+		if (resetTimer > 3f)
+			ResetCombo ();
+		
 		
 		// Check for combos
 		comboScript.ComboCheckII();
 		
+	}
+	
+	// A centralized method to reset all of the combat / combo related values.
+	public void ResetCombo()	
+	{
+		songValue = "";
+		songs.specialAttackValue = 0;
+		comboTiming.Reset();
+		resetTimer = 0f;
 	}
 
 ////// PROJECTILES AND EFFECTS ////// 
@@ -213,7 +234,8 @@ public class CombatControllerIII : MonoBehaviour {
 
 	void NotePress (int note) 
 	{	
-		songValue += noteRep[--note];	
+		songValue += noteRep[--note];
+		resetTimer = 0f;	
 		FireSm();	
 		// AudioSource.PlayClipAtPoint(noteSound[--note], noteOrigin.position);	
 	}
