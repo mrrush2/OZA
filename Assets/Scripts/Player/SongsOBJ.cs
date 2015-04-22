@@ -107,17 +107,17 @@ public class SongsOBJ : MonoBehaviour
 			
 			
 			if (notesArray[i].Equals("0")) notesArray[i] = "E";			// The follwing 12 statements translate the array to the actual notes.
-			if (notesArray[i].Equals("1")) notesArray[i] = "F";
-			if (notesArray[i].Equals("2")) notesArray[i] = "F♯";
+			if (notesArray[i].Equals("1")) notesArray[i] = "F";			// ♯♭
+			if (notesArray[i].Equals("2")) notesArray[i] = "F#";
 			if (notesArray[i].Equals("3")) notesArray[i] = "G";
-			if (notesArray[i].Equals("4")) notesArray[i] = "A♭";
+			if (notesArray[i].Equals("4")) notesArray[i] = "Ab";
 			if (notesArray[i].Equals("5")) notesArray[i] = "A";
-			if (notesArray[i].Equals("6")) notesArray[i] = "B♭";
+			if (notesArray[i].Equals("6")) notesArray[i] = "Bb";
 			if (notesArray[i].Equals("7")) notesArray[i] = "B";
 			if (notesArray[i].Equals("8")) notesArray[i] = "C";
-			if (notesArray[i].Equals("9")) notesArray[i] = "C♯";
+			if (notesArray[i].Equals("9")) notesArray[i] = "C#";
 			if (notesArray[i].Equals("10")) notesArray[i] = "D";
-			if (notesArray[i].Equals("11")) notesArray[i] = "E♭";
+			if (notesArray[i].Equals("11")) notesArray[i] = "Eb";
 		}
 		
 		return notesArray;
