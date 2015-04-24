@@ -127,7 +127,16 @@ public class DamageableObject : MonoBehaviour {
 			this.inKnockback = true;
 
 			if (this.isPlayer)
+			{
 				CameraLogic.ShakeItUp(0.25f, 0.2f, 1.0f);
+				GameObject player = GameObject.FindGameObjectWithTag("Player");
+				player.GetComponent<CharacterKontroller>().movementEnabled = false;		// Disable player movement when hit
+				player.GetComponent<CharacterKontroller>().reEnableMovementTimer = 0f;	// And reset the timer so it can count to threshold
+			}
+			if (this.tag = "Enemy")
+			{
+			
+			}
 		}
 	}
 

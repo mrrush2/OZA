@@ -6,7 +6,7 @@ public class Zombie01Attack : CustomProjectile {
 	public override void Customize() {
 		this.setCanPunch (true);
 		this.setKnockback (1000f);
-		this.setKnockbackVertical (75f);
+		this.setKnockbackVertical (200f);
 		this.setDamage (10f);
 	}
 	
