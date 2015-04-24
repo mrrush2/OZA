@@ -99,7 +99,9 @@ public class CharacterKontroller : MonoBehaviour {
 
 		
 
-		//Debug.Log ("Knockback value: " + player.getKnockback ());
+		// Reset y velocity if in knockback - prevents player from shooting upwards on slopes
+		if (player.getKnockback() && rigidbody2D.velocity.y > 3)
+			rigidbody2D.velocity = new Vector2(rigidbody2D.velocity.x, 1);
 
 		if (grounded && Input.GetKeyDown (keyJump) && rigidbody2D.velocity.y < 0 && reachedApex) 
 		{
