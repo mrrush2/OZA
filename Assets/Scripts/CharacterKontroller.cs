@@ -117,10 +117,11 @@ public class CharacterKontroller : MonoBehaviour {
 			rigidbody2D.AddForce (new Vector2(0, jumpForce));
 			reachedApex = false;
 		}
-		if (!reachedApex && rigidbody2D.velocity.y <= -0.001f)
+		if (!reachedApex && rigidbody2D.velocity.y <= -0.01f)
 		{
 			reachedApex = true;
 		}
+		
 
 		// Quick healthbar stuff
 		healthBar.value = player.getHealth () / player.getMaxHealth ();
