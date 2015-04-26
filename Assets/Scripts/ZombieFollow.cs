@@ -19,6 +19,9 @@ public class ZombieFollow : MonoBehaviour {
 	Vector3 theScale;
 	float timer;
 
+	public bool canMove = true;
+	public float reEnableMovementTimer = 0f;
+
 	void Start()
 	{
 		anim = GetComponent < Animator > ();
@@ -52,6 +55,11 @@ public class ZombieFollow : MonoBehaviour {
 		else {
 			Patrol ();
 		}
+	
+		reEnableMovementTimer += Time.deltaTime;
+		if(!canMove && reEnableMovementTimer > .5f)
+			canMove = true;
+		
 		
 	}
 	
@@ -70,20 +78,20 @@ public class ZombieFollow : MonoBehaviour {
 		//if (distance == 0) {
 			//rigidbody2D.velocity = new Vector2 (0, rigidbody2D.velocity.y);
 		 if (facingRight) {
-			rigidbody2D.velocity = new Vector2 (theScale.x * followSpeed, rigidbody2D.velocity.y);
+			if (canMove) rigidbody2D.velocity = new Vector2 (theScale.x * followSpeed, rigidbody2D.velocity.y);
 		} else {
-			rigidbody2D.velocity = new Vector2 (theScale.x * followSpeed, rigidbody2D.velocity.y);
+			if (canMove) rigidbody2D.velocity = new Vector2 (theScale.x * followSpeed, rigidbody2D.velocity.y);
 		}
 	}
 	
 	void Patrol(){
 		if (patrolTimer > initialPatrolTime/timer) {
-			rigidbody2D.velocity = new Vector2 (theScale.x * patrolSpeed, rigidbody2D.velocity.y);
+			if (canMove) rigidbody2D.velocity = new Vector2 (theScale.x * patrolSpeed, rigidbody2D.velocity.y);
 			patrolTimer -= Time.deltaTime;
 		}
 		else if (patrolTimer > 0) {
 			Flip();
-			rigidbody2D.velocity = new Vector2 (theScale.x * patrolSpeed, rigidbody2D.velocity.y);
+			if (canMove) rigidbody2D.velocity = new Vector2 (theScale.x * patrolSpeed, rigidbody2D.velocity.y);
 			patrolTimer -= Time.deltaTime;
 		}
 		else {

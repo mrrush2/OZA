@@ -22,7 +22,9 @@ public class CharacterKontroller : MonoBehaviour {
 	public bool reachedApex = true;
 
 	public bool onLadder = false;
-
+	
+	public bool movementEnabled = true;
+	public float reEnableMovementTimer = 0f;
 
 	// Move variable
 	public float move = 0F;
@@ -55,7 +57,8 @@ public class CharacterKontroller : MonoBehaviour {
 		if (notTraversable || onLadder)
 			rigidbody2D.velocity = new Vector2(0, rigidbody2D.velocity.y);
 		else
-			rigidbody2D.velocity = new Vector2(move * maxSpeed, rigidbody2D.velocity.y);
+			if (movementEnabled)
+				rigidbody2D.velocity = new Vector2(move * maxSpeed, rigidbody2D.velocity.y);
 		
 		if (move > 0 && !facingRight)
 			Flip ();
@@ -74,10 +77,10 @@ public class CharacterKontroller : MonoBehaviour {
 		
 		if (Input.GetKey (keyRight) && Input.GetKey (keyLeft)) {
 			move = 0F; // Reset velocity if both keys are down
-		} else if (Input.GetKey (keyRight)) {
+		} else if (Input.GetKey (keyRight) && movementEnabled) {
 			if (move < 0F) move = 0F; // Reset velocity
 			if (move < 1F) move += 0.15F; // Small acceleration
-		} else if (Input.GetKey (keyLeft)) {
+		} else if (Input.GetKey (keyLeft) && movementEnabled) {
 			if (move > 0F) move = 0F;
 			if (move > -1F) move -= 0.15F;
 		} else {//if (!player.getKnockback()) {
@@ -86,8 +89,19 @@ public class CharacterKontroller : MonoBehaviour {
 			else
 				move = 0F; // Reset velocity if sufficiently slow
 		}
+		
+		reEnableMovementTimer += Time.deltaTime;
+		// Two cases for re-enable movement: In midair for 3 seconds, or on the ground for .25.
+		if (!movementEnabled && (reEnableMovementTimer > 3f || (grounded && reEnableMovementTimer > 0.25f)))
+			movementEnabled = true;
+		
+		
 
-		//Debug.Log ("Knockback value: " + player.getKnockback ());
+		
+
+		// Reset y velocity if in knockback - prevents player from shooting upwards on slopes
+		if (player.getKnockback() && rigidbody2D.velocity.y > 3)
+			rigidbody2D.velocity = new Vector2(rigidbody2D.velocity.x, 1);
 
 		if (grounded && Input.GetKeyDown (keyJump) && rigidbody2D.velocity.y < 0 && reachedApex) 
 		{
@@ -103,10 +117,11 @@ public class CharacterKontroller : MonoBehaviour {
 			rigidbody2D.AddForce (new Vector2(0, jumpForce));
 			reachedApex = false;
 		}
-		if (!reachedApex && rigidbody2D.velocity.y <= -0.001f)
+		if (!reachedApex && rigidbody2D.velocity.y <= -0.01f)
 		{
 			reachedApex = true;
 		}
+		
 
 		// Quick healthbar stuff
 		healthBar.value = player.getHealth () / player.getMaxHealth ();
